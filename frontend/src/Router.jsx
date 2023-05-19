@@ -1,22 +1,23 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import PageWrapper from "./components/PageWrapper";
 import Home from "./pages/Home";
-import Project from "./pages/Project";
 import Error404 from "./pages/Error404";
 
 const Router = () => {
     const router = createBrowserRouter([
         {
-            path: "/",
-            element: <Home />,
-        },
-        {
-            path: "/projects/:projectId",
-            element: <Project />,
-        },
-        {
-            path: "*",
-            element: <Error404 />,
+            element: <PageWrapper />,
+            children: [
+                {
+                    path: "/",
+                    element: <Home />,
+                },
+                {
+                    path: "*",
+                    element: <Error404 />,
+                },
+            ],
         },
     ]);
 

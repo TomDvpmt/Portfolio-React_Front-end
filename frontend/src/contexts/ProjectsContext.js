@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import projects from "../assets/projects";
+import projects from "../assets/data/projects";
 
 const ProjectsContext = createContext(projects);
 
