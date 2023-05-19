@@ -14,18 +14,18 @@ const NavBar = () => {
                             textDecoration: "underline",
                         },
                     }}>
-                    <Button component={RouterLink} to="#about" color="inherit">
+                    <Button component={RouterLink} to="/#about" color="inherit">
                         À propos
                     </Button>
                     <Button
                         component={RouterLink}
-                        to="#projects"
+                        to="/#projects"
                         color="inherit">
                         Projets
                     </Button>
                     <Button
                         component={RouterLink}
-                        to="#contact"
+                        to="/#contact"
                         color="inherit">
                         Contact
                     </Button>

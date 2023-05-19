@@ -21,6 +21,9 @@ const ErrorBoundary = ({ page }) => {
                 message =
                     "Aïe ! Impossible de récupérer les données du projet.";
                 break;
+            case "error404":
+                message = "Page introuvable.";
+                break;
             default:
                 message = "Quelque chose s'est mal passé.";
         }

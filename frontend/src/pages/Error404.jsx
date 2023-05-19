@@ -1,7 +1,7 @@
-import React from "react";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 const Error404 = () => {
-    return <div>Error404</div>;
+    return <ErrorBoundary page="error404" />;
 };
 
 export default Error404;

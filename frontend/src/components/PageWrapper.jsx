@@ -8,13 +8,25 @@ import { Box } from "@mui/material";
 
 const PageWrapper = () => {
     return (
-        <>
-            <NavBar />
+        <Box
+            sx={{
+                minHeight: "100vh",
+                display: "flex",
+                flexDirection: "column",
+            }}>
             <ScrollToHashElement />
-            <Box component="main">
+            <NavBar />
+            <Box
+                component="main"
+                sx={{
+                    flexGrow: "1",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                }}>
                 <Outlet />
             </Box>
-        </>
+        </Box>
     );
 };
 
