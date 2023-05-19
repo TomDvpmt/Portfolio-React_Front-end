@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 
-import { ProjectsContext } from "../../app/contexts";
+import ProjectsContext from "../contexts/ProjectsContext";
 
-import ErrorBoundary from "../../components/ErrorBoundary";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 const Project = () => {
     const { projectId } = useParams();

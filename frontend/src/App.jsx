@@ -1,11 +1,11 @@
-import Router from "../Router";
-import NavBar from "../../layout/NavBar";
+import Router from "./Router";
+import NavBar from "./layout/NavBar";
 
-import { ProjectsContext } from "../contexts";
-import projects from "../../assets/projects";
+import ProjectsContext from "./contexts/ProjectsContext";
+import projects from "./assets/projects";
 
 import { ThemeProvider, CssBaseline } from "@mui/material";
-import theme from "../../styles/theme";
+import theme from "./styles/theme";
 
 const App = () => {
     return (
