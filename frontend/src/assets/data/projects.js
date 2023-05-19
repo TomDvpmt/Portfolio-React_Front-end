@@ -1,8 +1,11 @@
+import mockImg from "../img/projects/mock-img.jpg";
+import mockImg2 from "../img/projects/mock-img2.jpg";
+
 const projects = [
     {
         id: 1,
         title: "Application de commandes en ligne (Oh My Food)",
-        imgUrl: "",
+        imgUrl: mockImg,
         description:
             "Création d'une application mobile-first de commandes de repas en ligne avec Sass, à partir d'une maquette et d'un brief créatif",
         features: "Animations CSS, mobile-first, responsive",
@@ -13,7 +16,7 @@ const projects = [
     {
         id: 2,
         title: "Application de location immobilière (Kasa)",
-        imgUrl: "",
+        imgUrl: mockImg2,
         description:
             "Création du front-end d'une application de location immobilière avec React, à partir d'une maquette Figma",
         features:
@@ -25,7 +28,7 @@ const projects = [
     {
         id: 3,
         title: "Réseau social d'entreprise (Groupomania)",
-        imgUrl: "",
+        imgUrl: mockImg,
         description:
             "Création du back-end et front-end d'un réseau social avec forum et chat, avec React et Redux",
         features:
@@ -37,7 +40,7 @@ const projects = [
     {
         id: 4,
         title: "Application de covoiturage (Covoit')",
-        imgUrl: "",
+        imgUrl: mockImg2,
         description:
             "Création d'une application de covoiturage avec React et Redux",
         features:

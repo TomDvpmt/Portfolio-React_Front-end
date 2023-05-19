@@ -1,39 +1,62 @@
-import SectionHeading from "../components/SectionHeading";
+import { useState, useEffect } from "react";
+import { useContext } from "react";
+import ProjectsContext from "../contexts/ProjectsContext";
 
-import { Typography } from "@mui/material";
+import SectionHeading from "../components/SectionHeading";
+import ProjectCard from "../components/ProjectCard";
+
+import { Box, ButtonGroup, Button } from "@mui/material";
 
 const Projects = () => {
+    const projectsData = useContext(ProjectsContext);
+    const transitionDuration = 1000;
+
+    const [projects, setProjects] = useState([]);
+    const [carouselPosition, setCarouselPosition] = useState(0);
+    const [translateValue, setTranslateValue] = useState(0);
+
+    const handleSwipeLeft = () => {
+        if (carouselPosition === 0) {
+            setCarouselPosition(projectsData.length - 1);
+            return;
+        }
+        setCarouselPosition((position) => position - 1);
+    };
+    const handleSwipeRight = () => {
+        if (carouselPosition === projectsData.length - 1) {
+            setCarouselPosition(0);
+            return;
+        }
+        setCarouselPosition((position) => position + 1);
+    };
+
+    useEffect(() => {
+        setTranslateValue(-100 * carouselPosition);
+    }, [carouselPosition]);
+
     return (
         <>
             <SectionHeading slug="projects" />
-            <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                quis nunc mi. Aenean vestibulum lacus ante, sit amet iaculis
-                sapien convallis vestibulum. Nam tristique facilisis est quis
-                tristique. Nulla vestibulum tincidunt diam, eget elementum ex
-                tincidunt quis. Pellentesque pellentesque sit amet mi mattis
-                imperdiet. Aliquam fermentum ultrices ante, at vehicula felis
-                mattis elementum. Orci varius natoque penatibus et magnis dis
-                parturient montes, nascetur ridiculus mus. In sem enim, tempor
-                non est quis, consectetur hendrerit libero. Nam vel arcu quam.
-                Orci varius natoque penatibus et magnis dis parturient montes,
-                nascetur ridiculus mus. Vivamus imperdiet dolor vitae hendrerit
-                viverra. Nullam ac viverra ligula, vitae cursus est. Donec
-                consectetur dignissim ligula vitae interdum. Maecenas risus
-                urna, facilisis a diam quis, viverra laoreet diam. In consequat
-                efficitur tortor. Class aptent taciti sociosqu ad litora
-                torquent per conubia nostra, per inceptos himenaeos.
-                Pellentesque sed dictum magna. Fusce lacinia justo quis tortor
-                tristique, a vulputate augue ullamcorper. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Aenean fringilla odio in
-                purus efficitur, et fermentum elit ultricies. Quisque massa leo,
-                accumsan nec metus eu, viverra pretium nisl. Aliquam metus
-                lacus, finibus ut mi eu, pulvinar imperdiet orci. Suspendisse et
-                mi nec lectus mollis facilisis sit amet et orci. Aenean ultrices
-                tincidunt libero, non egestas dolor pharetra in. Aliquam
-                ullamcorper felis nec eleifend venenatis. Donec ultricies ex
-                quis lobortis pretium.
-            </Typography>
+            <Box
+                sx={{
+                    maxWidth: "640px",
+                    minHeight: "360px",
+                    display: "flex",
+                    overflow: "hidden",
+                    transition: `transform ease ${transitionDuration}ms`,
+                }}>
+                {projectsData?.map((project, index) => (
+                    <ProjectCard
+                        key={`a${index}`}
+                        project={project}
+                        translateValue={translateValue}
+                    />
+                ))}
+            </Box>
+            <ButtonGroup variant="outlined">
+                <Button onClick={handleSwipeLeft}>left</Button>
+                <Button onClick={handleSwipeRight}>right</Button>
+            </ButtonGroup>
         </>
     );
 };
