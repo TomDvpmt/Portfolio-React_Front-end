@@ -5,13 +5,13 @@ import ProjectsContext from "../contexts/ProjectsContext";
 import SectionHeading from "../components/SectionHeading";
 import ProjectCard from "../components/ProjectCard";
 
+import theme from "../styles/theme";
 import { Box, ButtonGroup, Button } from "@mui/material";
 
 const Projects = () => {
     const projectsData = useContext(ProjectsContext);
     const transitionDuration = 1000;
 
-    const [projects, setProjects] = useState([]);
     const [carouselPosition, setCarouselPosition] = useState(0);
     const [translateValue, setTranslateValue] = useState(0);
 
@@ -35,12 +35,13 @@ const Projects = () => {
     }, [carouselPosition]);
 
     return (
-        <>
+        <Box component="section">
             <SectionHeading slug="projects" />
             <Box
                 sx={{
-                    maxWidth: "640px",
+                    maxWidth: theme.maxWidth.carousel,
                     minHeight: "360px",
+                    m: "0 auto",
                     display: "flex",
                     overflow: "hidden",
                     transition: `transform ease ${transitionDuration}ms`,
@@ -53,11 +54,11 @@ const Projects = () => {
                     />
                 ))}
             </Box>
-            <ButtonGroup variant="outlined">
+            <ButtonGroup variant="outlined" sx={{ m: "0 auto" }}>
                 <Button onClick={handleSwipeLeft}>left</Button>
                 <Button onClick={handleSwipeRight}>right</Button>
             </ButtonGroup>
-        </>
+        </Box>
     );
 };
 

@@ -49,6 +49,18 @@ const projects = [
         gitHubLink: "https://github.com/TomDvpmt/Covoit",
         url: "",
     },
+    {
+        id: 5,
+        title: "Application de recherche de films (80s-90s Flix)",
+        imgUrl: mockImg,
+        description:
+            "Création d'une application de recherche de films avec React, Redux et une API externe",
+        features:
+            "Single Page Application, authentification (JWT), BDD : MongoDB Atlas + Mongoose, module de recherche de film, filtrage par date et genre, tableau de bord avec films favoris, films vus et films à voir.",
+        techs: ["MongoDB, JWT, React, Redux, MaterialUI"],
+        gitHubLink: "https://github.com/TomDvpmt/80s-90s-Flix",
+        url: "",
+    },
 ];
 
 export default projects;

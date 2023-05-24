@@ -1,32 +1,47 @@
-import { Link as RouterLink } from "react-router-dom";
-import { AppBar, Toolbar, Box, Button, Link } from "@mui/material";
+import { NavLink } from "react-router-dom";
+
+import theme from "../styles/theme";
+import { AppBar, Toolbar, Box, Button, Link, Typography } from "@mui/material";
 
 const NavBar = () => {
+    const handleClick = (e) => {
+        const links = e.currentTarget.children;
+        const link = e.target;
+
+        if (!link.classList.contains("active-anchor")) {
+            Array.from(links).forEach((link) =>
+                link.classList.remove("active-anchor")
+            );
+            link.classList.add("active-anchor");
+        }
+    };
     return (
-        <AppBar position="sticky">
-            <Toolbar sx={{ justifyContent: "space-between" }}>
-                <Link href="/" underline="none" sx={{ color: "inherit" }}>
-                    Thomas Boussion
-                </Link>
+        <AppBar position="sticky" sx={{ alignItems: "center" }}>
+            <Toolbar
+                sx={{
+                    width: "100%",
+                    maxWidth: theme.maxWidth.nav,
+                    justifyContent: "space-between",
+                }}>
+                <Typography component="h1">
+                    <Link href="/" underline="none" sx={{ color: "inherit" }}>
+                        Thomas Boussion
+                    </Link>
+                </Typography>
                 <Box
                     sx={{
-                        "& .active": {
+                        "& .active-anchor": {
                             textDecoration: "underline",
                         },
-                    }}>
-                    <Button component={RouterLink} to="/#about" color="inherit">
+                    }}
+                    onClick={handleClick}>
+                    <Button component={NavLink} to="/#about" color="inherit">
                         À propos
                     </Button>
-                    <Button
-                        component={RouterLink}
-                        to="/#projects"
-                        color="inherit">
+                    <Button component={NavLink} to="/#projects" color="inherit">
                         Projets
                     </Button>
-                    <Button
-                        component={RouterLink}
-                        to="/#contact"
-                        color="inherit">
+                    <Button component={NavLink} to="/#contact" color="inherit">
                         Contact
                     </Button>
                 </Box>
