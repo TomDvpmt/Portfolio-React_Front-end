@@ -16,13 +16,26 @@ const theme = createTheme({
             // orange-red
             main: "#EB3E23",
         },
+        background: {
+            default: "#f5f5f5",
+        },
+    },
+    components: {
+        MuiInputBase: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: "white",
+                },
+            },
+        },
     },
     maxWidth: {
         nav: "1200px",
         main: "1200px",
         section: "800px",
-        carousel: "800px",
+        carousel: "1200px",
         form: "700px",
+        techIcon: "24px",
     },
 });
 

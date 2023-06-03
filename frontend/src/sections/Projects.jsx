@@ -10,7 +10,6 @@ import { Box, ButtonGroup, Button } from "@mui/material";
 
 const Projects = () => {
     const projectsData = useContext(ProjectsContext);
-    const transitionDuration = 1000;
 
     const [carouselPosition, setCarouselPosition] = useState(0);
     const [translateValue, setTranslateValue] = useState(0);
@@ -40,11 +39,10 @@ const Projects = () => {
             <Box
                 sx={{
                     maxWidth: theme.maxWidth.carousel,
-                    minHeight: "360px",
+                    minHeight: "500px",
                     m: "0 auto",
                     display: "flex",
                     overflow: "hidden",
-                    transition: `transform ease ${transitionDuration}ms`,
                 }}>
                 {projectsData?.map((project, index) => (
                     <ProjectCard

@@ -23,6 +23,7 @@ const PageWrapper = () => {
                 sx={{
                     flexGrow: "1",
                     maxWidth: theme.maxWidth.main,
+                    width: "100%",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
