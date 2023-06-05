@@ -6,6 +6,10 @@ const theme = createTheme({
             fontSize: "3rem",
             textAlign: "center",
         },
+        h4: {
+            fontSize: "1rem",
+            fontWeight: "700",
+        },
     },
     palette: {
         success: {

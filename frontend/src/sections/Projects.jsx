@@ -4,9 +4,10 @@ import ProjectsContext from "../contexts/ProjectsContext";
 
 import SectionHeading from "../components/SectionHeading";
 import ProjectCard from "../components/ProjectCard";
+import CarouselNavigation from "../components/CarouselNavigation";
 
 import theme from "../styles/theme";
-import { Box, ButtonGroup, Button } from "@mui/material";
+import { Box, Link } from "@mui/material";
 
 const Projects = () => {
     const projectsData = useContext(ProjectsContext);
@@ -29,6 +30,10 @@ const Projects = () => {
         setCarouselPosition((position) => position + 1);
     };
 
+    const handleMosaicClick = (e) => {
+        setCarouselPosition(parseInt(e.currentTarget.id));
+    };
+
     useEffect(() => {
         setTranslateValue(-100 * carouselPosition);
     }, [carouselPosition]);
@@ -36,6 +41,26 @@ const Projects = () => {
     return (
         <Box component="section">
             <SectionHeading slug="projects" />
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: ".5rem",
+                }}>
+                {projectsData?.map((project, index) => (
+                    <Box
+                        key={index}
+                        width={`${100 / projectsData.length - 2}%`}>
+                        <Link id={index} onClick={handleMosaicClick}>
+                            <img
+                                src={project.imgUrl}
+                                alt={project.title}
+                                width="100%"
+                            />
+                        </Link>
+                    </Box>
+                ))}
+            </Box>
             <Box
                 sx={{
                     maxWidth: theme.maxWidth.carousel,
@@ -52,10 +77,10 @@ const Projects = () => {
                     />
                 ))}
             </Box>
-            <ButtonGroup variant="outlined" sx={{ m: "0 auto" }}>
-                <Button onClick={handleSwipeLeft}>left</Button>
-                <Button onClick={handleSwipeRight}>right</Button>
-            </ButtonGroup>
+            <CarouselNavigation
+                handleSwipeLeft={handleSwipeLeft}
+                handleSwipeRight={handleSwipeRight}
+            />
         </Box>
     );
 };

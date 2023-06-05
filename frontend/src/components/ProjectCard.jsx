@@ -32,8 +32,9 @@ const ProjectCard = ({ project, translateValue }) => {
             component="article"
             sx={{
                 minWidth: "100%",
-                display: "flex",
-                flexDirection: "column",
+                display: "grid",
+                // display: "flex",
+                // flexDirection: "column",
                 transition: `transform ease ${transitionDuration}ms`,
                 transform: `translateX(${translateValue}%)`,
             }}>
@@ -42,33 +43,92 @@ const ProjectCard = ({ project, translateValue }) => {
                 component="img"
                 image={project.imgUrl}
                 alt={project.title}
-                sx={{ flexGrow: "1" }}
+                sx={{ maxHeight: "500px" }}
             />
-            <CardContent>
-                <Box>{project.features}</Box>
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
-                    {projectTechs.map((tech, index) => (
-                        <Box
-                            key={index}
-                            sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: ".3rem",
-                                "& svg": {
-                                    maxWidth: theme.maxWidth.techIcon,
-                                    maxHeight: theme.maxWidth.techIcon,
-                                },
-                            }}>
-                            {tech.imgElement}
-                            <Typography component="span">
-                                {tech.label}
-                            </Typography>
-                        </Box>
-                    ))}
+            <CardContent
+                sx={{
+                    display: "flex",
+                    gap: { xs: "3rem", md: "5rem" },
+                    flexDirection: {
+                        xs: "column",
+                        md: "row",
+                    },
+                    alignItems: {
+                        xs: "center",
+                        md: "initial",
+                    },
+                }}>
+                <Typography>{project.features}</Typography>
+                <Box
+                    sx={{
+                        maxWidth: "500px",
+                        display: "flex",
+                        justifyContent: "center",
+                        gap: "4rem",
+                    }}>
+                    {["back", "front", "global"].map((type) => {
+                        const typeFilteredTechs = projectTechs.filter(
+                            (tech) => tech.type === type
+                        );
+
+                        return (
+                            typeFilteredTechs.length > 0 && (
+                                <Box
+                                    key={type}
+                                    sx={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                    }}>
+                                    <Typography
+                                        component="h4"
+                                        variant="h4"
+                                        mb="1rem"
+                                        textTransform="uppercase">
+                                        {type}
+                                    </Typography>
+                                    <Box
+                                        sx={{
+                                            display: "flex",
+                                            flexDirection: "column",
+                                            gap: ".7rem",
+                                        }}>
+                                        {typeFilteredTechs.map(
+                                            (tech, index) => (
+                                                <Box
+                                                    key={index}
+                                                    sx={{
+                                                        display: "flex",
+                                                        alignItems: "center",
+                                                        gap: ".5rem",
+                                                        "& svg": {
+                                                            maxWidth:
+                                                                theme.maxWidth
+                                                                    .techIcon,
+                                                            maxHeight:
+                                                                theme.maxWidth
+                                                                    .techIcon,
+                                                        },
+                                                    }}>
+                                                    {tech.imgElement}
+                                                    <Typography component="span">
+                                                        {tech.label}
+                                                    </Typography>
+                                                </Box>
+                                            )
+                                        )}
+                                    </Box>
+                                </Box>
+                            )
+                        );
+                    })}
                 </Box>
             </CardContent>
             <CardActions
-                sx={{ flexDirection: "column", alignItems: "flex-end" }}>
+                sx={{
+                    justifyContent: "center",
+                    gap: "2rem",
+                }}>
                 <Button
                     startIcon={<GitHub />}
                     href={project.gitHubLink}
