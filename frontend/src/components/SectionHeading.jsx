@@ -27,7 +27,7 @@ const SectionHeading = ({ slug }) => {
         }
     }, [slug]);
     return (
-        <Typography variant="h2" component="h2" id={slug} pt="4rem">
+        <Typography variant="h2" component="h2" id={slug} pt="4rem" pb="2rem">
             {title}
         </Typography>
     );

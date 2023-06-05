@@ -62,7 +62,7 @@ const Contact = () => {
                 sx={{
                     width: "100%",
                     maxWidth: theme.maxWidth.form,
-                    m: "0 auto",
+                    m: "0 auto 4rem",
                     p: "1rem",
                     display: "flex",
                     flexDirection: "column",

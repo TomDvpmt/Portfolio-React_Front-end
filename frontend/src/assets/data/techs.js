@@ -10,7 +10,6 @@ import { ReactComponent as ReduxLogo } from "../img/techs/logo-redux.svg";
 import { ReactComponent as MaterialUILogo } from "../img/techs/logo-materialUI.svg";
 import { ReactComponent as SocketIoLogo } from "../img/techs/logo-socket-io.svg";
 import nodemailerLogo from "../img/techs/logo-nodemailer_200x136.png";
-import { node } from "prop-types";
 
 import theme from "../../styles/theme";
 

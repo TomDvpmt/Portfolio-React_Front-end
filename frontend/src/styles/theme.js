@@ -9,6 +9,7 @@ const theme = createTheme({
         h4: {
             fontSize: "1rem",
             fontWeight: "700",
+            textTransform: "uppercase",
         },
     },
     palette: {

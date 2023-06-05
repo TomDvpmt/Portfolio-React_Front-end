@@ -5,11 +5,19 @@ const projects = [
     {
         id: 1,
         title: "Réseau social d'entreprise (Groupomania)",
+        shortTitle: "Réseau social",
         imgUrl: mockImg,
         description:
             "Création du back-end et front-end d'un réseau social avec forum et chat, avec React et Redux",
-        features:
-            "Single Page Application, authentification (JWT), BDD : MySQL sans ORM/ODM, forum avec posts et commentaires, possibilité de poster des images (Multer), système de likes, chat en temps réel avec WebSocket",
+        features: [
+            "Single Page Application",
+            "authentification (JWT)",
+            "base de données : MySQL (sans ORM/ODM)",
+            "forum avec posts et commentaires",
+            "possibilité de poster des images (Multer)",
+            "système de likes",
+            "chat en temps réel avec Socket.io",
+        ],
         techs: [
             "MySQL",
             "JavaScript",
@@ -27,11 +35,20 @@ const projects = [
     {
         id: 2,
         title: "Application de covoiturage (Covoit')",
+        shortTitle: "Covoiturage",
         imgUrl: mockImg2,
         description:
             "Création d'une application de covoiturage avec React et Redux",
-        features:
-            "Single Page Application, authentification (JWT), BDD : MongoDB Atlas + Mongoose, module de recherche de trajet, système de réservations, notifications par mail (Nodemailer), messagerie interne entre utilisateurs, API externe pour les noms de communes",
+        features: [
+            "Single Page Application",
+            "authentification (JWT)",
+            "base de données : MongoDB Atlas + Mongoose",
+            "module de recherche de trajet",
+            "système de réservations",
+            "notifications par mail (Nodemailer)",
+            "messagerie interne entre utilisateurs",
+            "API externe pour les noms de communes",
+        ],
         techs: [
             "MongoDB",
             "JavaScript",
@@ -49,11 +66,18 @@ const projects = [
     {
         id: 3,
         title: "Application de recherche de films (80s-90s Flix)",
+        shortTitle: "Films 80s-90s",
         imgUrl: mockImg,
         description:
             "Création d'une application de recherche de films avec React, Redux et une API externe",
-        features:
-            "Single Page Application, authentification (JWT), BDD : MongoDB Atlas + Mongoose, module de recherche de film, filtrage par date et genre, tableau de bord avec films favoris, films vus et films à voir.",
+        features: [
+            "Single Page Application",
+            "authentification (JWT)",
+            "base de données : MongoDB Atlas + Mongoose",
+            "module de recherche de film",
+            "filtrage par date et genre",
+            "tableau de bord avec films favoris, films vus et films à voir",
+        ],
         techs: [
             "MongoDB",
             "JavaScript",
@@ -70,10 +94,11 @@ const projects = [
     {
         id: 4,
         title: "Application de commandes en ligne (Oh My Food)",
+        shortTitle: "Menus en ligne",
         imgUrl: mockImg,
         description:
             "Création d'une application mobile-first de commandes de repas en ligne avec Sass, à partir d'une maquette et d'un brief créatif",
-        features: "Animations CSS, mobile-first, responsive",
+        features: ["Animations CSS", "mobile-first", "responsive"],
         techs: ["JavaScript", "Sass"],
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_P3_OhMyFood",
         url: "",
@@ -81,11 +106,18 @@ const projects = [
     {
         id: 5,
         title: "Application de location immobilière (Kasa)",
+        shortTitle: "Location immobilière",
         imgUrl: mockImg2,
         description:
             "Création du front-end d'une application de location immobilière avec React, à partir d'une maquette Figma",
-        features:
-            "Single Page Application, menus déroulants, slider, modules CSS, mobile-first, responsive",
+        features: [
+            "Single Page Application",
+            "menus déroulants",
+            "slider",
+            "modules CSS",
+            "mobile-first",
+            "responsive",
+        ],
         techs: ["JavaScript", "React"],
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_P7_Kasa",
         url: "",
