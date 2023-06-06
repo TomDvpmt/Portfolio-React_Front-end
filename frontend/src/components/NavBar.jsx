@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import theme from "../styles/theme";
-import { AppBar, Toolbar, Box, Button, Link, Typography } from "@mui/material";
+import { AppBar, Toolbar, Link, Typography } from "@mui/material";
 
 const NavBar = () => {
     const handleClick = (e) => {
@@ -16,35 +16,61 @@ const NavBar = () => {
         }
     };
     return (
-        <AppBar position="sticky" sx={{ alignItems: "center" }}>
+        <AppBar
+            position="sticky"
+            sx={{ bgcolor: theme.palette.primary.main, alignItems: "center" }}>
             <Toolbar
                 sx={{
                     width: "100%",
                     maxWidth: theme.maxWidth.nav,
                     justifyContent: "space-between",
                 }}>
-                <Typography component="h1">
-                    <Link href="/" underline="none" sx={{ color: "inherit" }}>
-                        Thomas Boussion
-                    </Link>
-                </Typography>
-                <Box
+                <Link href="/" underline="none">
+                    <Typography component="h1" variant="h1">
+                        <Typography
+                            component="span"
+                            color="white"
+                            textTransform="uppercase">
+                            Portfolio
+                        </Typography>
+                        {/* <Typography component="span" color="white">
+                            Thomas{" "}
+                        </Typography>
+                        <Typography
+                            component="span"
+                            color={theme.palette.secondary.main}>
+                            Boussion
+                        </Typography> */}
+                    </Typography>
+                </Link>
+                <Typography
                     sx={{
+                        color: theme.palette.text.title,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "1rem",
+                        "& a": {
+                            color: theme.palette.text.title,
+                            transition: "border-bottom-width ease 300ms",
+                            "&:hover": {
+                                borderBottom: `1px solid ${theme.palette.secondary.main}`,
+                            },
+                        },
                         "& .active-anchor": {
-                            textDecoration: "underline",
+                            borderBottom: `1px solid ${theme.palette.secondary.main}`,
                         },
                     }}
                     onClick={handleClick}>
-                    <Button component={NavLink} to="/#about" color="inherit">
+                    <Link component={NavLink} to="/#about" underline="none">
                         À propos
-                    </Button>
-                    <Button component={NavLink} to="/#projects" color="inherit">
+                    </Link>
+                    <Link component={NavLink} to="/#projects" underline="none">
                         Projets
-                    </Button>
-                    <Button component={NavLink} to="/#contact" color="inherit">
+                    </Link>
+                    <Link component={NavLink} to="/#contact" underline="none">
                         Contact
-                    </Button>
-                </Box>
+                    </Link>
+                </Typography>
             </Toolbar>
         </AppBar>
     );

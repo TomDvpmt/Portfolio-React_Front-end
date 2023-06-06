@@ -1,9 +1,11 @@
+import theme from "../styles/theme";
 import { ButtonGroup, Button } from "@mui/material";
 
 const CarouselNavigation = ({ handleSwipeLeft, handleSwipeRight }) => {
     return (
         <ButtonGroup
             variant="outlined"
+            color="secondary"
             sx={{
                 m: ".5rem 0",
                 display: "flex",

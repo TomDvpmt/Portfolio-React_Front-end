@@ -69,7 +69,7 @@ const Projects = () => {
             <SectionHeading slug="projects" />
             <Box
                 sx={{
-                    mb: "1rem",
+                    mb: "3rem",
                     display: "flex",
                     justifyContent: "center",
                     gap: ".5rem",
@@ -85,7 +85,7 @@ const Projects = () => {
                             bgcolor: "black",
                             position: "relative",
                             "&.active-thumbnail": {
-                                boxShadow: `inset 0 0 2px 4px red`,
+                                boxShadow: `inset 0 0 2px 3px ${theme.palette.secondary.main}`,
                                 ...showTextStyle,
                             },
                             "& img": {

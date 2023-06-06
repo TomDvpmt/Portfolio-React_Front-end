@@ -1,29 +1,110 @@
-import SectionHeading from "../components/SectionHeading";
+import Techs from "../components/Techs";
 
+import ALL_TECHS from "../assets/data/techs";
+import profilePicture from "../assets/img/profile-picture_square.jpg";
+
+import theme from "../styles/theme";
 import { Box, Typography } from "@mui/material";
 
 const About = () => {
+    const typesArray = ["languages", "back", "front", "autres"];
+
     return (
         <>
-            <SectionHeading slug="about" />
-            <Box sx={{ display: "flex" }}>
-                <Box>
-                    <img src="" alt="Thomas Boussion" />
+            <Box
+                id="about"
+                sx={{
+                    m: "0 auto",
+                    pt: "7rem",
+                    maxWidth: theme.maxWidth.about,
+                }}>
+                <Box
+                    sx={{
+                        mb: "8rem",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "3rem",
+                    }}>
+                    <Box
+                        sx={{
+                            "& img": {
+                                maxWidth: "150px",
+                                borderRadius: "50%",
+                            },
+                        }}>
+                        <img src={profilePicture} alt="Thomas Boussion" />
+                    </Box>
+                    <Box>
+                        <Typography
+                            component="h2"
+                            // id="about"
+                            color={theme.palette.text.title}
+                            sx={{
+                                mb: "2rem",
+                                display: "flex",
+                                flexDirection: "column",
+                                "& span": {
+                                    fontSize: "2rem",
+                                    "&.job": {
+                                        fontSize: "3rem",
+                                    },
+                                },
+                            }}>
+                            <Typography component="span">
+                                Thomas Boussion
+                            </Typography>
+                            <Typography
+                                component="span"
+                                className="job"
+                                color="secondary"
+                                textTransform="uppercase">
+                                Développeur web
+                            </Typography>
+                        </Typography>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "1rem",
+                            }}>
+                            <Typography
+                                textAlign="justify"
+                                color={theme.palette.text.content}>
+                                Après l'apprentissage du développement web en
+                                autodidacte, ma formation chez OpenClassrooms
+                                m'a permis de consolider les acquis et de me
+                                spécialiser sur la stack{" "}
+                                <Typography
+                                    component="span"
+                                    fontWeight="700"
+                                    color="secondary">
+                                    MERN
+                                </Typography>
+                                .
+                            </Typography>
+                            <Typography
+                                textAlign="justify"
+                                color={theme.palette.text.content}>
+                                Je cherche un poste de développeur front-end
+                                mais souhaite également, à terme, développer mes
+                                compétences en back-end.
+                            </Typography>
+                        </Box>
+                    </Box>
                 </Box>
-                <Typography textAlign="justify">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Fusce quis nunc mi. Aenean vestibulum lacus ante, sit amet
-                    iaculis sapien convallis vestibulum. Nam tristique facilisis
-                    est quis tristique. Nulla vestibulum tincidunt diam, eget
-                    elementum ex tincidunt quis. Pellentesque pellentesque sit
-                    amet mi mattis imperdiet. Aliquam fermentum ultrices ante,
-                    at vehicula felis mattis elementum. Orci varius natoque
-                    penatibus et magnis dis parturient montes, nascetur
-                    ridiculus mus. In sem enim, tempor non est quis, consectetur
-                    hendrerit libero. Nam vel arcu quam. Orci varius natoque
-                    penatibus et magnis dis parturient montes, nascetur
-                    ridiculus mus.
-                </Typography>
+                <Box
+                    sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        gap: "6rem",
+                    }}>
+                    <Techs
+                        typesArray={typesArray}
+                        techsArray={ALL_TECHS}
+                        hasTitle={true}
+                    />
+                </Box>
             </Box>
         </>
     );

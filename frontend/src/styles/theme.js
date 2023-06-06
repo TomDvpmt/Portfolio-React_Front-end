@@ -1,18 +1,15 @@
 import { createTheme } from "@mui/material";
 
-const theme = createTheme({
-    typography: {
-        h1: {
-            fontSize: "3rem",
-            textAlign: "center",
-        },
-        h4: {
-            fontSize: "1rem",
-            fontWeight: "700",
-            textTransform: "uppercase",
-        },
-    },
+let theme = createTheme({
     palette: {
+        primary: {
+            // dark blue
+            main: "#0D2134",
+        },
+        secondary: {
+            // yellow
+            main: "#FEAB2D",
+        },
         success: {
             // green
             main: "#007022",
@@ -22,7 +19,33 @@ const theme = createTheme({
             main: "#EB3E23",
         },
         background: {
-            default: "#f5f5f5",
+            // dark blue
+            default: "#0D2134",
+        },
+        text: {
+            title: "#ffffff",
+            content: "#f5f5f5",
+        },
+    },
+});
+
+theme = createTheme(theme, {
+    typography: {
+        h1: {
+            color: theme.palette.text.title,
+            fontSize: "1rem",
+            textAlign: "center",
+        },
+        h2: {
+            color: theme.palette.text.title,
+        },
+        h3: {
+            color: theme.palette.text.title,
+        },
+        h4: {
+            fontSize: "1rem",
+            fontWeight: "700",
+            textTransform: "uppercase",
         },
     },
     components: {
@@ -38,6 +61,7 @@ const theme = createTheme({
         nav: "1200px",
         main: "1200px",
         section: "800px",
+        about: "800px",
         carousel: "1200px",
         form: "700px",
         techIcon: "24px",

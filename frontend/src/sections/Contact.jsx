@@ -137,6 +137,7 @@ const Contact = () => {
                 <Button
                     type="submit"
                     variant="contained"
+                    color="secondary"
                     sx={{ width: "max-content", alignSelf: "end" }}>
                     Envoyer
                 </Button>
