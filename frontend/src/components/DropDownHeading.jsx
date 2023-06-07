@@ -1,7 +1,15 @@
 import { Box, Typography } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 
+import PropTypes from "prop-types";
+
 const DropDownHeading = ({ condition, label, handleClick }) => {
+    DropDownHeading.propTypes = {
+        condition: PropTypes.bool.isRequired,
+        label: PropTypes.string.isRequired,
+        handleClick: PropTypes.func.isRequired,
+    };
+
     return (
         <Box
             sx={{

@@ -24,7 +24,14 @@ import { GitHub, ExitToApp, ChevronRight } from "@mui/icons-material";
 
 import theme from "../styles/theme";
 
+import PropTypes from "prop-types";
+
 const ProjectCard = ({ project, translateValue }) => {
+    ProjectCard.propTypes = {
+        project: PropTypes.object.isRequired,
+        translateValue: PropTypes.number.isRequired,
+    };
+
     const transitionDuration = 1000;
 
     const [projectTechs, setProjectTechs] = useState([]);

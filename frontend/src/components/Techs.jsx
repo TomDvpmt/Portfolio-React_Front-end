@@ -1,7 +1,14 @@
 import theme from "../styles/theme";
 import { Box, Typography } from "@mui/material";
 
+import PropTypes from "prop-types";
+
 const Techs = ({ typesArray, techsArray, hasTitle }) => {
+    Techs.propTypes = {
+        typesArray: PropTypes.array.isRequired,
+        techsArray: PropTypes.array.isRequired,
+        hasTitle: PropTypes.bool.isRequired,
+    };
     return (
         <>
             {typesArray.map((type) => (

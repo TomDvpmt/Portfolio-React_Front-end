@@ -24,7 +24,7 @@ let theme = createTheme({
         },
         text: {
             title: "#ffffff",
-            content: "#f5f5f5",
+            content: "#d9d9d9",
         },
     },
 });
