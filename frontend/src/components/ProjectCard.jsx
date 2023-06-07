@@ -18,18 +18,20 @@ import {
     ListItemIcon,
     ListItemText,
     Collapse,
+    IconButton,
     useMediaQuery,
 } from "@mui/material";
-import { GitHub, ExitToApp, ChevronRight } from "@mui/icons-material";
+import { GitHub, ExitToApp, ChevronRight, Close } from "@mui/icons-material";
 
 import theme from "../styles/theme";
 
 import PropTypes from "prop-types";
 
-const ProjectCard = ({ project, translateValue }) => {
+const ProjectCard = ({ project, translateValue, handleClose }) => {
     ProjectCard.propTypes = {
         project: PropTypes.object.isRequired,
         translateValue: PropTypes.number.isRequired,
+        handleClose: PropTypes.func.isRequired,
     };
 
     const transitionDuration = 1000;
@@ -70,7 +72,15 @@ const ProjectCard = ({ project, translateValue }) => {
                 transition: `transform ease ${transitionDuration}ms`,
                 transform: `translateX(${translateValue}%)`,
             }}>
-            <CardHeader title={project.title} subheader={project.description} />
+            <CardHeader
+                title={project.title}
+                subheader={project.description}
+                action={
+                    <IconButton onClick={handleClose}>
+                        <Close />
+                    </IconButton>
+                }
+            />
             <Box sx={{ display: "flex", p: "0 1rem" }}>
                 <CardMedia
                     component="img"

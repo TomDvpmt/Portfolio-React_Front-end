@@ -97,7 +97,7 @@ const About = () => {
                     sx={{
                         display: "flex",
                         justifyContent: "center",
-                        gap: "6rem",
+                        gap: "8rem",
                     }}>
                     <Techs
                         typesArray={typesArray}
