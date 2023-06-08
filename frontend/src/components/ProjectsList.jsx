@@ -31,7 +31,6 @@ const ProjectsList = ({ projectsArray, setProjectToShow, setShowDialog }) => {
                 return (
                     <Card
                         key={index}
-                        item
                         elevation={0}
                         sx={{
                             flexGrow: "1",

@@ -1,9 +1,23 @@
 import { NavLink } from "react-router-dom";
 
 import theme from "../styles/theme";
-import { AppBar, Toolbar, Link, Typography } from "@mui/material";
+import {
+    AppBar,
+    Toolbar,
+    Link,
+    Typography,
+    useMediaQuery,
+} from "@mui/material";
 
-const NavBar = () => {
+import PropTypes from "prop-types";
+
+const NavBar = ({ setSectionPosition }) => {
+    NavBar.propTypes = {
+        setSectionPosition: PropTypes.func.isRequired,
+    };
+
+    const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+
     const handleClick = (e) => {
         const links = e.currentTarget.children;
         const link = e.target;
@@ -13,6 +27,22 @@ const NavBar = () => {
                 link.classList.remove("active-anchor")
             );
             link.classList.add("active-anchor");
+        }
+
+        if (isLargeScreen) {
+            switch (e.target.id) {
+                case "about-link":
+                    setSectionPosition(0);
+                    break;
+                case "projects-link":
+                    setSectionPosition(1);
+                    break;
+                case "contact-link":
+                    setSectionPosition(2);
+                    break;
+                default:
+                    setSectionPosition(0);
+            }
         }
     };
     return (
@@ -34,14 +64,6 @@ const NavBar = () => {
                         <Typography component="span">
                             Thomas Boussion
                         </Typography>
-                        {/* <Typography component="span" color="white">
-                            Thomas{" "}
-                        </Typography>
-                        <Typography
-                            component="span"
-                            color={theme.palette.secondary.main}>
-                            Boussion
-                        </Typography> */}
                     </Typography>
                 </Link>
                 <Typography
@@ -62,13 +84,25 @@ const NavBar = () => {
                         },
                     }}
                     onClick={handleClick}>
-                    <Link component={NavLink} to="/#about" underline="none">
+                    <Link
+                        component={NavLink}
+                        id="about-link"
+                        to={!isLargeScreen && "/#about"}
+                        underline="none">
                         À propos
                     </Link>
-                    <Link component={NavLink} to="/#projects" underline="none">
+                    <Link
+                        component={NavLink}
+                        id="projects-link"
+                        to={!isLargeScreen && "/#projects"}
+                        underline="none">
                         Projets
                     </Link>
-                    <Link component={NavLink} to="/#contact" underline="none">
+                    <Link
+                        component={NavLink}
+                        id="contact-link"
+                        to={!isLargeScreen && "/#contact"}
+                        underline="none">
                         Contact
                     </Link>
                 </Typography>

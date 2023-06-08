@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 import NavBar from "./NavBar";
@@ -8,6 +9,12 @@ import theme from "../styles/theme";
 import { Box } from "@mui/material";
 
 const PageWrapper = () => {
+    const [sectionPosition, setSectionPosition] = useState(0);
+
+    useEffect(() => {
+        console.log(sectionPosition);
+    }, [sectionPosition]);
+
     return (
         <Box
             sx={{
@@ -17,7 +24,7 @@ const PageWrapper = () => {
                 alignItems: "center",
             }}>
             <ScrollToHashElement />
-            <NavBar />
+            <NavBar setSectionPosition={setSectionPosition} />
             <Box
                 component="main"
                 sx={{
@@ -25,32 +32,33 @@ const PageWrapper = () => {
                     maxHeight: {
                         lg: "100vh",
                     },
-                    width: "100%",
-
-                    // display: "flex",
-                    // flexDirection: "column",
-                    // justifyContent: "center",
-                    // flexWrap: "nowrap",
-                    // gap: "4rem",
-                    display: "grid",
-                    gridTemplateColumns: {
-                        xs: "1fr",
-                        lg: "100% 100% 100%",
-                    },
-                    alignItems: {
-                        lg: "center",
-                    },
                     overflow: "hidden",
-                    "& section": {
-                        minWidth: "100%",
-                        p: {
-                            xs: "0 .3rem",
-                            md: "0 .7rem",
-                            lg: "0 1.3rem",
-                        },
-                    },
+                    display: "flex",
+                    flexDirection: "column",
                 }}>
-                <Outlet />
+                <Box
+                    sx={{
+                        flexGrow: "1",
+                        display: "grid",
+                        gridTemplateColumns: {
+                            xs: "1fr",
+                            lg: "100% 100% 100%",
+                        },
+                        alignItems: "center",
+
+                        "& section": {
+                            minWidth: "100%",
+                            p: {
+                                xs: "0 .3rem",
+                                md: "0 .7rem",
+                                lg: "0 1.3rem",
+                            },
+                        },
+                        transform: `translateX(${-100 * sectionPosition}%)`,
+                        transition: "transform ease 1000ms",
+                    }}>
+                    <Outlet sectionPosition={sectionPosition} />
+                </Box>
             </Box>
         </Box>
     );
