@@ -27,6 +27,11 @@ const PageWrapper = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
+                    // flexWrap: "nowrap",
+                    // overflow: "hidden",
+                    // "& section": {
+                    //     minWidth: "100%",
+                    // },
                 }}>
                 <Outlet />
             </Box>

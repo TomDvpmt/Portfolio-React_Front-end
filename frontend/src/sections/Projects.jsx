@@ -7,7 +7,9 @@ const Projects = () => {
     return (
         <Box component="section">
             <SectionHeading slug="projects" />
-            <Modals />
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Modals />
+            </Box>
         </Box>
     );
 };

@@ -10,6 +10,10 @@ let theme = createTheme({
             // yellow
             main: "#FEAB2D",
         },
+        tertiary: {
+            // react
+            main: "#61dafb",
+        },
         success: {
             // green
             main: "#007022",
@@ -21,6 +25,7 @@ let theme = createTheme({
         background: {
             // dark blue
             default: "#0D2134",
+            grey: "#d9d9d9",
         },
         text: {
             title: "#ffffff",
@@ -49,10 +54,16 @@ theme = createTheme(theme, {
         },
     },
     components: {
+        MuiTypography: {
+            defaultProps: {
+                fontFamily:
+                    "'Raleway', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'",
+            },
+        },
         MuiInputBase: {
             styleOverrides: {
                 root: {
-                    backgroundColor: "white",
+                    backgroundColor: "#f5f5f5",
                 },
             },
         },
@@ -62,9 +73,10 @@ theme = createTheme(theme, {
         main: "1200px",
         section: "800px",
         about: "800px",
+        homeProjectCard: "800px",
+        techIcon: "24px",
         carousel: "1200px",
         form: "700px",
-        techIcon: "24px",
     },
 });
 

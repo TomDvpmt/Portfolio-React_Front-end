@@ -13,6 +13,7 @@ const About = () => {
         <>
             <Box
                 id="about"
+                component="section"
                 sx={{
                     m: "0 auto",
                     pt: "7rem",
@@ -46,7 +47,7 @@ const About = () => {
                                 flexDirection: "column",
                                 "& span": {
                                     fontSize: "2rem",
-                                    "&.job": {
+                                    "&.job span": {
                                         fontSize: "3rem",
                                     },
                                 },
@@ -54,13 +55,19 @@ const About = () => {
                             <Typography component="span">
                                 Thomas Boussion
                             </Typography>
-                            <Typography
-                                component="span"
+                            <Box
                                 className="job"
-                                color="secondary"
+                                component="span"
                                 textTransform="uppercase">
-                                Développeur web
-                            </Typography>
+                                <Typography component="span" color="secondary">
+                                    Développeur{" "}
+                                </Typography>
+                                <Typography
+                                    component="span"
+                                    color={theme.palette.tertiary.main}>
+                                    React
+                                </Typography>
+                            </Box>
                         </Typography>
                         <Box
                             sx={{

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import DropDownHeading from "./DropDownHeading";
+import TechsList from "./TechsList";
 
 import ALL_TECHS from "../assets/data/techs";
 
@@ -74,7 +75,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
             }}>
             <CardHeader
                 title={project.title}
-                subheader={project.description}
+                // subheader={project.description}
                 action={
                     <IconButton onClick={handleClose}>
                         <Close />
@@ -83,11 +84,23 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
             />
             <Box sx={{ display: "flex", p: "0 1rem" }}>
                 <CardMedia
+                    component="video"
+                    // image={project.imgUrl}
+                    src={project.videoUrl}
+                    autoPlay
+                    loop
+                    controls
+                    alt={project.title}
+                    sx={{
+                        maxWidth: "50%",
+                    }}
+                />
+                {/* <CardMedia
                     component="img"
                     image={project.imgUrl}
                     alt={project.title}
                     sx={{ maxWidth: "50%" }}
-                />
+                /> */}
                 <CardContent
                     sx={{
                         flexGrow: "1",
@@ -149,62 +162,74 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                         md: "nowrap",
                                     },
                                 }}>
-                                {["back", "front", "autres"].map((type) => {
-                                    const typeFilteredTechs =
-                                        projectTechs.filter(
-                                            (tech) => tech.type === type
-                                        );
+                                {["languages", "back", "front", "autres"].map(
+                                    (type) => {
+                                        const typeFilteredTechs =
+                                            projectTechs.filter(
+                                                (tech) => tech.type === type
+                                            );
 
-                                    return (
-                                        typeFilteredTechs.length > 0 && (
-                                            <Box
-                                                key={type}
-                                                sx={{
-                                                    display: "flex",
-                                                    flexDirection: "column",
-                                                    alignItems: "center",
-                                                }}>
+                                        return (
+                                            typeFilteredTechs.length > 0 && (
                                                 <Box
+                                                    key={type}
                                                     sx={{
                                                         display: "flex",
                                                         flexDirection: "column",
-                                                        gap: ".7rem",
+                                                        alignItems: "center",
                                                     }}>
-                                                    {typeFilteredTechs.map(
-                                                        (tech, index) => (
-                                                            <Box
-                                                                key={index}
-                                                                sx={{
-                                                                    display:
-                                                                        "flex",
-                                                                    alignItems:
-                                                                        "center",
-                                                                    gap: ".5rem",
-                                                                    "& svg": {
-                                                                        maxWidth:
-                                                                            theme
-                                                                                .maxWidth
-                                                                                .techIcon,
-                                                                        maxHeight:
-                                                                            theme
-                                                                                .maxWidth
-                                                                                .techIcon,
-                                                                    },
-                                                                }}>
-                                                                {
-                                                                    tech.imgElement
-                                                                }
-                                                                <Typography component="span">
-                                                                    {tech.label}
-                                                                </Typography>
-                                                            </Box>
-                                                        )
-                                                    )}
+                                                    <TechsList
+                                                        techsArray={
+                                                            typeFilteredTechs
+                                                        }
+                                                        location="modal"
+                                                    />
+                                                    {/* <Box
+                                                        sx={{
+                                                            display: "flex",
+                                                            flexDirection:
+                                                                "column",
+                                                            gap: ".7rem",
+                                                        }}>
+                                                        {typeFilteredTechs.map(
+                                                            (tech, index) => (
+                                                                <Box
+                                                                    key={index}
+                                                                    sx={{
+                                                                        display:
+                                                                            "flex",
+                                                                        alignItems:
+                                                                            "center",
+                                                                        gap: ".5rem",
+                                                                        "& svg":
+                                                                            {
+                                                                                maxWidth:
+                                                                                    theme
+                                                                                        .maxWidth
+                                                                                        .techIcon,
+                                                                                maxHeight:
+                                                                                    theme
+                                                                                        .maxWidth
+                                                                                        .techIcon,
+                                                                            },
+                                                                    }}>
+                                                                    {
+                                                                        tech.imgElement
+                                                                    }
+                                                                    <Typography component="span">
+                                                                        {
+                                                                            tech.label
+                                                                        }
+                                                                    </Typography>
+                                                                </Box>
+                                                            )
+                                                        )}
+                                                    </Box> */}
                                                 </Box>
-                                            </Box>
-                                        )
-                                    );
-                                })}
+                                            )
+                                        );
+                                    }
+                                )}
                             </Box>
                         </Collapse>
                     </Box>

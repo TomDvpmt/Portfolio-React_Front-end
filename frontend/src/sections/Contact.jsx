@@ -55,7 +55,7 @@ const Contact = () => {
     };
 
     return (
-        <>
+        <Box component="section">
             <SectionHeading slug="contact" />
             <Box
                 component="form"
@@ -142,7 +142,7 @@ const Contact = () => {
                     Envoyer
                 </Button>
             </Box>
-        </>
+        </Box>
     );
 };
 
