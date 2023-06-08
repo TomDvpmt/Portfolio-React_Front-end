@@ -55,8 +55,8 @@ const Contact = () => {
     };
 
     return (
-        <Box component="section">
-            <SectionHeading slug="contact" />
+        <Box component="section" id="contact">
+            {/* <SectionHeading slug="contact" /> */}
             <Box
                 component="form"
                 sx={{

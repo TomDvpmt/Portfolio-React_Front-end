@@ -22,7 +22,7 @@ const ProjectsList = ({ projectsArray, setProjectToShow, setShowDialog }) => {
     };
 
     return (
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
             {projectsArray?.map((project, index) => {
                 const techsArray = ALL_TECHS.filter((tech) =>
                     project.mainTechs.includes(tech.label)
@@ -52,17 +52,22 @@ const ProjectsList = ({ projectsArray, setProjectToShow, setShowDialog }) => {
                                     image={project.imgUrl}
                                     alt={project.title}
                                     sx={{
-                                        height: "200px",
+                                        height: "150px",
                                         maxWidth: "38%",
                                     }}
                                 />
                                 <CardContent
                                     sx={{
+                                        p: ".3rem",
+                                        "&:last-child": {
+                                            pb: ".3rem",
+                                        },
                                         flexGrow: "1",
                                         display: "flex",
                                         flexDirection: "column",
-                                        justifyContent: "space-between",
+                                        justifyContent: "center",
                                         alignItems: "center",
+                                        gap: ".5rem",
                                     }}>
                                     <Typography
                                         component="h3"

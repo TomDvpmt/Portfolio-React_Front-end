@@ -27,11 +27,12 @@ const NavBar = () => {
                 }}>
                 <Link href="/" underline="none">
                     <Typography component="h1" variant="h1">
-                        <Typography
-                            component="span"
-                            color="white"
-                            textTransform="uppercase">
+                        <Typography component="span" textTransform="uppercase">
                             Portfolio
+                        </Typography>
+                        <Typography component="span">{" | "}</Typography>
+                        <Typography component="span">
+                            Thomas Boussion
                         </Typography>
                         {/* <Typography component="span" color="white">
                             Thomas{" "}

@@ -73,7 +73,7 @@ theme = createTheme(theme, {
         main: "1200px",
         section: "800px",
         about: "800px",
-        homeProjectCard: "800px",
+        // homeProjectCard: "800px",
         techIcon: "24px",
         carousel: "1200px",
         form: "700px",

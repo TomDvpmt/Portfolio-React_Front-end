@@ -16,7 +16,7 @@ const About = () => {
                 component="section"
                 sx={{
                     m: "0 auto",
-                    pt: "7rem",
+                    // pt: "7rem",
                     maxWidth: theme.maxWidth.about,
                 }}>
                 <Box

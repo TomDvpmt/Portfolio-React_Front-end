@@ -118,7 +118,7 @@ const projects = [
     },
     {
         id: 4,
-        title: "Front-end d'une application de location immobilière à partir d'une maquette Figma",
+        title: "Application de location immobilière à partir d'une maquette Figma (front-end)",
         shortTitle: "Location immobilière",
         logoUrl: "",
         imgUrl: kasaImg,

@@ -49,7 +49,7 @@ const Carousel = () => {
     }, [carouselPosition]);
 
     return (
-        <>
+        <Box sx={{ display: "flex" }}>
             <CarouselMosaic
                 projectsData={projectsData}
                 setCarouselPosition={setCarouselPosition}
@@ -70,11 +70,11 @@ const Carousel = () => {
                     />
                 ))}
             </Box>
-            <CarouselNavigation
+            {/* <CarouselNavigation
                 handleSwipeLeft={handleSwipeLeft}
                 handleSwipeRight={handleSwipeRight}
-            />
-        </>
+            /> */}
+        </Box>
     );
 };
 

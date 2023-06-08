@@ -33,8 +33,8 @@ const SectionHeading = ({ slug }) => {
     return (
         <Box
             id={slug}
-            pt="10rem"
-            mb="4rem"
+            pt="1rem"
+            // mb="4rem"
             sx={{
                 display: "flex",
                 alignItems: "center",

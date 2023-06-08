@@ -22,16 +22,33 @@ const PageWrapper = () => {
                 component="main"
                 sx={{
                     flexGrow: "1",
-                    maxWidth: theme.maxWidth.main,
+                    maxHeight: {
+                        lg: "100vh",
+                    },
                     width: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
+
+                    // display: "flex",
+                    // flexDirection: "column",
+                    // justifyContent: "center",
                     // flexWrap: "nowrap",
-                    // overflow: "hidden",
-                    // "& section": {
-                    //     minWidth: "100%",
-                    // },
+                    // gap: "4rem",
+                    display: "grid",
+                    gridTemplateColumns: {
+                        xs: "1fr",
+                        lg: "100% 100% 100%",
+                    },
+                    alignItems: {
+                        lg: "center",
+                    },
+                    overflow: "hidden",
+                    "& section": {
+                        minWidth: "100%",
+                        p: {
+                            xs: "0 .3rem",
+                            md: "0 .7rem",
+                            lg: "0 1.3rem",
+                        },
+                    },
                 }}>
                 <Outlet />
             </Box>

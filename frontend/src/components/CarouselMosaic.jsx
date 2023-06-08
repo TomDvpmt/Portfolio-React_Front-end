@@ -26,8 +26,11 @@ const CarouselMosaic = ({ projectsData, setCarouselPosition }) => {
     return (
         <Box
             sx={{
-                mb: "3rem",
+                maxWidth: theme.maxWidth.carousel,
+                mb: "2rem",
                 display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
                 justifyContent: "center",
                 gap: ".5rem",
             }}>
