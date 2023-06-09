@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
+import PositionContext from "../contexts/PositionContext";
+
 import NavBar from "./NavBar";
 
 import ScrollToHashElement from "./ScrollToHashElement";
@@ -9,10 +11,6 @@ import { Box } from "@mui/material";
 
 const PageWrapper = () => {
     const [sectionPosition, setSectionPosition] = useState(0);
-
-    useEffect(() => {
-        console.log(sectionPosition);
-    }, [sectionPosition]);
 
     return (
         <Box
@@ -24,6 +22,7 @@ const PageWrapper = () => {
             }}>
             <ScrollToHashElement />
             <NavBar setSectionPosition={setSectionPosition} />
+
             <Box
                 component="main"
                 sx={{
@@ -56,7 +55,9 @@ const PageWrapper = () => {
                         transform: `translateX(${-100 * sectionPosition}%)`,
                         transition: "transform ease 600ms",
                     }}>
-                    <Outlet sectionPosition={sectionPosition} />
+                    <PositionContext.Provider value={sectionPosition}>
+                        <Outlet />
+                    </PositionContext.Provider>
                 </Box>
             </Box>
         </Box>

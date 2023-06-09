@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import theme from "../styles/theme";
-import { Box, Typography, ButtonGroup, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 
 import PropTypes from "prop-types";
 

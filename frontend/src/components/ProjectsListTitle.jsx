@@ -8,8 +8,6 @@ const ProjectsListTitle = ({ label }) => {
         label: PropTypes.string.isRequired,
     };
 
-    console.log("label :", label);
-
     return (
         <Box
             sx={{

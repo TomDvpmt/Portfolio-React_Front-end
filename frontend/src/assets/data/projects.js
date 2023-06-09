@@ -1,5 +1,4 @@
 import mockImg from "../img/projects/mock-img.jpg";
-import mockImg2 from "../img/projects/mock-img2.jpg";
 
 import groupomaniaLogo from "../img/projects/groupomania-logo.png";
 
@@ -25,8 +24,8 @@ const projects = [
             "Création d'une application de covoiturage avec module de réservation",
         features: [
             "Single Page Application",
+            "base de données (MongoDB Atlas + Mongoose)",
             "authentification (JWT)",
-            "base de données : MongoDB Atlas + Mongoose",
             "module de recherche de trajet",
             "système de réservations",
             "notifications par mail (Nodemailer)",
@@ -45,14 +44,14 @@ const projects = [
             "MaterialUI",
             "Nodemailer",
         ],
-        stackType: "fullstack",
+        projectType: "applications complètes",
         gitHubLink: "https://github.com/TomDvpmt/Covoit",
         url: "",
     },
 
     {
         id: 2,
-        title: "Application de recherche de films avec une API externe",
+        title: "Application de recherche de films (avec API externe)",
         shortTitle: "Recherche de films",
         logoUrl: "",
         imgUrl: mockImg,
@@ -61,8 +60,9 @@ const projects = [
             "Création d'une application de recherche de films avec une API externe",
         features: [
             "Single Page Application",
+            "base de données pour les fonctionnalités utilisateur (MongoDB Atlas + Mongoose)",
             "authentification (JWT)",
-            "base de données : MongoDB Atlas + Mongoose",
+            "donnés cinéma issues d'une API externe (The Movie Database)",
             "module de recherche de film",
             "filtrage par date et genre",
             "tableau de bord avec films favoris, films vus et films à voir",
@@ -78,7 +78,7 @@ const projects = [
             "Redux",
             "MaterialUI",
         ],
-        stackType: "fullstack",
+        projectType: "applications complètes",
         gitHubLink: "https://github.com/TomDvpmt/80s-90s-Flix",
         url: "",
     },
@@ -93,8 +93,8 @@ const projects = [
             "Création d'un réseau social avec forum et chat en temps réel",
         features: [
             "Single Page Application",
+            "base de données (MySQL, sans ORM/ODM)",
             "authentification (JWT)",
-            "base de données : MySQL (sans ORM/ODM)",
             "forum avec posts et commentaires",
             "possibilité de poster des images (Multer)",
             "système de likes",
@@ -112,13 +112,13 @@ const projects = [
             "MaterialUI",
             "Socket.io",
         ],
-        stackType: "fullstack",
+        projectType: "applications complètes",
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_OldP7_Groupomania",
         url: "",
     },
     {
         id: 4,
-        title: "Application de location immobilière à partir d'une maquette Figma (front-end)",
+        title: "Application de location immobilière à partir d'une maquette Figma",
         shortTitle: "Location immobilière",
         logoUrl: "",
         imgUrl: kasaImg,
@@ -138,7 +138,7 @@ const projects = [
             // "JavaScript",
             "React",
         ],
-        stackType: "front-end",
+        projectType: "front-end",
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_P7_Kasa",
         url: "",
     },
@@ -157,7 +157,7 @@ const projects = [
             // "JavaScript",
             "Sass",
         ],
-        stackType: "front-end",
+        projectType: "front-end",
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_P3_OhMyFood",
         url: "",
     },

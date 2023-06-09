@@ -26,6 +26,7 @@ let theme = createTheme({
             // dark blue
             default: "#0D2134",
             grey: "#d9d9d9",
+            darkGrey: "#757575",
         },
         text: {
             title: "#ffffff",
@@ -63,19 +64,6 @@ theme = createTheme(theme, {
         MuiInputBase: {
             styleOverrides: {
                 root: {
-                    backgroundColor: "#f5f5f5",
-                },
-            },
-        },
-        MuiFilledInput: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: "#f5f5f5",
-                    // "&:hover": {
-                    //     backgroundColor: "#f5f5f5",
-                    // },
-                },
-                input: {
                     backgroundColor: "#f5f5f5",
                 },
             },

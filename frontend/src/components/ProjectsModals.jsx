@@ -2,10 +2,10 @@ import { useState, useContext } from "react";
 
 import ProjectsContext from "../contexts/ProjectsContext";
 
-import ProjectsListTitle from "./ProjectsListTitle";
 import ProjectsList from "./ProjectsList";
 import ProjectCard from "./ProjectCard";
 
+import theme from "../styles/theme";
 import { Box, Dialog } from "@mui/material";
 
 const ProjectsModals = () => {
@@ -29,17 +29,18 @@ const ProjectsModals = () => {
                     gap: "10rem",
                 }}>
                 <ProjectsList
-                    projectsStackType="fullstack"
+                    projectType="applications complètes"
                     projectsArray={projectsData.filter(
-                        (project) => project.stackType === "fullstack"
+                        (project) =>
+                            project.projectType === "applications complètes"
                     )}
                     setProjectToShow={setProjectToShow}
                     setShowDialog={setShowDialog}
                 />
                 <ProjectsList
-                    projectsStackType="front-end"
+                    projectType="front-end"
                     projectsArray={projectsData.filter(
-                        (project) => project.stackType === "front-end"
+                        (project) => project.projectType === "front-end"
                     )}
                     setProjectToShow={setProjectToShow}
                     setShowDialog={setShowDialog}
@@ -49,7 +50,13 @@ const ProjectsModals = () => {
                 open={showDialog}
                 onClose={handleClose}
                 fullWidth
-                maxWidth="xl">
+                maxWidth="xl"
+                sx={{
+                    "& .MuiPaper-root": {
+                        bgcolor: theme.palette.primary.main,
+                        boxShadow: `0 0 10px 1px ${theme.palette.secondary.main}`,
+                    },
+                }}>
                 <ProjectCard
                     project={projectToShow}
                     translateValue={0}

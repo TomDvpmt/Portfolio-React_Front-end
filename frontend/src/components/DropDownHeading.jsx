@@ -1,3 +1,6 @@
+import TitleLine from "./TitleLine";
+
+import theme from "../styles/theme";
 import { Box, Typography } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 
@@ -29,9 +32,15 @@ const DropDownHeading = ({ condition, label, handleClick }) => {
                 },
             }}
             onClick={handleClick}>
-            <Typography component="h4" variant="h4">
-                {label}
-            </Typography>
+            <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                <TitleLine />
+                <Typography
+                    component="h4"
+                    variant="h4"
+                    color={theme.palette.text.title}>
+                    {label}
+                </Typography>
+            </Box>
             <ExpandMore
                 sx={{
                     display: {

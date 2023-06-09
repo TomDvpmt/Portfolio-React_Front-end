@@ -5,9 +5,9 @@ import TechsList from "./TechsList";
 
 import ALL_TECHS from "../assets/data/techs";
 
+import theme from "../styles/theme";
 import {
     Box,
-    Typography,
     Card,
     CardHeader,
     CardContent,
@@ -23,8 +23,6 @@ import {
     useMediaQuery,
 } from "@mui/material";
 import { GitHub, ExitToApp, ChevronRight, Close } from "@mui/icons-material";
-
-import theme from "../styles/theme";
 
 import PropTypes from "prop-types";
 
@@ -60,32 +58,36 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
         <Card
             component="article"
             sx={{
+                pb: "3rem",
                 minWidth: "100%",
-                display: "grid",
-                // gridTemplateRows: {
-                //     xs: "200px 400px 1fr 60px",
-                //     md: "150px 400px 1fr 60px",
-                // },
-                gridTemplateRows: {
-                    xs: "200px 1fr 60px",
-                    md: "150px 1fr 60px",
-                },
                 transition: `transform ease ${transitionDuration}ms`,
                 transform: `translateX(${translateValue}%)`,
             }}>
             <CardHeader
                 title={project.title}
-                // subheader={project.description}
+                titleTypographyProps={{
+                    p: "3rem",
+                    fontSize: "2.5rem",
+                }}
                 action={
-                    <IconButton onClick={handleClose}>
+                    <IconButton
+                        onClick={handleClose}
+                        sx={{ color: theme.palette.text.title }}>
                         <Close />
                     </IconButton>
                 }
+                sx={{
+                    color: theme.palette.text.title,
+                }}
             />
-            <Box sx={{ display: "flex", p: "0 1rem" }}>
+            <Box
+                sx={{
+                    p: "0 1rem",
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                }}>
                 <CardMedia
                     component="video"
-                    // image={project.imgUrl}
                     src={project.videoUrl}
                     autoPlay
                     loop
@@ -97,11 +99,10 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                 />
                 <CardContent
                     sx={{
-                        flexGrow: "1",
                         display: "flex",
                         gap: "3rem",
                         flexDirection: "column",
-                        alignItems: "center",
+                        color: theme.palette.text.content,
                     }}>
                     <Box>
                         <DropDownHeading
@@ -121,7 +122,11 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                             gap: ".5rem",
                                         }}>
                                         <ListItemIcon
-                                            sx={{ minWidth: "max-content" }}>
+                                            sx={{
+                                                minWidth: "max-content",
+                                                color: theme.palette.text
+                                                    .content,
+                                            }}>
                                             <ChevronRight fontSize="small" />
                                         </ListItemIcon>
                                         <ListItemText
@@ -138,7 +143,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             </List>
                         </Collapse>
                     </Box>
-                    <Box>
+                    <Box sx={{ flexGrow: "1" }}>
                         <DropDownHeading
                             condition={showTechs}
                             label="Techs"
@@ -149,7 +154,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                 sx={{
                                     maxWidth: "500px",
                                     display: "flex",
-                                    justifyContent: "center",
                                     gap: "4rem",
                                     flexWrap: {
                                         xs: "wrap",
@@ -170,7 +174,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                                     sx={{
                                                         display: "flex",
                                                         flexDirection: "column",
-                                                        alignItems: "center",
                                                     }}>
                                                     <TechsList
                                                         techsArray={
@@ -186,30 +189,35 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             </Box>
                         </Collapse>
                     </Box>
+                    <CardActions
+                        disableSpacing
+                        sx={{
+                            p: "0",
+                            flexDirection: {
+                                xs: "column",
+                                sm: "row",
+                            },
+                            gap: {
+                                xs: ".5rem",
+                                sm: "2rem",
+                            },
+                        }}>
+                        <Button
+                            startIcon={<GitHub />}
+                            href={project.gitHubLink}
+                            target="_blank"
+                            sx={{ color: theme.palette.text.content }}>
+                            Voir sur GitHub
+                        </Button>
+                        <Button
+                            color="secondary"
+                            startIcon={<ExitToApp />}
+                            href="">
+                            Tester l'application
+                        </Button>
+                    </CardActions>
                 </CardContent>
             </Box>
-            <CardActions
-                sx={{
-                    flexDirection: {
-                        xs: "column",
-                        sm: "row",
-                    },
-                    justifyContent: "center",
-                    gap: {
-                        xs: ".5rem",
-                        sm: "2rem",
-                    },
-                }}>
-                <Button
-                    startIcon={<GitHub />}
-                    href={project.gitHubLink}
-                    target="_blank">
-                    Voir sur GitHub
-                </Button>
-                <Button startIcon={<ExitToApp />} href="">
-                    Tester l'application
-                </Button>
-            </CardActions>
         </Card>
     );
 };

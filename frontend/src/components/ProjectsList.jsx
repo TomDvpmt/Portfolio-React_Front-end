@@ -1,3 +1,6 @@
+import { useState, useEffect, useContext } from "react";
+import PositionContext from "../contexts/PositionContext";
+
 import TechsList from "./TechsList";
 import ProjectsListTitle from "./ProjectsListTitle";
 
@@ -11,22 +14,32 @@ import {
     CardMedia,
     Box,
     Typography,
+    useMediaQuery,
 } from "@mui/material";
 
 import PropTypes from "prop-types";
 
 const ProjectsList = ({
-    projectsStackType,
+    projectType,
     projectsArray,
     setProjectToShow,
     setShowDialog,
 }) => {
     ProjectsList.propTypes = {
-        projectsArrayStackType: PropTypes.string.isRequired,
+        projectType: PropTypes.string.isRequired,
         projectsArray: PropTypes.array.isRequired,
         setProjectToShow: PropTypes.func.isRequired,
         setShowDialog: PropTypes.func.isRequired,
     };
+
+    const sectionPosition = useContext(PositionContext);
+    const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+
+    const [tabIndex, setTabIndex] = useState(-1);
+
+    useEffect(() => {
+        setTabIndex(sectionPosition === 1 ? 0 : -1);
+    }, [sectionPosition]);
 
     return (
         <Box
@@ -36,7 +49,7 @@ const ProjectsList = ({
                 alignItems: "center",
                 gap: "3rem",
             }}>
-            <ProjectsListTitle label={projectsStackType} />
+            <ProjectsListTitle label={projectType} />
             <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
                 {projectsArray?.map((project, index) => {
                     const techsArray = ALL_TECHS.filter((tech) =>
@@ -47,6 +60,7 @@ const ProjectsList = ({
                         <Card
                             key={index}
                             elevation={0}
+                            tabIndex={isLargeScreen ? tabIndex : 0}
                             sx={{
                                 flexGrow: "1",
                                 bgcolor: theme.palette.primary.main,
@@ -59,7 +73,7 @@ const ProjectsList = ({
                                 setProjectToShow(project);
                                 setShowDialog(true);
                             }}>
-                            <CardActionArea>
+                            <CardActionArea tabIndex={-1}>
                                 <Box sx={{ display: "flex" }}>
                                     <CardMedia
                                         component="img"
