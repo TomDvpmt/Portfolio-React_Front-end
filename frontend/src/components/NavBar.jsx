@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import theme from "../styles/theme";
@@ -17,6 +18,11 @@ const NavBar = ({ setSectionPosition }) => {
     };
 
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+
+    useEffect(() => {
+        const aboutLink = document.getElementById("about-link");
+        aboutLink.classList.add("active-anchor");
+    }, []);
 
     const handleClick = (e) => {
         const links = e.currentTarget.children;

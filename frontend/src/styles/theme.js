@@ -67,6 +67,19 @@ theme = createTheme(theme, {
                 },
             },
         },
+        MuiFilledInput: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: "#f5f5f5",
+                    // "&:hover": {
+                    //     backgroundColor: "#f5f5f5",
+                    // },
+                },
+                input: {
+                    backgroundColor: "#f5f5f5",
+                },
+            },
+        },
     },
     maxWidth: {
         nav: "1200px",

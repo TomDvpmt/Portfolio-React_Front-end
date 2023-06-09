@@ -39,7 +39,7 @@ const ProjectsModals = () => {
                 <ProjectsList
                     projectsStackType="front-end"
                     projectsArray={projectsData.filter(
-                        (project) => project.stackType === "fullstack"
+                        (project) => project.stackType === "front-end"
                     )}
                     setProjectToShow={setProjectToShow}
                     setShowDialog={setShowDialog}

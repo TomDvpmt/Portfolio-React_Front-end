@@ -36,7 +36,7 @@ const projects = [
         mainTechs: ["MongoDB", "React", "Redux"],
         techs: [
             "MongoDB",
-            "JavaScript",
+            // "JavaScript",
             "Node.js",
             "Express",
             "JWT",
@@ -70,7 +70,7 @@ const projects = [
         mainTechs: ["MongoDB", "React", "Redux"],
         techs: [
             "MongoDB",
-            "JavaScript",
+            // "JavaScript",
             "Node.js",
             "Express",
             "JWT",
@@ -103,7 +103,7 @@ const projects = [
         mainTechs: ["MySQL", "React", "Redux"],
         techs: [
             "MySQL",
-            "JavaScript",
+            // "JavaScript",
             "Node.js",
             "Express",
             "JWT",
@@ -134,7 +134,10 @@ const projects = [
             "responsive",
         ],
         mainTechs: ["React"],
-        techs: ["JavaScript", "React"],
+        techs: [
+            // "JavaScript",
+            "React",
+        ],
         stackType: "front-end",
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_P7_Kasa",
         url: "",
@@ -150,7 +153,10 @@ const projects = [
             "Intégration de la maquette Figma d'une application de menus en ligne",
         features: ["Animations CSS", "mobile-first", "responsive"],
         mainTechs: ["Sass"],
-        techs: ["JavaScript", "Sass"],
+        techs: [
+            // "JavaScript",
+            "Sass",
+        ],
         stackType: "front-end",
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_P3_OhMyFood",
         url: "",
