@@ -95,12 +95,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                         maxWidth: "50%",
                     }}
                 />
-                {/* <CardMedia
-                    component="img"
-                    image={project.imgUrl}
-                    alt={project.title}
-                    sx={{ maxWidth: "50%" }}
-                /> */}
                 <CardContent
                     sx={{
                         flexGrow: "1",
@@ -184,47 +178,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                                         }
                                                         location="modal"
                                                     />
-                                                    {/* <Box
-                                                        sx={{
-                                                            display: "flex",
-                                                            flexDirection:
-                                                                "column",
-                                                            gap: ".7rem",
-                                                        }}>
-                                                        {typeFilteredTechs.map(
-                                                            (tech, index) => (
-                                                                <Box
-                                                                    key={index}
-                                                                    sx={{
-                                                                        display:
-                                                                            "flex",
-                                                                        alignItems:
-                                                                            "center",
-                                                                        gap: ".5rem",
-                                                                        "& svg":
-                                                                            {
-                                                                                maxWidth:
-                                                                                    theme
-                                                                                        .maxWidth
-                                                                                        .techIcon,
-                                                                                maxHeight:
-                                                                                    theme
-                                                                                        .maxWidth
-                                                                                        .techIcon,
-                                                                            },
-                                                                    }}>
-                                                                    {
-                                                                        tech.imgElement
-                                                                    }
-                                                                    <Typography component="span">
-                                                                        {
-                                                                            tech.label
-                                                                        }
-                                                                    </Typography>
-                                                                </Box>
-                                                            )
-                                                        )}
-                                                    </Box> */}
                                                 </Box>
                                             )
                                         );

@@ -1,3 +1,5 @@
+import TechsList from "./TechsList";
+
 import theme from "../styles/theme";
 import { Box, Typography } from "@mui/material";
 
@@ -29,35 +31,12 @@ const Techs = ({ typesArray, techsArray, hasTitle }) => {
                             {type}
                         </Typography>
                     )}
-                    <Box
-                        sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "1rem",
-                        }}>
-                        {techsArray
-                            .filter((tech) => tech.type === type)
-                            .map((tech, index) => (
-                                <Box
-                                    key={index}
-                                    sx={{
-                                        display: "flex",
-                                        alignItems: "center",
-                                        gap: ".8rem",
-                                        "& svg": {
-                                            maxWidth: theme.maxWidth.techIcon,
-                                            maxHeight: theme.maxWidth.techIcon,
-                                        },
-                                    }}>
-                                    {tech.imgElement}
-                                    <Typography
-                                        component="span"
-                                        color={theme.palette.text.content}>
-                                        {tech.label}
-                                    </Typography>
-                                </Box>
-                            ))}
-                    </Box>
+                    <TechsList
+                        techsArray={techsArray.filter(
+                            (tech) => tech.type === type
+                        )}
+                        location="about"
+                    />
                 </Box>
             ))}
         </>

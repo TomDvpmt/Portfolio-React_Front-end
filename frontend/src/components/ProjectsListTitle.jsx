@@ -8,25 +8,34 @@ const ProjectsListTitle = ({ label }) => {
         label: PropTypes.string.isRequired,
     };
 
+    console.log("label :", label);
+
     return (
-        <Box sx={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+        <Box
+            sx={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                gap: "2rem",
+            }}>
             <Box
                 sx={{
                     height: "1px",
-                    width: "4rem",
+                    flexGrow: "1",
                     bgcolor: theme.palette.secondary.main,
                 }}
             />
             <Typography
+                component="h3"
                 textTransform="uppercase"
                 color={theme.palette.text.title}
                 fontSize="1.5rem">
-                {label}
+                {label.charAt(0).toUpperCase() + label.slice(1)}
             </Typography>
             <Box
                 sx={{
                     height: "1px",
-                    width: "4rem",
+                    flexGrow: "1",
                     bgcolor: theme.palette.secondary.main,
                 }}
             />

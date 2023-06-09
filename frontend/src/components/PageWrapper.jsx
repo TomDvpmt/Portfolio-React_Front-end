@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 
 import ScrollToHashElement from "./ScrollToHashElement";
 
-import theme from "../styles/theme";
 import { Box } from "@mui/material";
 
 const PageWrapper = () => {
@@ -55,7 +54,7 @@ const PageWrapper = () => {
                             },
                         },
                         transform: `translateX(${-100 * sectionPosition}%)`,
-                        transition: "transform ease 1000ms",
+                        transition: "transform ease 600ms",
                     }}>
                     <Outlet sectionPosition={sectionPosition} />
                 </Box>

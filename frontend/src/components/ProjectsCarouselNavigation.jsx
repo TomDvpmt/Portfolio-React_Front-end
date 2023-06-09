@@ -3,8 +3,8 @@ import { ButtonGroup, Button } from "@mui/material";
 
 import PropTypes from "prop-types";
 
-const CarouselNavigation = ({ handleSwipeLeft, handleSwipeRight }) => {
-    CarouselNavigation.propTypes = {
+const ProjectsCarouselNavigation = ({ handleSwipeLeft, handleSwipeRight }) => {
+    ProjectsCarouselNavigation.propTypes = {
         handleSwipeLeft: PropTypes.func.isRequired,
         handleSwipeRight: PropTypes.func.isRequired,
     };
@@ -27,4 +27,4 @@ const CarouselNavigation = ({ handleSwipeLeft, handleSwipeRight }) => {
     );
 };
 
-export default CarouselNavigation;
+export default ProjectsCarouselNavigation;

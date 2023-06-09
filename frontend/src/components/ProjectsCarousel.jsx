@@ -9,7 +9,7 @@ import ProjectCard from "./ProjectCard";
 import theme from "../styles/theme";
 import { Box } from "@mui/material";
 
-const Carousel = () => {
+const ProjectsCarousel = () => {
     const projectsData = useContext(ProjectsContext);
 
     const [carouselPosition, setCarouselPosition] = useState(0);
@@ -78,4 +78,4 @@ const Carousel = () => {
     );
 };
 
-export default Carousel;
+export default ProjectsCarousel;

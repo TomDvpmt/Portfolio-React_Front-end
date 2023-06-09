@@ -32,7 +32,8 @@ const TechsList = ({ techsArray, location }) => {
                     <Typography
                         component="span"
                         color={
-                            location === "home" && theme.palette.text.content
+                            ["about", "homeCard"].includes(location) &&
+                            theme.palette.text.content
                         }>
                         {tech.label}
                     </Typography>

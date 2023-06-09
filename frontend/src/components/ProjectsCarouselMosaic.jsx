@@ -3,8 +3,8 @@ import { Box, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
 
-const CarouselMosaic = ({ projectsData, setCarouselPosition }) => {
-    CarouselMosaic.propTypes = {
+const ProjectsCarouselMosaic = ({ projectsData, setCarouselPosition }) => {
+    ProjectsCarouselMosaic.propTypes = {
         projectsData: PropTypes.array.isRequired,
         setCarouselPosition: PropTypes.func.isRequired,
     };
@@ -88,4 +88,4 @@ const CarouselMosaic = ({ projectsData, setCarouselPosition }) => {
     );
 };
 
-export default CarouselMosaic;
+export default ProjectsCarouselMosaic;
