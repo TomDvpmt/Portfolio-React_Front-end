@@ -5,14 +5,19 @@ import { Box, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
 
-const Techs = ({ typesArray, techsArray, hasTitle }) => {
-    Techs.propTypes = {
+const AllTechs = ({ typesArray, techsArray, hasTitle }) => {
+    AllTechs.propTypes = {
         typesArray: PropTypes.array.isRequired,
         techsArray: PropTypes.array.isRequired,
         hasTitle: PropTypes.bool.isRequired,
     };
     return (
-        <>
+        <Box
+            sx={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "8rem",
+            }}>
             {typesArray.map((type) => (
                 <Box
                     key={type}
@@ -39,8 +44,8 @@ const Techs = ({ typesArray, techsArray, hasTitle }) => {
                     />
                 </Box>
             ))}
-        </>
+        </Box>
     );
 };
 
-export default Techs;
+export default AllTechs;

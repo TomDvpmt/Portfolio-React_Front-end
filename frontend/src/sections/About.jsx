@@ -1,4 +1,4 @@
-import Techs from "../components/Techs";
+import AllTechs from "../components/AllTechs";
 
 import ALL_TECHS from "../assets/data/techs";
 import profilePicture from "../assets/img/profile-picture_square.jpg";
@@ -71,6 +71,7 @@ const About = () => {
                         </Typography>
                         <Box
                             sx={{
+                                maxWidth: theme.maxWidth.aboutSpeech,
                                 display: "flex",
                                 flexDirection: "column",
                                 gap: "1rem",
@@ -100,18 +101,11 @@ const About = () => {
                         </Box>
                     </Box>
                 </Box>
-                <Box
-                    sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        gap: "8rem",
-                    }}>
-                    <Techs
-                        typesArray={typesArray}
-                        techsArray={ALL_TECHS}
-                        hasTitle={true}
-                    />
-                </Box>
+                <AllTechs
+                    typesArray={typesArray}
+                    techsArray={ALL_TECHS}
+                    hasTitle={true}
+                />
             </Box>
         </>
     );

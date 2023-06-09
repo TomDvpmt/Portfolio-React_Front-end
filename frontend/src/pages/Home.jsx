@@ -5,9 +5,7 @@ import About from "../sections/About";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
 
-import { Box } from "@mui/material";
-
-const Home = ({ sectionPosition }) => {
+const Home = () => {
     const location = useLocation();
     const navigate = useNavigate();
 

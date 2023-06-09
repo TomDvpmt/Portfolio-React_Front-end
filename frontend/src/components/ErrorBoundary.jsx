@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import { Box, Typography, ButtonGroup, Button, Link } from "@mui/material";
+import theme from "../styles/theme";
+import { Box, Typography, ButtonGroup, Button } from "@mui/material";
 
 import PropTypes from "prop-types";
 
@@ -38,17 +39,18 @@ const ErrorBoundary = ({ page }) => {
                 gap: "3rem",
                 alignItems: "center",
             }}>
-            <Typography component="h1" variant="h1">
+            <Typography
+                component="h1"
+                color={theme.palette.text.title}
+                fontSize="5rem">
                 {errorMessage}
             </Typography>
-            <ButtonGroup variant="text" size="small">
-                <Button onClick={() => navigate(-1)}>Revenir en arrière</Button>
-                <Button>
-                    <Link component={RouterLink} to="/" underline="none">
-                        Revenir à l'accueil
-                    </Link>
-                </Button>
-            </ButtonGroup>
+            <Button
+                color="secondary"
+                variant="outlined"
+                onClick={() => navigate("/")}>
+                Revenir à l'accueil
+            </Button>
         </Box>
     );
 };
