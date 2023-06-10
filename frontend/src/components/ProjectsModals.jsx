@@ -12,7 +12,7 @@ const ProjectsModals = () => {
     const projectsData = useContext(ProjectsContext);
 
     const [showDialog, setShowDialog] = useState(false);
-    const [projectToShow, setProjectToShow] = useState(false);
+    const [projectToShow, setProjectToShow] = useState({});
 
     const handleClose = () => {
         setShowDialog(false);

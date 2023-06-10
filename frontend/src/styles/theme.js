@@ -53,6 +53,15 @@ theme = createTheme(theme, {
             fontWeight: "700",
             textTransform: "uppercase",
         },
+        body1: {
+            fontSize: ".8rem",
+            [theme.breakpoints.up("sm")]: {
+                fontSize: ".9rem",
+            },
+            [theme.breakpoints.up("md")]: {
+                fontSize: "1rem",
+            },
+        },
     },
     components: {
         MuiTypography: {

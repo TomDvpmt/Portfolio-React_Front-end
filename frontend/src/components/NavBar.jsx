@@ -17,6 +17,7 @@ const NavBar = ({ setSectionPosition }) => {
         setSectionPosition: PropTypes.func.isRequired,
     };
 
+    const isSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
     useEffect(() => {
@@ -59,19 +60,23 @@ const NavBar = ({ setSectionPosition }) => {
                 sx={{
                     width: "100%",
                     maxWidth: theme.maxWidth.nav,
-                    justifyContent: "space-between",
+                    justifyContent: isSmallScreen ? "space-between" : "center",
                 }}>
-                <Link href="/" underline="none">
-                    <Typography component="h1" variant="h1">
-                        <Typography component="span" textTransform="uppercase">
-                            Portfolio
+                {isSmallScreen && (
+                    <Link href="/" underline="none">
+                        <Typography component="h1" variant="h1">
+                            <Typography
+                                component="span"
+                                textTransform="uppercase">
+                                Portfolio
+                            </Typography>
+                            <Typography component="span">{" | "}</Typography>
+                            <Typography component="span">
+                                Thomas Boussion
+                            </Typography>
                         </Typography>
-                        <Typography component="span">{" | "}</Typography>
-                        <Typography component="span">
-                            Thomas Boussion
-                        </Typography>
-                    </Typography>
-                </Link>
+                    </Link>
+                )}
                 <Typography
                     sx={{
                         color: theme.palette.text.title,

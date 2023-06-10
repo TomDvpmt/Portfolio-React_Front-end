@@ -1,16 +1,17 @@
-import mockImg from "../img/projects/mock-img.jpg";
-
 import groupomaniaLogo from "../img/projects/groupomania-logo.png";
+import flixLogo from "../img/projects/flix-logo.png";
 
 import kasaImg from "../img/projects/kasa.webp";
 import groupomaniaImg from "../img/projects/groupomania.webp";
 import covoitImg from "../img/projects/covoit.webp";
 import ohmyfoodImg from "../img/projects/ohmyfood.webp";
+import flixImg from "../img/projects/flix2.webp";
 
 import kasaVideo from "../vids/kasa.webm";
 import groupomaniaVideo from "../vids/groupomania.webm";
 import covoitVideo from "../vids/covoit.webm";
 import ohmyfoodVideo from "../vids/ohmyfood.webm";
+import flixVideo from "../vids/flix.webm";
 
 const projects = [
     {
@@ -53,9 +54,9 @@ const projects = [
         id: 2,
         title: "Application de recherche de films (avec API externe)",
         shortTitle: "Recherche de films",
-        logoUrl: "",
-        imgUrl: mockImg,
-        videoUrl: "",
+        logoUrl: flixLogo,
+        imgUrl: flixImg,
+        videoUrl: flixVideo,
         description:
             "Création d'une application de recherche de films avec une API externe",
         features: [
@@ -79,7 +80,7 @@ const projects = [
             "MaterialUI",
         ],
         projectType: "applications complètes",
-        gitHubLink: "https://github.com/TomDvpmt/80s-90s-Flix",
+        gitHubLink: "https://github.com/TomDvpmt/80s-90s-Flicks",
         url: "",
     },
     {

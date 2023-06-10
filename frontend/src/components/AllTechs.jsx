@@ -15,6 +15,7 @@ const AllTechs = ({ typesArray, techsArray, hasTitle }) => {
         <Box
             sx={{
                 display: "flex",
+                flexWrap: "wrap",
                 justifyContent: "center",
                 gap: "8rem",
             }}>

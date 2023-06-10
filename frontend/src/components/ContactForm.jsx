@@ -70,8 +70,6 @@ const ContactForm = ({ tabIndex }) => {
             sx={{
                 width: "100%",
                 maxWidth: theme.maxWidth.form,
-                // m: "0 auto 4rem",
-                // p: "0 1rem",
                 display: "flex",
                 flexDirection: "column",
                 gap: "1.1rem",
@@ -93,10 +91,6 @@ const ContactForm = ({ tabIndex }) => {
             <Box>
                 <Typography sx={inputLabelStyle}>
                     <ContactFormRequiredLabel label="Nom" />
-                    {/* <Typography component="span" color="secondary">
-                        *{" "}
-                    </Typography>
-                    Nom */}
                 </Typography>
                 <TextField
                     tabIndex={-1}
@@ -109,7 +103,6 @@ const ContactForm = ({ tabIndex }) => {
                     id="name"
                     name="name"
                     type="text"
-                    // placeholder="Votre nom"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
@@ -126,7 +119,6 @@ const ContactForm = ({ tabIndex }) => {
                     id="company"
                     name="company"
                     type="text"
-                    // placeholder="Nom de votre entreprise"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
                 />
@@ -134,10 +126,6 @@ const ContactForm = ({ tabIndex }) => {
             <Box>
                 <Typography sx={inputLabelStyle}>
                     <ContactFormRequiredLabel label="Adresse e-mail" />
-                    {/* <Typography component="span" color="secondary">
-                        *{" "}
-                    </Typography>
-                    Adresse e-mail */}
                 </Typography>
                 <TextField
                     tabIndex={-1}
@@ -150,7 +138,6 @@ const ContactForm = ({ tabIndex }) => {
                     id="email"
                     name="email"
                     type="email"
-                    // placeholder="Votre adresse e-mail"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
@@ -169,13 +156,14 @@ const ContactForm = ({ tabIndex }) => {
                     id="phone"
                     name="phone"
                     type="tel"
-                    // placeholder="Votre numéro de téléphone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                 />
             </Box>
             <Box>
-                <Typography sx={inputLabelStyle}>Votre message</Typography>
+                <Typography sx={inputLabelStyle}>
+                    <ContactFormRequiredLabel label="Votre message" />
+                </Typography>
                 <TextField
                     tabIndex={-1}
                     inputProps={{ tabIndex: tabIndex }}

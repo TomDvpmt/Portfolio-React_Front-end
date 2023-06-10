@@ -16,16 +16,26 @@ const About = () => {
                 component="section"
                 sx={{
                     m: "0 auto",
-                    // pt: "7rem",
+                    pt: {
+                        xs: "4rem !important",
+                        lg: "0",
+                    },
                     maxWidth: theme.maxWidth.about,
                 }}>
                 <Box
                     sx={{
                         mb: "8rem",
                         display: "flex",
+                        flexDirection: {
+                            xs: "column",
+                            sm: "row",
+                        },
                         alignItems: "center",
                         justifyContent: "center",
-                        gap: "3rem",
+                        gap: {
+                            xs: "2rem",
+                            lg: "3rem",
+                        },
                     }}>
                     <Box
                         sx={{
@@ -39,26 +49,45 @@ const About = () => {
                     <Box>
                         <Typography
                             component="h2"
-                            // id="about"
                             color={theme.palette.text.title}
                             sx={{
                                 mb: "2rem",
                                 display: "flex",
                                 flexDirection: "column",
+                                alignItems: {
+                                    xs: "center",
+                                    sm: "start",
+                                },
                                 "& span": {
-                                    fontSize: "2rem",
+                                    fontSize: {
+                                        xs: "1.5rem",
+                                        lg: "2rem",
+                                    },
                                     "&.job span": {
-                                        fontSize: "3rem",
+                                        fontSize: {
+                                            xs: "2rem",
+                                            lg: "3rem",
+                                        },
                                     },
                                 },
                             }}>
                             <Typography component="span">
                                 Thomas Boussion
                             </Typography>
-                            <Box
+                            <Typography
                                 className="job"
                                 component="span"
-                                textTransform="uppercase">
+                                textTransform="uppercase"
+                                sx={{
+                                    mt: {
+                                        xs: "1rem",
+                                        sm: "0",
+                                    },
+                                    textAlign: {
+                                        xs: "center",
+                                        sm: "left",
+                                    },
+                                }}>
                                 <Typography component="span" color="secondary">
                                     Développeur{" "}
                                 </Typography>
@@ -67,7 +96,7 @@ const About = () => {
                                     color={theme.palette.tertiary.main}>
                                     React
                                 </Typography>
-                            </Box>
+                            </Typography>
                         </Typography>
                         <Box
                             sx={{
@@ -77,7 +106,7 @@ const About = () => {
                                 gap: "1rem",
                             }}>
                             <Typography
-                                textAlign="justify"
+                                textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
                                 Après l'apprentissage du développement web en
                                 autodidacte, ma formation chez OpenClassrooms

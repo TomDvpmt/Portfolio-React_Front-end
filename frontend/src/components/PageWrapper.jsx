@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import PositionContext from "../contexts/PositionContext";
@@ -47,7 +47,7 @@ const PageWrapper = () => {
                         "& section": {
                             minWidth: "100%",
                             p: {
-                                xs: "0 .3rem",
+                                xs: "0 .5rem",
                                 md: "0 .7rem",
                                 lg: "0 1.3rem",
                             },

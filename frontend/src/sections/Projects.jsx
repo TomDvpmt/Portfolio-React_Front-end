@@ -1,3 +1,6 @@
+import ProjectsContext from "../contexts/ProjectsContext";
+import projects from "../assets/data/projects";
+
 // import SectionHeading from "../components/SectionHeading";
 import ProjectsModals from "../components/ProjectsModals";
 
@@ -18,7 +21,9 @@ const Projects = () => {
                 sur un projet pour afficher ses informations.
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <ProjectsModals />
+                <ProjectsContext.Provider value={projects}>
+                    <ProjectsModals />
+                </ProjectsContext.Provider>
             </Box>
         </Box>
     );
