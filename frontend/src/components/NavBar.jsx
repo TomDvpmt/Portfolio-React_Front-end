@@ -64,7 +64,12 @@ const NavBar = ({ setSectionPosition }) => {
                 }}>
                 {isSmallScreen && (
                     <Link href="/" underline="none">
-                        <Typography component="h1" variant="h1">
+                        <Typography
+                            sx={{
+                                color: theme.palette.text.title,
+                                fontSize: "1rem",
+                                textAlign: "center",
+                            }}>
                             <Typography
                                 component="span"
                                 textTransform="uppercase">

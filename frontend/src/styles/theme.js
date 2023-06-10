@@ -39,14 +39,13 @@ theme = createTheme(theme, {
     typography: {
         h1: {
             color: theme.palette.text.title,
-            fontSize: "1rem",
-            textAlign: "center",
         },
         h2: {
             color: theme.palette.text.title,
         },
         h3: {
             color: theme.palette.text.title,
+            fontSize: "1.5rem",
         },
         h4: {
             fontSize: "1rem",

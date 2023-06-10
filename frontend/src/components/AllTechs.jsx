@@ -15,22 +15,39 @@ const AllTechs = ({ typesArray, techsArray, hasTitle }) => {
         <Box
             sx={{
                 display: "flex",
+                justifyContent: {
+                    // xs: "space-evenly",
+                    md: "center",
+                },
                 flexWrap: "wrap",
-                justifyContent: "center",
-                gap: "8rem",
+                gap: {
+                    xs: "1rem",
+                    sm: "2rem",
+                    md: "4rem",
+                    lg: "6rem",
+                    xl: "8rem",
+                },
             }}>
             {typesArray.map((type) => (
                 <Box
                     key={type}
                     sx={{
+                        flexGrow: {
+                            xs: "1",
+                            md: "0",
+                        },
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        gap: "2rem",
+                        gap: {
+                            xs: "1rem",
+                            sm: "1.5rem",
+                            md: "2rem",
+                        },
                     }}>
                     {hasTitle && (
                         <Typography
-                            component="h3"
+                            mt={{ xs: "1rem", sm: "0" }}
                             fontWeight="700"
                             textTransform="uppercase"
                             color={theme.palette.text.title}>

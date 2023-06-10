@@ -38,23 +38,23 @@ const ALL_TECHS = [
         imgElement: <GitLogo title="Git / GitHub" />,
     },
     {
-        label: "MongoDB",
-        type: "back",
-        imgElement: <MongoDBLogo title="MongoDB" />,
-    },
-    {
         label: "MySQL",
-        type: "back",
+        type: "back-end",
         imgElement: <MySQLLogo title="MySQL" />,
     },
     {
+        label: "MongoDB",
+        type: "back-end",
+        imgElement: <MongoDBLogo title="MongoDB" />,
+    },
+    {
         label: "Node.js",
-        type: "back",
+        type: "back-end",
         imgElement: <NodeJsLogo title="Node.js" />,
     },
     {
         label: "Express",
-        type: "back",
+        type: "back-end",
         imgElement: (
             <img
                 src={expressLogo}
@@ -67,12 +67,12 @@ const ALL_TECHS = [
     },
     {
         label: "JWT",
-        type: "back",
+        type: "back-end",
         imgElement: <JWTLogo title="JWT" />,
     },
     {
         label: "Nodemailer",
-        type: "back",
+        type: "back-end",
         imgElement: (
             <img
                 src={nodemailerLogo}
@@ -85,22 +85,22 @@ const ALL_TECHS = [
     },
     {
         label: "React",
-        type: "front",
+        type: "front-end",
         imgElement: <ReactLogo title="React" />,
     },
     {
         label: "Redux",
-        type: "front",
+        type: "front-end",
         imgElement: <ReduxLogo title="Redux" />,
     },
     {
         label: "Sass",
-        type: "front",
+        type: "front-end",
         imgElement: <SassLogo title="Sass" />,
     },
     {
         label: "MaterialUI",
-        type: "front",
+        type: "front-end",
         imgElement: <MaterialUILogo title="MaterialUI" />,
     },
     {

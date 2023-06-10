@@ -62,8 +62,10 @@ const ProjectsList = ({
                             elevation={0}
                             tabIndex={isLargeScreen ? tabIndex : 0}
                             sx={{
+                                maxWidth: "500px",
                                 flexGrow: "1",
                                 bgcolor: theme.palette.primary.main,
+                                borderRadius: "0",
                                 "&:hover": {
                                     cursor: "pointer",
                                     boxShadow: `0 0 5px 4px ${theme.palette.secondary.main}`,
@@ -74,13 +76,17 @@ const ProjectsList = ({
                                 setShowDialog(true);
                             }}>
                             <CardActionArea tabIndex={-1}>
-                                <Box sx={{ display: "flex" }}>
+                                <Box
+                                    sx={{
+                                        display: "flex",
+                                        minHeight: "150px",
+                                    }}>
                                     <CardMedia
                                         component="img"
                                         image={project.imgUrl}
                                         alt={project.title}
                                         sx={{
-                                            height: "150px",
+                                            minHeight: "100%",
                                             maxWidth: "38%",
                                         }}
                                     />
@@ -98,9 +104,13 @@ const ProjectsList = ({
                                             gap: ".5rem",
                                         }}>
                                         <Typography
-                                            component="h3"
+                                            component="h4"
+                                            align="center"
                                             textTransform="uppercase"
-                                            fontSize="1.2rem"
+                                            fontSize={{
+                                                xs: ".9rem",
+                                                md: "1.2rem",
+                                            }}
                                             fontWeight="700"
                                             color={theme.palette.text.title}>
                                             {project.shortTitle}

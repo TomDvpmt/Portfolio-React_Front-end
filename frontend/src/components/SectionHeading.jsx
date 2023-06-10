@@ -33,7 +33,8 @@ const SectionHeading = ({ slug }) => {
     return (
         <Box
             id={slug}
-            pt="1rem"
+            mt="4rem"
+            pt="5rem"
             // mb="4rem"
             sx={{
                 display: "flex",
@@ -47,14 +48,16 @@ const SectionHeading = ({ slug }) => {
                     flexGrow: "1",
                 }}
             />
+
             <Typography variant="h2" component="h2">
                 {title}
             </Typography>
+
             <Box
                 sx={{
                     bgcolor: theme.palette.secondary.main,
                     height: "1px",
-                    flexGrow: "6",
+                    flexGrow: { xs: "1", sm: "6" },
                 }}
             />
         </Box>

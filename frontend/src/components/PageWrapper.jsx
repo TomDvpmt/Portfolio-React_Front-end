@@ -30,7 +30,7 @@ const PageWrapper = () => {
                     maxHeight: {
                         lg: "100vh",
                     },
-                    overflow: "hidden",
+                    overflow: { lg: "hidden" },
                     display: "flex",
                     flexDirection: "column",
                 }}>

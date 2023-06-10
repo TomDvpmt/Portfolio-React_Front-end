@@ -62,7 +62,7 @@ const ContactForm = ({ tabIndex }) => {
 
     const inputLabelStyle = {
         color: theme.palette.text.title,
-        fontSize: ".9rem",
+        // fontSize: ".9rem",
     };
     return (
         <Box

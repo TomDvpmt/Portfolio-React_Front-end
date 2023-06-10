@@ -14,7 +14,7 @@ const TechsList = ({ techsArray, location }) => {
             sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: ".7rem",
+                gap: { xs: ".4rem", sm: ".7rem" },
             }}>
             {techsArray.map((tech, index) => (
                 <Box
@@ -22,7 +22,10 @@ const TechsList = ({ techsArray, location }) => {
                     sx={{
                         display: "flex",
                         alignItems: "center",
-                        gap: ".8rem",
+                        gap: {
+                            xs: ".5rem",
+                            sm: ".8rem",
+                        },
                         "& svg": {
                             maxWidth: theme.maxWidth.techIcon,
                             maxHeight: theme.maxWidth.techIcon,

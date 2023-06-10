@@ -7,7 +7,7 @@ import theme from "../styles/theme";
 import { Box, Typography } from "@mui/material";
 
 const About = () => {
-    const typesArray = ["languages", "back", "front", "autres"];
+    const typesArray = ["languages", "back-end", "front-end", "autres"];
 
     return (
         <>
@@ -17,14 +17,18 @@ const About = () => {
                 sx={{
                     m: "0 auto",
                     pt: {
-                        xs: "4rem !important",
-                        lg: "0",
+                        xs: "5rem !important",
+                        lg: "0 !important",
                     },
                     maxWidth: theme.maxWidth.about,
                 }}>
                 <Box
                     sx={{
-                        mb: "8rem",
+                        mb: {
+                            xs: "4rem",
+                            md: "6rem",
+                            xl: "8rem",
+                        },
                         display: "flex",
                         flexDirection: {
                             xs: "column",
@@ -48,8 +52,8 @@ const About = () => {
                     </Box>
                     <Box>
                         <Typography
-                            component="h2"
-                            color={theme.palette.text.title}
+                            component="h1"
+                            variant="h1"
                             sx={{
                                 mb: "2rem",
                                 display: "flex",
