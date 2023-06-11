@@ -221,6 +221,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                         </Button>
                         <Button
                             color="secondary"
+                            variant="contained"
                             startIcon={<ExitToApp />}
                             href="">
                             Tester l'application

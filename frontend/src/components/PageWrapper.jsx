@@ -5,8 +5,6 @@ import PositionContext from "../contexts/PositionContext";
 
 import NavBar from "./NavBar";
 
-import ScrollToHashElement from "./ScrollToHashElement";
-
 import { Box } from "@mui/material";
 
 const PageWrapper = () => {
@@ -20,7 +18,6 @@ const PageWrapper = () => {
                 flexDirection: "column",
                 alignItems: "center",
             }}>
-            <ScrollToHashElement />
             <NavBar setSectionPosition={setSectionPosition} />
 
             <Box

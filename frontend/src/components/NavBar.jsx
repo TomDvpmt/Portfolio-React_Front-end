@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+import { addActiveClass, createObserver } from "../utils/navLinks";
+
 import theme from "../styles/theme";
 import {
     AppBar,
@@ -21,20 +23,24 @@ const NavBar = ({ setSectionPosition }) => {
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
     useEffect(() => {
+        const aboutSection = document.getElementById("about");
         const aboutLink = document.getElementById("about-link");
-        aboutLink.classList.add("active-anchor");
+        createObserver(aboutSection, aboutLink);
+
+        const projectsSection = document.getElementById("projects");
+        const projectsLink = document.getElementById("projects-link");
+        createObserver(projectsSection, projectsLink);
+
+        const contactSection = document.getElementById("contact");
+        const contactLink = document.getElementById("contact-link");
+        createObserver(contactSection, contactLink);
     }, []);
 
     const handleClick = (e) => {
         const links = e.currentTarget.children;
         const link = e.target;
 
-        if (!link.classList.contains("active-anchor")) {
-            Array.from(links).forEach((link) =>
-                link.classList.remove("active-anchor")
-            );
-            link.classList.add("active-anchor");
-        }
+        addActiveClass(link, links);
 
         if (isLargeScreen) {
             switch (e.target.id) {
@@ -50,6 +56,13 @@ const NavBar = ({ setSectionPosition }) => {
                 default:
                     setSectionPosition(0);
             }
+        } else {
+            const sectionId = link.id.split("-")[0];
+            const destination = document.getElementById(sectionId);
+            destination.scrollIntoView({
+                behavior: "smooth",
+                inline: "nearest",
+            });
         }
     };
     return (
@@ -83,6 +96,7 @@ const NavBar = ({ setSectionPosition }) => {
                     </Link>
                 )}
                 <Typography
+                    id="nav-links"
                     sx={{
                         color: theme.palette.text.title,
                         display: "flex",
@@ -103,21 +117,21 @@ const NavBar = ({ setSectionPosition }) => {
                     <Link
                         component={NavLink}
                         id="about-link"
-                        to={!isLargeScreen && "/#about"}
+                        // to={!isLargeScreen && "/#about"}
                         underline="none">
                         À propos
                     </Link>
                     <Link
                         component={NavLink}
                         id="projects-link"
-                        to={!isLargeScreen && "/#projects"}
+                        // to={!isLargeScreen && "/#projects"}
                         underline="none">
                         Projets
                     </Link>
                     <Link
                         component={NavLink}
                         id="contact-link"
-                        to={!isLargeScreen && "/#contact"}
+                        // to={!isLargeScreen && "/#contact"}
                         underline="none">
                         Contact
                     </Link>

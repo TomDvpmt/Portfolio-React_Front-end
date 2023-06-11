@@ -11,7 +11,7 @@ const Projects = () => {
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
     return (
-        <Box component="section">
+        <Box id="projects" component="section">
             {!isLargeScreen && <SectionHeading slug="projects" />}
             <Typography
                 m={{ xs: "4rem 0", lg: "0 0 4rem" }}

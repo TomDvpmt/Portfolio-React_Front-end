@@ -29,7 +29,7 @@ const Contact = () => {
 
     return (
         <>
-            <Box component="section" mb={{ xs: "4rem", lg: "0" }}>
+            <Box id="contact" component="section" mb={{ xs: "4rem", lg: "0" }}>
                 {!isLargeScreen && <SectionHeading slug="contact" />}
                 <Box
                     mt={{ xs: "4rem", lg: "0" }}
