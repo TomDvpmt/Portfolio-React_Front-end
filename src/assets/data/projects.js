@@ -132,10 +132,10 @@ const projects = [
             "Création du front-end d'une application de location immobilière à partir d'une maquette Figma",
         features: [
             "navigation avec routeur (React Router)",
-            "menus déroulants",
-            "slider",
             "modules CSS",
             "responsive (mobile-first)",
+            "menus déroulants",
+            "slider",
         ],
         mainTechs: ["ReactJS"],
         techs: [

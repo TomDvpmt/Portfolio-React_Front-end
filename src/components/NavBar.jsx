@@ -88,7 +88,9 @@ const NavBar = ({ setSectionPosition }) => {
                                 textTransform="uppercase">
                                 Portfolio
                             </Typography>
-                            <Typography component="span">{" | "}</Typography>
+                            <Typography component="span" color="secondary">
+                                {" | "}
+                            </Typography>
                             <Typography component="span">
                                 Thomas Boussion
                             </Typography>
@@ -101,37 +103,32 @@ const NavBar = ({ setSectionPosition }) => {
                         color: theme.palette.text.title,
                         display: "flex",
                         alignItems: "center",
-                        gap: "1rem",
+                        gap: "2rem",
                         "& a": {
                             color: theme.palette.text.title,
                             transition: "border-bottom-width ease 300ms",
                             "&:hover": {
                                 borderBottom: `1px solid ${theme.palette.secondary.main}`,
                             },
+                            textTransform: "uppercase",
                         },
                         "& .active-anchor": {
                             borderBottom: `1px solid ${theme.palette.secondary.main}`,
                         },
                     }}
                     onClick={handleClick}>
-                    <Link
-                        component={NavLink}
-                        id="about-link"
-                        // to={!isLargeScreen && "/#about"}
-                        underline="none">
+                    <Link component={NavLink} id="about-link" underline="none">
                         À propos
                     </Link>
                     <Link
                         component={NavLink}
                         id="projects-link"
-                        // to={!isLargeScreen && "/#projects"}
                         underline="none">
                         Projets
                     </Link>
                     <Link
                         component={NavLink}
                         id="contact-link"
-                        // to={!isLargeScreen && "/#contact"}
                         underline="none">
                         Contact
                     </Link>

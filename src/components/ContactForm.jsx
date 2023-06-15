@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import ContactFormRequiredLabel from "./ContactFormRequiredLabel";
 
+import BASE_API_URI from "../utils/API";
+
 import theme from "../styles/theme";
 import { Box, Typography, TextField, Button } from "@mui/material";
 
@@ -34,7 +36,7 @@ const ContactForm = ({ tabIndex }) => {
             content,
         };
 
-        fetch("/API/mail/send", {
+        fetch(`${BASE_API_URI}/API/mail/send`, {
             method: "POST",
             headers: {
                 "content-type": "application/json",

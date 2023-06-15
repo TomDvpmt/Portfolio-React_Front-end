@@ -63,7 +63,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
         <Card
             component="article"
             sx={{
-                pb: "3rem",
+                pb: "1.5rem",
                 minWidth: "100%",
                 transition: `transform ease ${transitionDuration}ms`,
                 transform: `translateX(${translateValue}%)`,
@@ -72,7 +72,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
             <CardHeader
                 title={project.title}
                 titleTypographyProps={{
-                    p: { xs: "2rem .5rem", lg: "3rem" },
+                    p: { xs: "1.5rem .5rem", lg: "1.5rem" },
                     fontSize: { xs: "1.5rem", lg: "2.5rem" },
                 }}
                 action={

@@ -6,10 +6,8 @@ import SocialLinks from "../components/SocialLinks";
 import LocationSpeech from "../components/LocationSpeech";
 
 import ContactForm from "../components/ContactForm";
-import TitleLine from "../components/TitleLine";
 
-import { Box, Typography, IconButton, useMediaQuery } from "@mui/material";
-// import { LinkedIn, GitHub } from "@mui/icons-material";
+import { Box, useMediaQuery } from "@mui/material";
 
 import theme from "../styles/theme";
 
@@ -22,10 +20,6 @@ const Contact = () => {
     useEffect(() => {
         setTabIndex(sectionPosition === 2 ? 0 : -1);
     }, [sectionPosition]);
-
-    // const socialIconStyle = {
-    //     color: theme.palette.text.title,
-    // };
 
     return (
         <>

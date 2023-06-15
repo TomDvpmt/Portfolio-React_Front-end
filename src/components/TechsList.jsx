@@ -34,6 +34,7 @@ const TechsList = ({ techsArray, location }) => {
                     {tech.imgElement}
                     <Typography
                         component="span"
+                        textTransform="none"
                         color={
                             ["about", "homeCard"].includes(location) &&
                             theme.palette.text.content
