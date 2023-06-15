@@ -52,7 +52,9 @@ const ContactForm = ({ tabIndex }) => {
                 setEmail("");
                 setPhone("");
                 setContent("");
-                setValidationMessage("Message envoyé.");
+                setValidationMessage(
+                    "Votre message a bien été envoyé. J'y répondrai dès que possible !"
+                );
             })
             .catch((error) => {
                 setErrorMessage(error.message);
@@ -62,7 +64,6 @@ const ContactForm = ({ tabIndex }) => {
 
     const inputLabelStyle = {
         color: theme.palette.text.title,
-        // fontSize: ".9rem",
     };
     return (
         <Box
@@ -105,6 +106,7 @@ const ContactForm = ({ tabIndex }) => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    onFocus={() => setValidationMessage("")}
                 />
             </Box>
             <Box>
@@ -121,6 +123,7 @@ const ContactForm = ({ tabIndex }) => {
                     type="text"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
+                    onFocus={() => setValidationMessage("")}
                 />
             </Box>
             <Box>
@@ -140,6 +143,7 @@ const ContactForm = ({ tabIndex }) => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    onFocus={() => setValidationMessage("")}
                 />
             </Box>
             <Box>
@@ -158,6 +162,7 @@ const ContactForm = ({ tabIndex }) => {
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    onFocus={() => setValidationMessage("")}
                 />
             </Box>
             <Box>
@@ -180,6 +185,7 @@ const ContactForm = ({ tabIndex }) => {
                     // placeholder="Votre message"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
+                    onFocus={() => setValidationMessage("")}
                 />
             </Box>
             <Button

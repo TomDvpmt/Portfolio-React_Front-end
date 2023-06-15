@@ -26,7 +26,6 @@ const sendEmail = async (req, res) => {
             `,
         })
         .then((mailInfo) => {
-            console.log(mailInfo);
             res.status(200).json({ message: "Message envoyé.", mailInfo });
         })
         .catch((error) => {

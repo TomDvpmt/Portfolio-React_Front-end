@@ -11,12 +11,12 @@ let theme = createTheme({
             main: "#FEAB2D",
         },
         tertiary: {
-            // react
+            // React
             main: "#61dafb",
         },
         success: {
-            // green
-            main: "#007022",
+            // main: "#007022", // green
+            main: "#61dafb", // React
         },
         warning: {
             // orange-red

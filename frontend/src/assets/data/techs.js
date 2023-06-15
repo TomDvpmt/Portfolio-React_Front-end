@@ -84,9 +84,9 @@ const ALL_TECHS = [
         ),
     },
     {
-        label: "React",
+        label: "ReactJS",
         type: "front-end",
-        imgElement: <ReactLogo title="React" />,
+        imgElement: <ReactLogo title="ReactJS" />,
     },
     {
         label: "Redux",
@@ -99,9 +99,9 @@ const ALL_TECHS = [
         imgElement: <SassLogo title="Sass" />,
     },
     {
-        label: "MaterialUI",
+        label: "Material UI",
         type: "front-end",
-        imgElement: <MaterialUILogo title="MaterialUI" />,
+        imgElement: <MaterialUILogo title="Material UI" />,
     },
     {
         label: "Socket.io",

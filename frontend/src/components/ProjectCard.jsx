@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import ProjectCardContentHeading from "./ProjectCardContentHeading";
 import TechsList from "./TechsList";
@@ -36,7 +36,10 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
     const [projectTechs, setProjectTechs] = useState([]);
     const [numberOfTechColumns, setNumberOfTechColumns] = useState(0);
 
-    const TECH_TYPES = ["back-end", "front-end", "autres"];
+    const getTechTypes = useCallback(
+        () => ["back-end", "front-end", "autres"],
+        []
+    );
 
     useEffect(() => {
         setProjectTechs(
@@ -45,12 +48,16 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
     }, [project.techs]);
 
     useEffect(() => {
+        const techTypesArray = getTechTypes();
+
         setNumberOfTechColumns(
-            TECH_TYPES.map((type) =>
-                projectTechs.filter((tech) => tech.type === type)
-            ).filter((column) => column.length > 0).length
+            techTypesArray
+                .map((type) =>
+                    projectTechs.filter((tech) => tech.type === type)
+                )
+                .filter((column) => column.length > 0).length
         );
-    }, [projectTechs]);
+    }, [projectTechs, getTechTypes]);
 
     return (
         <Card
@@ -171,7 +178,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                     lg: "nowrap",
                                 },
                             }}>
-                            {TECH_TYPES.map((type) => {
+                            {getTechTypes().map((type) => {
                                 const typeFilteredTechs = projectTechs.filter(
                                     (tech) => tech.type === type
                                 );
@@ -219,13 +226,16 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             sx={{ color: theme.palette.text.content }}>
                             Voir sur GitHub
                         </Button>
-                        <Button
-                            color="secondary"
-                            variant="contained"
-                            startIcon={<ExitToApp />}
-                            href="">
-                            Tester l'application
-                        </Button>
+                        {project.url !== "" && (
+                            <Button
+                                color="secondary"
+                                variant="contained"
+                                startIcon={<ExitToApp />}
+                                href={project.url}
+                                target="_blank">
+                                Tester l'application
+                            </Button>
+                        )}
                     </CardActions>
                 </CardContent>
             </Box>

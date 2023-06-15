@@ -33,11 +33,12 @@ const Contact = () => {
                 {!isLargeScreen && <SectionHeading slug="contact" />}
                 <Box
                     mt={{ xs: "4rem", lg: "0" }}
+                    p={{ xs: "0", lg: "0 2rem" }}
                     display="flex"
                     flexDirection={{ xs: "column", lg: "row" }}
                     alignItems={{ xs: "center", lg: "flex-start" }}
-                    justifyContent="center"
-                    gap={{ xs: "4rem", lg: "8rem" }}>
+                    justifyContent={{ xs: "center", lg: "space-evenly" }}
+                    gap={{ xs: "4rem", lg: "2rem" }}>
                     <Box
                         sx={{
                             maxWidth: "500px",
