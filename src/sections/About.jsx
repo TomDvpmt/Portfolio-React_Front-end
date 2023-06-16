@@ -44,11 +44,6 @@ const About = () => {
                 }}>
                 <Box
                     sx={{
-                        // mb: {
-                        //     xs: "4rem",
-                        //     md: "6rem",
-                        //     xl: "8rem",
-                        // },
                         display: "flex",
                         flexDirection: {
                             xs: "column",

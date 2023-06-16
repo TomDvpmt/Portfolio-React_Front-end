@@ -22,11 +22,15 @@ const ContactForm = ({ tabIndex }) => {
     const [errorMessage, setErrorMessage] = useState("");
     const [validationMessage, setValidationMessage] = useState("");
 
+    const resetMessages = () => {
+        setValidationMessage("");
+        setErrorMessage("");
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        setValidationMessage("");
-        setErrorMessage("");
+        resetMessages();
 
         const mailData = {
             name,
@@ -46,7 +50,7 @@ const ContactForm = ({ tabIndex }) => {
             .then((response) => {
                 if (!response.ok) {
                     throw new Error(
-                        `Impossible d'envoyer le message. Veuillez réessayer ultérieurement ou me contacter à l'adresse suivante : thomasboussion@hotmail.com`
+                        `Impossible d'envoyer le message. Veuillez réessayer ultérieurement ou me contacter à l'adresse suivante : thomas.boussion.dev@gmail.com`
                     );
                 }
                 setName("");
@@ -108,7 +112,7 @@ const ContactForm = ({ tabIndex }) => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    onFocus={() => setValidationMessage("")}
+                    onFocus={() => resetMessages()}
                 />
             </Box>
             <Box>
@@ -125,7 +129,7 @@ const ContactForm = ({ tabIndex }) => {
                     type="text"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
-                    onFocus={() => setValidationMessage("")}
+                    onFocus={() => resetMessages()}
                 />
             </Box>
             <Box>
@@ -145,7 +149,7 @@ const ContactForm = ({ tabIndex }) => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    onFocus={() => setValidationMessage("")}
+                    onFocus={() => resetMessages()}
                 />
             </Box>
             <Box>
@@ -164,7 +168,7 @@ const ContactForm = ({ tabIndex }) => {
                     type="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    onFocus={() => setValidationMessage("")}
+                    onFocus={() => resetMessages()}
                 />
             </Box>
             <Box>
@@ -187,7 +191,7 @@ const ContactForm = ({ tabIndex }) => {
                     // placeholder="Votre message"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                    onFocus={() => setValidationMessage("")}
+                    onFocus={() => resetMessages()}
                 />
             </Box>
             <Button
