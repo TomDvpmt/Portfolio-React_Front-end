@@ -128,8 +128,9 @@ const About = () => {
                                 textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
                                 Après de multiples expériences professionnelles
-                                (édition, restauration, entrepreneuriat), je me
-                                suis <strong>reconverti</strong> dans le
+                                (édition, restauration, entrepreneuriat dans la
+                                menuiserie), je me suis{" "}
+                                <strong>reconverti</strong> dans le
                                 développement web.
                             </Typography>
                             <Typography
