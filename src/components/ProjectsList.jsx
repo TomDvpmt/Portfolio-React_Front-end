@@ -21,7 +21,7 @@ const ProjectsList = ({
         setShowDialog: PropTypes.func.isRequired,
     };
 
-    const sectionPosition = useContext(PositionContext);
+    const { sectionPosition } = useContext(PositionContext);
 
     const [tabIndex, setTabIndex] = useState(-1);
 

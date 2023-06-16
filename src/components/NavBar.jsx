@@ -68,7 +68,10 @@ const NavBar = ({ setSectionPosition }) => {
     return (
         <AppBar
             position="sticky"
-            sx={{ bgcolor: theme.palette.primary.main, alignItems: "center" }}>
+            sx={{
+                bgcolor: theme.palette.primary.main,
+                alignItems: "center",
+            }}>
             <Toolbar
                 component="nav"
                 sx={{

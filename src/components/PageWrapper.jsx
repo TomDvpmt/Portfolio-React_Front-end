@@ -70,7 +70,8 @@ const PageWrapper = () => {
                         transform: `translateX(${-100 * sectionPosition}%)`,
                         transition: "transform ease 600ms",
                     }}>
-                    <PositionContext.Provider value={sectionPosition}>
+                    <PositionContext.Provider
+                        value={{ sectionPosition, setSectionPosition }}>
                         <Outlet />
                     </PositionContext.Provider>
                 </Box>

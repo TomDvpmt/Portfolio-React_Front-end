@@ -12,7 +12,7 @@ import { Box, useMediaQuery } from "@mui/material";
 import theme from "../styles/theme";
 
 const Contact = () => {
-    const sectionPosition = useContext(PositionContext);
+    const { sectionPosition } = useContext(PositionContext);
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
     const [tabIndex, setTabIndex] = useState(-1);

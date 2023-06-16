@@ -79,10 +79,10 @@ theme = createTheme(theme, {
     },
     maxWidth: {
         nav: "1200px",
-        main: "1200px",
         section: "800px",
+        aboutSection: "1350px",
         aboutSpeech: "800px",
-        // homeProjectCard: "800px",
+        aboutImg: "150px",
         techIcon: "24px",
         carousel: "1200px",
         form: "700px",

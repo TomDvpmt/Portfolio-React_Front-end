@@ -1,13 +1,34 @@
+import { useContext } from "react";
+import PositionContext from "../contexts/PositionContext";
+
 import AllTechs from "../components/AllTechs";
 
 import ALL_TECHS from "../assets/data/techs";
 import profilePicture from "../assets/img/profile/profile-picture_square.jpg";
+import CV from "../assets/files/2023_CV_Thomas_Boussion.pdf";
 
 import theme from "../styles/theme";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button, useMediaQuery } from "@mui/material";
+import { PictureAsPdf } from "@mui/icons-material";
 
 const About = () => {
     const typesArray = ["languages", "back-end", "front-end", "autres"];
+
+    const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+
+    const { setSectionPosition } = useContext(PositionContext);
+
+    const handleContactMe = () => {
+        if (isLargeScreen) {
+            setSectionPosition(2);
+        } else {
+            const destination = document.getElementById("contact");
+            destination.scrollIntoView({
+                behavior: "smooth",
+                inline: "nearest",
+            });
+        }
+    };
 
     return (
         <>
@@ -20,15 +41,14 @@ const About = () => {
                         xs: "5rem !important",
                         lg: "0 !important",
                     },
-                    maxWidth: theme.maxWidth.about,
                 }}>
                 <Box
                     sx={{
-                        mb: {
-                            xs: "4rem",
-                            md: "6rem",
-                            xl: "8rem",
-                        },
+                        // mb: {
+                        //     xs: "4rem",
+                        //     md: "6rem",
+                        //     xl: "8rem",
+                        // },
                         display: "flex",
                         flexDirection: {
                             xs: "column",
@@ -44,7 +64,7 @@ const About = () => {
                     <Box
                         sx={{
                             "& img": {
-                                maxWidth: "150px",
+                                maxWidth: theme.maxWidth.aboutImg,
                                 borderRadius: "50%",
                             },
                         }}>
@@ -112,9 +132,18 @@ const About = () => {
                             <Typography
                                 textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
-                                Après l'apprentissage du développement web en
-                                autodidacte, ma formation chez OpenClassrooms
-                                m'a permis de consolider les acquis et de me
+                                Après de multiples expériences professionnelles
+                                (édition, restauration, entrepreneuriat), je me
+                                suis <strong>reconverti</strong> dans le
+                                développement web.
+                            </Typography>
+                            <Typography
+                                textAlign={{ xs: "left", lg: "justify" }}
+                                color={theme.palette.text.content}>
+                                {" "}
+                                J'ai complété mon apprentissage en autodidacte
+                                par une <strong>formation</strong> chez
+                                OpenClassrooms en 2023, qui m'a permis de me
                                 spécialiser sur la stack{" "}
                                 <Typography
                                     component="span"
@@ -125,13 +154,53 @@ const About = () => {
                                 .
                             </Typography>
                             <Typography
-                                textAlign="justify"
+                                textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
-                                Je cherche un poste de développeur front-end
-                                mais souhaite également, à terme, développer mes
-                                compétences en back-end.
+                                <strong>Ce qui me motive :</strong> construire
+                                des applications robustes et efficaces !
                             </Typography>
                         </Box>
+                    </Box>
+                </Box>
+                <Box
+                    mt="2rem"
+                    mb={{
+                        xs: "4rem",
+                        md: "6rem",
+                        xl: "8rem",
+                    }}
+                    display="flex"
+                    flexDirection={{ xs: "column", md: "row" }}
+                    alignItems="center"
+                    justifyContent="center"
+                    gap={{
+                        xs: "2rem",
+                        lg: "3rem",
+                    }}>
+                    <Box
+                        width={theme.maxWidth.aboutImg}
+                        display={{ xs: "none", sm: "block" }}></Box>
+                    <Box
+                        flexGrow="1"
+                        maxWidth={theme.maxWidth.aboutSpeech}
+                        display="flex"
+                        flexDirection={{ xs: "column", sm: "row" }}
+                        justifyContent={{ xs: "center", md: "flex-end" }}
+                        gap={{ xs: ".5rem", md: "2rem" }}>
+                        <Button
+                            startIcon={<PictureAsPdf />}
+                            sx={{ color: theme.palette.text.title }}
+                            href={CV}
+                            target="_blank">
+                            Voir mon CV
+                        </Button>
+                        <Button
+                            color="secondary"
+                            variant="contained"
+                            onClick={handleContactMe}
+                            sx={{ maxWidth: "max-content" }}>
+                            Me contacter
+                        </Button>
                     </Box>
                 </Box>
                 <AllTechs
