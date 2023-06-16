@@ -152,7 +152,8 @@ const About = () => {
                                 textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
                                 <strong>Ce qui me motive :</strong> construire
-                                des applications robustes et efficaces !
+                                en équipe des applications robustes et efficaces
+                                !
                             </Typography>
                         </Box>
                     </Box>
