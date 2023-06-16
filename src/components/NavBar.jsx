@@ -70,6 +70,7 @@ const NavBar = ({ setSectionPosition }) => {
             position="sticky"
             sx={{ bgcolor: theme.palette.primary.main, alignItems: "center" }}>
             <Toolbar
+                component="nav"
                 sx={{
                     width: "100%",
                     maxWidth: theme.maxWidth.nav,

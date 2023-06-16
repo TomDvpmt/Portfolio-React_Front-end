@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
+import bgImg from "../assets/img/techs/logo-react.svg";
+
 import PositionContext from "../contexts/PositionContext";
 
 import NavBar from "./NavBar";
@@ -12,12 +14,28 @@ const PageWrapper = () => {
 
     return (
         <Box
-            sx={{
-                minHeight: "100vh",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-            }}>
+            minHeight="100vh"
+            display="flex"
+            flexDirection="column"
+            alignItems="center">
+            <Box
+                sx={{
+                    opacity: "0.03",
+                    position: "fixed",
+                    top: "0",
+                    right: "0",
+                    bottom: "0",
+                    left: "0",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    "& img": {
+                        maxHeight: "100%",
+                        maxWidth: "100%",
+                    },
+                }}>
+                <img src={bgImg} alt="Code background" />
+            </Box>
             <NavBar setSectionPosition={setSectionPosition} />
 
             <Box

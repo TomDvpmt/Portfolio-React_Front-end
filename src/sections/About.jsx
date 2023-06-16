@@ -1,7 +1,7 @@
 import AllTechs from "../components/AllTechs";
 
 import ALL_TECHS from "../assets/data/techs";
-import profilePicture from "../assets/img/profile-picture_square.jpg";
+import profilePicture from "../assets/img/profile/profile-picture_square.jpg";
 
 import theme from "../styles/theme";
 import { Box, Typography } from "@mui/material";
@@ -76,7 +76,7 @@ const About = () => {
                                 },
                             }}>
                             <Typography component="span">
-                                Thomas Boussion
+                                Thomas Boussion{" "}
                             </Typography>
                             <Typography
                                 className="job"

@@ -29,7 +29,7 @@ const ProjectsListTitle = ({ label }) => {
                 />
             )}
             <Typography
-                component="h3"
+                component={isLargeScreen ? "h2" : "h3"}
                 variant="h3"
                 textTransform="uppercase"
                 align="center"

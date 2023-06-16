@@ -83,7 +83,7 @@ const ProjectsListCard = ({
                             gap: ".5rem",
                         }}>
                         <Typography
-                            component="h4"
+                            component={isLargeScreen ? "h3" : "h4"}
                             align="center"
                             textTransform="uppercase"
                             fontSize={{
