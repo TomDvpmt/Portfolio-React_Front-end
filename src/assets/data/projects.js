@@ -26,7 +26,7 @@ const projects = [
         features: [
             "base de données (MongoDB Atlas + Mongoose)",
             "authentification (JWT)",
-            "routeur (React Router)",
+            "routeurs en back-end (Express) et front-end (React Router)",
             "state manager (Redux)",
             "module de recherche de trajet",
             "système de réservations",
@@ -63,11 +63,13 @@ const projects = [
         features: [
             "base de données pour les fonctionnalités utilisateur (MongoDB Atlas + Mongoose)",
             "authentification (JWT)",
-            "routeur (React Router)",
+            "sécurité : token dans un cookie httpOnly", 
+            "routeurs en back-end (Express) et front-end (React Router)",
             "state manager (Redux)",
             "donnés cinéma issues d'une API externe (The Movie Database)",
             "module de recherche par titre",
             "filtrage par date et genre",
+            "profil d'utilisateur avec photo",
             "tableau de bord avec films favoris, films vus et films à voir",
             "fiches individuelles avec filmographie complète pour les réalisateurs, scénaristes et acteurs",
         ],
@@ -83,8 +85,8 @@ const projects = [
             "Material UI",
         ],
         projectType: "applications complètes",
-        gitHubLink: "https://github.com/TomDvpmt/80s-90s-Flicks-frontend",
-        url: "https://flicks80s90s.onrender.com/",
+        gitHubLink: "https://github.com/TomDvpmt/80s-90s-Flixx-frontend",
+        url: "https://flixx80s90s.netlify.app/",
     },
     {
         id: 3,
@@ -98,7 +100,7 @@ const projects = [
         features: [
             "base de données (MySQL, sans ORM/ODM)",
             "authentification (JWT)",
-            "routeur (React Router)",
+            "routeurs en back-end (Express) et front-end (React Router)",
             "state manager (Redux)",
             "forum avec posts et commentaires",
             "possibilité de poster des images (Multer)",
