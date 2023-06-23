@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, forwardRef } from "react";
 import PositionContext from "../contexts/PositionContext";
 
 import AllTechs from "../components/AllTechs";
@@ -12,7 +12,7 @@ import theme from "../styles/theme";
 import { Box, Typography, Button, useMediaQuery } from "@mui/material";
 import { PictureAsPdf } from "@mui/icons-material";
 
-const About = () => {
+const About = forwardRef((props, ref) => {
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
     const { sectionPosition, setSectionPosition } = useContext(PositionContext);
 
@@ -40,6 +40,7 @@ const About = () => {
         <>
             <Box
                 id="about"
+                ref={ref}
                 component="section"
                 sx={{
                     m: "0 auto",
@@ -228,6 +229,6 @@ const About = () => {
             </Box>
         </>
     );
-};
+});
 
 export default About;

@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, forwardRef } from "react";
 import PositionContext from "../contexts/PositionContext";
 
 import { API_BASE_URI } from "../config/API";
@@ -13,7 +13,7 @@ import { Box, useMediaQuery } from "@mui/material";
 
 import theme from "../styles/theme";
 
-const Contact = () => {
+const Contact = forwardRef((props, ref) => {
     const { sectionPosition } = useContext(PositionContext);
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
@@ -32,7 +32,11 @@ const Contact = () => {
 
     return (
         <>
-            <Box id="contact" component="section" mb={{ xs: "4rem", lg: "0" }}>
+            <Box
+                ref={ref}
+                id="contact"
+                component="section"
+                mb={{ xs: "4rem", lg: "0" }}>
                 {!isLargeScreen && <SectionHeading slug="contact" />}
                 <Box
                     mt={{ xs: "4rem", lg: "0" }}
@@ -57,6 +61,6 @@ const Contact = () => {
             </Box>
         </>
     );
-};
+});
 
 export default Contact;

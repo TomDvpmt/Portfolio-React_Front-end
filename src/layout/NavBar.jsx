@@ -1,7 +1,9 @@
-import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { forwardRef, useContext, useEffect, useRef } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { addActiveClass, createObserver } from "../utils/navLinks";
+
+import PositionContext from "../contexts/PositionContext";
 
 import theme from "../styles/theme";
 import {
@@ -12,29 +14,30 @@ import {
     useMediaQuery,
 } from "@mui/material";
 
-import PropTypes from "prop-types";
+const NavBar = forwardRef((props, ref) => {
+    const { setSectionPosition } = useContext(PositionContext);
 
-const NavBar = ({ setSectionPosition }) => {
-    NavBar.propTypes = {
-        setSectionPosition: PropTypes.func.isRequired,
-    };
+    const location = useLocation();
 
     const isSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
+    const aboutLink = useRef();
+    const projectsLink = useRef();
+    const contactLink = useRef();
+
+    const { aboutSection, projectsSection, contactSection } = ref;
+
     useEffect(() => {
-        const aboutSection = document.getElementById("about");
-        const aboutLink = document.getElementById("about-link");
-        createObserver(aboutSection, aboutLink);
+        if (location.pathname === "/")
+            createObserver(aboutSection.current, aboutLink.current);
 
-        const projectsSection = document.getElementById("projects");
-        const projectsLink = document.getElementById("projects-link");
-        createObserver(projectsSection, projectsLink);
+        if (location.pathname === "/")
+            createObserver(projectsSection.current, projectsLink.current);
 
-        const contactSection = document.getElementById("contact");
-        const contactLink = document.getElementById("contact-link");
-        createObserver(contactSection, contactLink);
-    }, []);
+        if (location.pathname === "/")
+            createObserver(contactSection.current, contactLink.current);
+    }, [location.pathname, aboutSection, projectsSection, contactSection]);
 
     const handleClick = (e) => {
         const links = e.currentTarget.children;
@@ -43,14 +46,14 @@ const NavBar = ({ setSectionPosition }) => {
         addActiveClass(link, links);
 
         if (isLargeScreen) {
-            switch (e.target.id) {
-                case "about-link":
+            switch (e.target) {
+                case aboutLink.current:
                     setSectionPosition(0);
                     break;
-                case "projects-link":
+                case projectsLink.current:
                     setSectionPosition(1);
                     break;
-                case "contact-link":
+                case contactLink.current:
                     setSectionPosition(2);
                     break;
                 default:
@@ -121,16 +124,22 @@ const NavBar = ({ setSectionPosition }) => {
                         },
                     }}
                     onClick={handleClick}>
-                    <Link component={NavLink} id="about-link" underline="none">
+                    <Link
+                        ref={aboutLink}
+                        component={NavLink}
+                        id="about-link"
+                        underline="none">
                         À propos
                     </Link>
                     <Link
+                        ref={projectsLink}
                         component={NavLink}
                         id="projects-link"
                         underline="none">
                         Projets
                     </Link>
                     <Link
+                        ref={contactLink}
                         component={NavLink}
                         id="contact-link"
                         underline="none">
@@ -140,6 +149,6 @@ const NavBar = ({ setSectionPosition }) => {
             </Toolbar>
         </AppBar>
     );
-};
+});
 
 export default NavBar;

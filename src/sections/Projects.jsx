@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import ProjectsContext from "../contexts/ProjectsContext";
 import projects from "../assets/data/projects";
 
@@ -7,11 +8,11 @@ import ProjectsModals from "../components/ProjectsModals";
 import theme from "../styles/theme";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 
-const Projects = () => {
+const Projects = forwardRef((props, ref) => {
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
     return (
-        <Box id="projects" component="section">
+        <Box ref={ref} id="projects" component="section">
             {!isLargeScreen && <SectionHeading slug="projects" />}
             <Typography
                 m={{ xs: "4rem 0", lg: "0 0 4rem" }}
@@ -33,6 +34,6 @@ const Projects = () => {
             </Box>
         </Box>
     );
-};
+});
 
 export default Projects;
