@@ -1,6 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 import PositionContext from "../contexts/PositionContext";
 
+import { API_BASE_URI } from "../config/API";
+
 import SectionHeading from "../components/SectionHeading";
 import SocialLinks from "../components/SocialLinks";
 import LocationSpeech from "../components/LocationSpeech";
@@ -15,11 +17,18 @@ const Contact = () => {
     const { sectionPosition } = useContext(PositionContext);
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
-    const [tabIndex, setTabIndex] = useState(-1);
+    const [tabIndex, setTabIndex] = useState(0);
 
     useEffect(() => {
-        setTabIndex(sectionPosition === 2 ? 0 : -1);
-    }, [sectionPosition]);
+        fetch(`${API_BASE_URI}/API/config/initialize`)
+            .then((response) => response.json())
+            .then((data) => console.log(data.message))
+            .catch((error) => console.error(error));
+    }, []);
+
+    useEffect(() => {
+        isLargeScreen && setTabIndex(sectionPosition === 2 ? 0 : -1);
+    }, [isLargeScreen, sectionPosition]);
 
     return (
         <>

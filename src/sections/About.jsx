@@ -1,7 +1,8 @@
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import PositionContext from "../contexts/PositionContext";
 
 import AllTechs from "../components/AllTechs";
+import SocialLinks from "../components/SocialLinks";
 
 import ALL_TECHS from "../assets/data/techs";
 import profilePicture from "../assets/img/profile/profile-picture_square.jpg";
@@ -12,11 +13,16 @@ import { Box, Typography, Button, useMediaQuery } from "@mui/material";
 import { PictureAsPdf } from "@mui/icons-material";
 
 const About = () => {
-    const typesArray = ["languages", "back-end", "front-end", "autres"];
-
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+    const { sectionPosition, setSectionPosition } = useContext(PositionContext);
 
-    const { setSectionPosition } = useContext(PositionContext);
+    const [tabIndex, setTabIndex] = useState(0);
+
+    useEffect(() => {
+        isLargeScreen && setTabIndex(sectionPosition === 0 ? 0 : -1);
+    }, [isLargeScreen, sectionPosition]);
+
+    const typesArray = ["langages", "back-end", "front-end", "autres"];
 
     const handleContactMe = () => {
         if (isLargeScreen) {
@@ -167,37 +173,51 @@ const About = () => {
                         xl: "8rem",
                     }}
                     display="flex"
-                    flexDirection={{ xs: "column", md: "row" }}
+                    flexDirection={{ xs: "column", sm: "row" }}
                     alignItems="center"
                     justifyContent="center"
                     gap={{
                         xs: "2rem",
                         lg: "3rem",
                     }}>
-                    <Box
+                    {/* <Box
                         width={theme.maxWidth.aboutImg}
-                        display={{ xs: "none", sm: "block" }}></Box>
+                        display={{ xs: "none", sm: "block" }}></Box> */}
                     <Box
                         flexGrow="1"
-                        maxWidth={theme.maxWidth.aboutSpeech}
+                        maxWidth="600px"
                         display="flex"
                         flexDirection={{ xs: "column", sm: "row" }}
-                        justifyContent={{ xs: "center", md: "flex-end" }}
-                        gap={{ xs: ".5rem", md: "2rem" }}>
-                        <Button
-                            startIcon={<PictureAsPdf />}
-                            sx={{ color: theme.palette.text.title }}
-                            href={CV}
-                            target="_blank">
-                            Voir mon CV
-                        </Button>
-                        <Button
-                            color="secondary"
-                            variant="contained"
-                            onClick={handleContactMe}
-                            sx={{ maxWidth: "max-content" }}>
-                            Me contacter
-                        </Button>
+                        justifyContent={{
+                            xs: "center",
+                            sm: "center",
+                            md: "space-evenly",
+                        }}
+                        gap={{ xs: "1.5rem", sm: "3rem" }}>
+                        <SocialLinks tabIndex={tabIndex} />
+                        <Box
+                            maxWidth={theme.maxWidth.aboutSpeech}
+                            display="flex"
+                            flexDirection="column"
+                            justifyContent={{ xs: "center", sm: "flex-end" }}
+                            gap=".5rem">
+                            <Button
+                                tabIndex={tabIndex}
+                                startIcon={<PictureAsPdf />}
+                                sx={{ color: theme.palette.text.title }}
+                                href={CV}
+                                target="_blank">
+                                Voir mon CV
+                            </Button>
+                            <Button
+                                tabIndex={tabIndex}
+                                color="secondary"
+                                variant="contained"
+                                onClick={handleContactMe}
+                                sx={{ maxWidth: "max-content" }}>
+                                Me contacter
+                            </Button>
+                        </Box>
                     </Box>
                 </Box>
                 <AllTechs

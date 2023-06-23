@@ -1,6 +1,3 @@
-// See https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-// and https://css-tricks.com/scroll-triggered-animation-vanilla-javascript/
-
 export function addActiveClass(link, links) {
     if (!link.classList.contains("active-anchor")) {
         Array.from(links).forEach((link) =>
@@ -9,6 +6,9 @@ export function addActiveClass(link, links) {
         link.classList.add("active-anchor");
     }
 }
+
+// See https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+// and https://css-tricks.com/scroll-triggered-animation-vanilla-javascript/
 
 export function createObserver(target, navLink) {
     let observer = new IntersectionObserver(

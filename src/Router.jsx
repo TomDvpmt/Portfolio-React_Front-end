@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import PageWrapper from "./components/PageWrapper";
+import PageWrapper from "./layout/PageWrapper";
 import Home from "./pages/Home";
 import Error404 from "./pages/Error404";
 

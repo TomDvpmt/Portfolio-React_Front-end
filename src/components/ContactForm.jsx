@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import ContactFormRequiredLabel from "./ContactFormRequiredLabel";
 
-import BASE_API_URI from "../utils/API";
+import { API_BASE_URI } from "../config/API";
 
 import theme from "../styles/theme";
 import { Box, Typography, TextField, Button } from "@mui/material";
@@ -40,7 +40,7 @@ const ContactForm = ({ tabIndex }) => {
             content,
         };
 
-        fetch(`${BASE_API_URI}/API/mail/send`, {
+        fetch(`${API_BASE_URI}/API/mail/send`, {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -59,7 +59,7 @@ const ContactForm = ({ tabIndex }) => {
                 setPhone("");
                 setContent("");
                 setValidationMessage(
-                    "Votre message a bien été envoyé. J'y répondrai dès que possible !"
+                    "Votre message a bien été envoyé. J'y répondrai dans les plus brefs délais !"
                 );
             })
             .catch((error) => {

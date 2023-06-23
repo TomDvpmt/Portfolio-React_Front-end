@@ -19,17 +19,17 @@ import theme from "../../styles/theme";
 const ALL_TECHS = [
     {
         label: "HTML",
-        type: "languages",
+        type: "langages",
         imgElement: <HTMLLogo title="HTML" />,
     },
     {
         label: "CSS",
-        type: "languages",
+        type: "langages",
         imgElement: <CSSLogo title="CSS" />,
     },
     {
         label: "JavaScript",
-        type: "languages",
+        type: "langages",
         imgElement: <JavaScriptLogo title="JavaScript" />,
     },
     {
