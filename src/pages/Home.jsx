@@ -24,15 +24,12 @@ const Home = () => {
         location.hash && navigate(location.hash);
     }, [location.hash, navigate]);
 
-    useEffect(() => {
-        console.log(sectionPosition);
-    }, [sectionPosition]);
-
     return (
         <PositionContext.Provider
             value={{ sectionPosition, setSectionPosition }}>
             <NavBar ref={{ aboutSection, projectsSection, contactSection }} />
             <Box
+                component="main"
                 sx={{
                     flexGrow: "1",
                     display: "grid",

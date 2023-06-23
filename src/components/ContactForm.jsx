@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect, useRef, forwardRef, useContext } from "react";
 
-import ContactFormRequiredLabel from "./ContactFormRequiredLabel";
+import PositionContext from "../contexts/PositionContext";
 
 import { API_BASE_URI } from "../config/API";
 
+import ContactFormRequiredLabel from "./ContactFormRequiredLabel";
+
 import theme from "../styles/theme";
-import { Box, Typography, TextField, Button } from "@mui/material";
+import {
+    Box,
+    Typography,
+    TextField,
+    Button,
+    useMediaQuery,
+} from "@mui/material";
 
 import PropTypes from "prop-types";
 
-const ContactForm = ({ tabIndex }) => {
+const ContactForm = forwardRef(({ tabIndex }, ref) => {
     ContactForm.propTypes = {
         tabIndex: PropTypes.number.isRequired,
     };
@@ -21,6 +29,12 @@ const ContactForm = ({ tabIndex }) => {
     const [content, setContent] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [validationMessage, setValidationMessage] = useState("");
+
+    const { sectionPosition } = useContext(PositionContext);
+    const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+
+    const validationMessageRef = useRef();
+    const errorMessageRef = useRef();
 
     const resetMessages = () => {
         setValidationMessage("");
@@ -53,11 +67,6 @@ const ContactForm = ({ tabIndex }) => {
                         `Impossible d'envoyer le message. Veuillez réessayer ultérieurement ou me contacter à l'adresse suivante : thomas.boussion.dev@gmail.com`
                     );
                 }
-                setName("");
-                setCompany("");
-                setEmail("");
-                setPhone("");
-                setContent("");
                 setValidationMessage(
                     "Votre message a bien été envoyé. J'y répondrai dans les plus brefs délais !"
                 );
@@ -65,8 +74,37 @@ const ContactForm = ({ tabIndex }) => {
             .catch((error) => {
                 setErrorMessage(error.message);
                 console.log(error);
+            })
+            .finally(() => {
+                setName("");
+                setCompany("");
+                setEmail("");
+                setPhone("");
+                setContent("");
             });
     };
+
+    const scrollToMessage = (ref) => {
+        ref.current.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+        });
+    };
+
+    useEffect(() => {
+        if (validationMessage) {
+            scrollToMessage(validationMessageRef);
+        }
+        if (errorMessage) {
+            scrollToMessage(errorMessageRef);
+        }
+    }, [validationMessage, errorMessage]);
+
+    useEffect(() => {
+        if (isLargeScreen && sectionPosition !== 2) {
+            resetMessages();
+        }
+    }, [isLargeScreen, sectionPosition]);
 
     const inputLabelStyle = {
         color: theme.palette.text.title,
@@ -86,12 +124,16 @@ const ContactForm = ({ tabIndex }) => {
             }}
             onSubmit={handleSubmit}>
             {validationMessage && (
-                <Typography color={theme.palette.success.main}>
+                <Typography
+                    ref={validationMessageRef}
+                    color={theme.palette.success.main}>
                     {validationMessage}
                 </Typography>
             )}
             {errorMessage && (
-                <Typography color={theme.palette.warning.main}>
+                <Typography
+                    ref={errorMessageRef}
+                    color={theme.palette.warning.main}>
                     {errorMessage}
                 </Typography>
             )}
@@ -204,6 +246,6 @@ const ContactForm = ({ tabIndex }) => {
             </Button>
         </Box>
     );
-};
+});
 
 export default ContactForm;

@@ -41,6 +41,8 @@ const ErrorBoundary = ({ page }) => {
             }}>
             <Typography
                 component="h1"
+                variant="h1"
+                className="error-message"
                 color={theme.palette.text.title}
                 fontSize="5rem">
                 {errorMessage}

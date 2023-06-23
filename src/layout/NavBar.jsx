@@ -5,6 +5,8 @@ import { addActiveClass, createObserver } from "../utils/navLinks";
 
 import PositionContext from "../contexts/PositionContext";
 
+import Branding from "../components/Branding";
+
 import theme from "../styles/theme";
 import {
     AppBar,
@@ -82,28 +84,7 @@ const NavBar = forwardRef((props, ref) => {
                     maxWidth: theme.maxWidth.nav,
                     justifyContent: isSmallScreen ? "space-between" : "center",
                 }}>
-                {isSmallScreen && (
-                    <Link href="/" underline="none">
-                        <Typography
-                            sx={{
-                                color: theme.palette.text.title,
-                                fontSize: "1rem",
-                                textAlign: "center",
-                            }}>
-                            <Typography
-                                component="span"
-                                textTransform="uppercase">
-                                Portfolio
-                            </Typography>
-                            <Typography component="span" color="secondary">
-                                {" | "}
-                            </Typography>
-                            <Typography component="span">
-                                Thomas Boussion
-                            </Typography>
-                        </Typography>
-                    </Link>
-                )}
+                {isSmallScreen && <Branding />}
                 <Typography
                     id="nav-links"
                     sx={{

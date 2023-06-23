@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, forwardRef } from "react";
+import { useState, useEffect, useContext, useRef, forwardRef } from "react";
 import PositionContext from "../contexts/PositionContext";
 
 import { API_BASE_URI } from "../config/API";
@@ -18,6 +18,8 @@ const Contact = forwardRef((props, ref) => {
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
     const [tabIndex, setTabIndex] = useState(0);
+
+    const messageSentRef = useRef();
 
     useEffect(() => {
         fetch(`${API_BASE_URI}/API/config/initialize`)
@@ -54,9 +56,12 @@ const Contact = forwardRef((props, ref) => {
                             gap: "5rem",
                         }}>
                         <SocialLinks tabIndex={tabIndex} />
-                        <LocationSpeech />
+                        <LocationSpeech ref={messageSentRef} />
                     </Box>
-                    <ContactForm tabIndex={isLargeScreen ? tabIndex : 0} />
+                    <ContactForm
+                        ref={messageSentRef}
+                        tabIndex={isLargeScreen ? tabIndex : 0}
+                    />
                 </Box>
             </Box>
         </>

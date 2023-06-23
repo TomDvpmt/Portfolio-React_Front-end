@@ -31,13 +31,12 @@ const PageWrapper = () => {
             </Box>
 
             <Box
-                component="main"
                 sx={{
                     flexGrow: "1",
                     maxHeight: {
                         lg: "100vh",
                     },
-                    overflow: { lg: "hidden" },
+                    overflowX: { lg: "hidden" },
                     display: "flex",
                     flexDirection: "column",
                 }}>

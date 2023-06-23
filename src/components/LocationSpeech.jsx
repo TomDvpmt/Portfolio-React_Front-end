@@ -2,11 +2,13 @@ import TitleLine from "./TitleLine";
 
 import theme from "../styles/theme";
 import { Box, Typography, useMediaQuery } from "@mui/material";
+import { forwardRef } from "react";
 
-const LocationSpeech = () => {
+const LocationSpeech = forwardRef((props, ref) => {
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
     return (
         <Box
+            ref={ref}
             sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -32,6 +34,6 @@ const LocationSpeech = () => {
             </Typography>
         </Box>
     );
-};
+});
 
 export default LocationSpeech;
