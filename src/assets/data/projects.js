@@ -32,6 +32,7 @@ const projects = [
             "donnés cinéma issues d'une API externe (The Movie Database)",
             "module de recherche par titre",
             "filtrage par date et genre",
+            "choix de la langue pour toute l'application (français / anglais)",
             "profil d'utilisateur avec photo",
             "tableau de bord avec films favoris, films vus et films à voir",
             "fiches individuelles avec filmographie complète pour les réalisateurs, scénaristes et acteurs",
