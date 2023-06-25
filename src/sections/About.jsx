@@ -170,8 +170,8 @@ const About = forwardRef((props, ref) => {
                     mt="2rem"
                     mb={{
                         xs: "4rem",
-                        md: "6rem",
-                        xl: "8rem",
+                        // md: "6rem",
+                        // xl: "8rem",
                     }}
                     display="flex"
                     flexDirection={{ xs: "column", sm: "row" }}
@@ -181,9 +181,6 @@ const About = forwardRef((props, ref) => {
                         xs: "2rem",
                         lg: "3rem",
                     }}>
-                    {/* <Box
-                        width={theme.maxWidth.aboutImg}
-                        display={{ xs: "none", sm: "block" }}></Box> */}
                     <Box
                         flexGrow="1"
                         maxWidth="600px"
