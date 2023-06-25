@@ -35,10 +35,9 @@ const ProjectsModals = () => {
                     gap: { xs: "4rem", md: "2rem", lg: "10rem" },
                 }}>
                 <ProjectsList
-                    projectType="applications complètes"
+                    projectType="fullstack"
                     projectsArray={projectsData.filter(
-                        (project) =>
-                            project.projectType === "applications complètes"
+                        (project) => project.projectType === "fullstack"
                     )}
                     setProjectToShow={setProjectToShow}
                     setShowDialog={setShowDialog}
