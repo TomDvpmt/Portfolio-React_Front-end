@@ -6,7 +6,7 @@ import SocialLinks from "../components/SocialLinks";
 
 import ALL_TECHS from "../assets/data/techs";
 import profilePicture from "../assets/img/profile/profile-picture_square.jpg";
-import CV from "../assets/files/2023_CV_Thomas_Boussion.pdf";
+import CV from "../assets/files/CV_Thomas_Boussion.pdf";
 
 import theme from "../styles/theme";
 import { Box, Typography, Button, useMediaQuery } from "@mui/material";
@@ -120,7 +120,7 @@ const About = forwardRef((props, ref) => {
                                 <Typography
                                     component="span"
                                     color={theme.palette.tertiary.main}>
-                                    React
+                                    web
                                 </Typography>
                             </Typography>
                         </Typography>
@@ -159,9 +159,16 @@ const About = forwardRef((props, ref) => {
                             <Typography
                                 textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
-                                <strong>Ce qui me motive :</strong> construire
-                                en équipe des applications robustes et efficaces
-                                !
+                                Actuellement, je développe mes compétences
+                                en&nbsp;
+                                <Typography
+                                    component="span"
+                                    fontWeight="700"
+                                    color="secondary">
+                                    PHP
+                                </Typography>
+                                , souhaitant à terme maîtriser le framework
+                                Symfony.
                             </Typography>
                         </Box>
                     </Box>

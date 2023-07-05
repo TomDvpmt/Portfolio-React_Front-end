@@ -11,6 +11,7 @@ import { ReactComponent as JWTLogo } from "../img/techs/logo-jwt.svg";
 import { ReactComponent as ReduxLogo } from "../img/techs/logo-redux.svg";
 import { ReactComponent as MaterialUILogo } from "../img/techs/logo-materialUI.svg";
 import { ReactComponent as SocketIoLogo } from "../img/techs/logo-socket-io.svg";
+import phpLogo from "../img/techs/logo-php.png";
 import nodemailerLogo from "../img/techs/logo-nodemailer_200x136.png";
 import expressLogo from "../img/techs/logo-expressjs.png";
 
@@ -31,6 +32,18 @@ const ALL_TECHS = [
         label: "JavaScript",
         type: "langages",
         imgElement: <JavaScriptLogo title="JavaScript" />,
+    },
+    {
+        label: "PHP",
+        type: "langages",
+        imgElement: (
+            <img
+                src={phpLogo}
+                alt="PHP"
+                title="PHP"
+                width={theme.maxWidth.techIcon}
+            />
+        ),
     },
     {
         label: "Git / GitHub",
@@ -61,7 +74,6 @@ const ALL_TECHS = [
                 alt="Express"
                 title="Express"
                 width={theme.maxWidth.techIcon}
-                height={theme.maxWidth.techIcon}
             />
         ),
     },
@@ -79,7 +91,6 @@ const ALL_TECHS = [
                 alt="Nodemailer"
                 title="Nodemailer"
                 width={theme.maxWidth.techIcon}
-                height={theme.maxWidth.techIcon}
             />
         ),
     },
