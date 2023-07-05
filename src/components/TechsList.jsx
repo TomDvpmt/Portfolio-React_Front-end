@@ -27,7 +27,7 @@ const TechsList = ({ techsArray, location }) => {
                             sm: ".8rem",
                         },
                         "& svg": {
-                            maxWidth: theme.maxWidth.techIcon,
+                            width: theme.maxWidth.techIcon,
                             maxHeight: theme.maxWidth.techIcon,
                         },
                     }}>

@@ -11,6 +11,8 @@ import { ReactComponent as JWTLogo } from "../img/techs/logo-jwt.svg";
 import { ReactComponent as ReduxLogo } from "../img/techs/logo-redux.svg";
 import { ReactComponent as MaterialUILogo } from "../img/techs/logo-materialUI.svg";
 import { ReactComponent as SocketIoLogo } from "../img/techs/logo-socket-io.svg";
+import { ReactComponent as LinuxLogo } from "../img/techs/logo-linux.svg";
+import { ReactComponent as WordPressLogo } from "../img/techs/logo-wordpress.svg";
 import phpLogo from "../img/techs/logo-php.png";
 import nodemailerLogo from "../img/techs/logo-nodemailer_200x136.png";
 import expressLogo from "../img/techs/logo-expressjs.png";
@@ -113,6 +115,16 @@ const ALL_TECHS = [
         label: "Material UI",
         type: "front-end",
         imgElement: <MaterialUILogo title="Material UI" />,
+    },
+    {
+        label: "Linux",
+        type: "autres",
+        imgElement: <LinuxLogo title="Linux" />,
+    },
+    {
+        label: "WordPress",
+        type: "autres",
+        imgElement: <WordPressLogo title="WordPress" />,
     },
     {
         label: "Socket.io",
