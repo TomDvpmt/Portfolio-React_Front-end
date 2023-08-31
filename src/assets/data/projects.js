@@ -29,7 +29,7 @@ const projects = [
             "sécurité : token dans un cookie httpOnly",
             "routeurs en back-end (Express) et front-end (React Router)",
             "state manager (Redux)",
-            "donnés cinéma issues d'une API externe (The Movie Database)",
+            "données cinéma issues d'une API externe (The Movie Database)",
             "module de recherche par titre",
             "filtrage par date et genre",
             "choix de la langue pour toute l'application (français / anglais)",
