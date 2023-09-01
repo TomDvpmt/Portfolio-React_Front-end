@@ -134,41 +134,36 @@ const About = forwardRef((props, ref) => {
                             <Typography
                                 textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
-                                Après de multiples expériences professionnelles
-                                (édition, restauration, entrepreneuriat dans la
-                                menuiserie), je me suis{" "}
-                                <strong>reconverti</strong> dans le
-                                développement web.
+                                Récemment reconverti dans le développement web,
+                                je développe des applications{" "}
+                                <Typography
+                                    component="span"
+                                    fontWeight="700"
+                                    color="secondary">
+                                    fullstack
+                                </Typography>{" "}
+                                simples et efficaces.
                             </Typography>
                             <Typography
                                 textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
                                 {" "}
-                                J'ai complété mon apprentissage en autodidacte
-                                par une <strong>formation</strong> chez
-                                OpenClassrooms en 2023, qui m'a permis de me
-                                spécialiser sur la stack{" "}
+                                Je suis formé sur la stack{" "}
                                 <Typography
                                     component="span"
                                     fontWeight="700"
                                     color="secondary">
                                     MERN
                                 </Typography>
-                                .
-                            </Typography>
-                            <Typography
-                                textAlign={{ xs: "left", lg: "justify" }}
-                                color={theme.palette.text.content}>
-                                Actuellement, je développe mes compétences
-                                en&nbsp;
+                                , et étudie actuellement{" "}
                                 <Typography
                                     component="span"
                                     fontWeight="700"
                                     color="secondary">
                                     PHP
-                                </Typography>
-                                , souhaitant à terme maîtriser le framework
-                                Symfony.
+                                </Typography>{" "}
+                                pour étendre mes compétences, avec pour objectif
+                                de maîtriser le framework Symfony.{" "}
                             </Typography>
                         </Box>
                     </Box>
