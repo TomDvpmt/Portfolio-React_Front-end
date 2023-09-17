@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 import ProjectCardContentHeading from "./ProjectCardContentHeading";
 import TechsList from "./TechsList";
 
-import { ALL_TECHS } from "../assets/data/techs";
+import { ALL_TECHS, TYPES_ARRAY } from "../assets/data/techs";
 
 import theme from "../styles/theme";
 import {
@@ -39,11 +39,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
     const [projectTechs, setProjectTechs] = useState([]);
     const [numberOfTechColumns, setNumberOfTechColumns] = useState(0);
 
-    const getTechTypes = useCallback(
-        () => ["langages", "back-end", "front-end", "autres"],
-        []
-    );
-
     useEffect(() => {
         setProjectTechs(
             ALL_TECHS?.filter((tech) => project.techs.includes(tech.label))
@@ -51,16 +46,12 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
     }, [project.techs]);
 
     useEffect(() => {
-        const techTypesArray = getTechTypes();
-
         setNumberOfTechColumns(
-            techTypesArray
-                .map((type) =>
-                    projectTechs.filter((tech) => tech.type === type)
-                )
-                .filter((column) => column.length > 0).length
+            TYPES_ARRAY.map((type) =>
+                projectTechs.filter((tech) => tech.type === type)
+            ).filter((column) => column.length > 0).length
         );
-    }, [projectTechs, getTechTypes]);
+    }, [projectTechs]);
 
     const cardActions = (
         <CardActions
@@ -174,10 +165,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                 component="img"
                                 image={project.imgUrl}
                                 alt={project.title}
-                                // sx={{
-                                //     minHeight: "100%",
-                                //     maxWidth: "38%",
-                                // }}
                             />
                         )}
                         {isLargeScreen && !isExtraLargeScreen && cardActions}
@@ -315,7 +302,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                         lg: "nowrap",
                                     },
                                 }}>
-                                {getTechTypes().map((type) => {
+                                {TYPES_ARRAY.map((type) => {
                                     const typeFilteredTechs =
                                         projectTechs.filter(
                                             (tech) => tech.type === type

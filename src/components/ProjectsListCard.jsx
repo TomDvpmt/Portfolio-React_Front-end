@@ -60,6 +60,7 @@ const ProjectsListCard = ({
                         minHeight: "150px",
                     }}>
                     <CardMedia
+                        data-testid="thumbnail"
                         component="img"
                         image={project.imgUrl}
                         alt={project.title}
@@ -91,7 +92,8 @@ const ProjectsListCard = ({
                                 md: "1.2rem",
                             }}
                             fontWeight="700"
-                            color={theme.palette.text.title}>
+                            color={theme.palette.text.title}
+                            data-testid="project-short-title">
                             {project.shortTitle}
                         </Typography>
                         <TechsList

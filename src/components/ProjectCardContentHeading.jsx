@@ -17,7 +17,8 @@ const ProjectCardContentHeading = ({ label, linePosition }) => {
             mb="1.5rem"
             display="flex"
             alignItems="center"
-            gap="1rem">
+            gap="1rem"
+            data-testid="content-heading">
             {(linePosition === "left" || linePosition === "both") && (
                 <TitleLine />
             )}

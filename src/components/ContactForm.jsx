@@ -125,6 +125,7 @@ const ContactForm = forwardRef(({ tabIndex }, ref) => {
             onSubmit={handleSubmit}>
             {validationMessage && (
                 <Typography
+                    data-testid="success-message"
                     ref={validationMessageRef}
                     color={theme.palette.success.main}>
                     {validationMessage}

@@ -1,0 +1,33 @@
+import ContactForm from "./ContactForm";
+import { fireEvent, render, screen } from "@testing-library/react";
+
+describe("ContactForm", () => {
+    it("should render without crashing", async () => {
+        render(<ContactForm />);
+    });
+    it("should display success message when sent with required inputs filled", async () => {
+        const { container } = render(<ContactForm tabIndex={0} />);
+        const submitButton = screen.getByText("Envoyer");
+        const name = container.querySelector("input[name='name']");
+        const email = container.querySelector("input[name='email']");
+        const content = container.querySelector("textarea[name='content']");
+
+        // TODO : mock useRef() hook
+
+        fireEvent.change(name, { target: { value: "something" } });
+        fireEvent.change(email, { target: { value: "something@gmail.com" } });
+        fireEvent.change(content, { target: { value: "something important" } });
+
+        fireEvent.click(submitButton);
+
+        const success = await screen.findByTestId(
+            "success-message",
+            {
+                name: "Votre message a bien été envoyé. J'y répondrai dans les plus brefs délais !",
+            },
+            { timeout: 3000 }
+        );
+        console.log(success);
+        expect(success).toBeTruthy();
+    });
+});

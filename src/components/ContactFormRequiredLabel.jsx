@@ -9,8 +9,14 @@ const ContactFormRequiredLabel = ({ label }) => {
 
     return (
         <>
-            {label}
-            <Typography component="span" color="secondary" fontFamily="Arial">
+            <Typography component="span" data-testid="label">
+                {label}
+            </Typography>
+            <Typography
+                component="span"
+                color="secondary"
+                fontFamily="Arial"
+                data-testid="asterisk">
                 {" "}
                 *
             </Typography>

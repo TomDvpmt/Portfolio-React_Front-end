@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 const TitleLine = () => {
     return (
         <Box
+            className="title-line"
             sx={{
                 height: "1px",
                 width: "30px",
