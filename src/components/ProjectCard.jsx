@@ -19,6 +19,8 @@ import {
     ListItemIcon,
     ListItemText,
     IconButton,
+    useMediaQuery,
+    Typography,
 } from "@mui/material";
 import { GitHub, ExitToApp, ChevronRight, Close } from "@mui/icons-material";
 
@@ -33,11 +35,13 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
 
     const transitionDuration = 1000;
 
+    const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+
     const [projectTechs, setProjectTechs] = useState([]);
     const [numberOfTechColumns, setNumberOfTechColumns] = useState(0);
 
     const getTechTypes = useCallback(
-        () => ["back-end", "front-end", "autres"],
+        () => ["langages", "back-end", "front-end", "autres"],
         []
     );
 
@@ -89,31 +93,46 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
             <Box
                 sx={{
                     p: { xs: "0 .3rem", lg: "0 1rem" },
-                    display: "flex",
-                    flexDirection: { xs: "column", lg: "row" },
-                    justifyContent: "space-evenly",
                 }}>
-                <CardMedia
-                    component="video"
-                    src={project.videoUrl}
-                    autoPlay
-                    loop
-                    controls
-                    alt={project.title}
-                    sx={{
-                        maxWidth: { lg: "50%" },
-                        mb: { xs: "2rem", lg: "0" },
-                    }}
-                />
                 <CardContent
                     sx={{
-                        display: "flex",
-                        gap: "3rem",
-                        flexDirection: "column",
                         color: theme.palette.text.content,
+                        display: "grid",
+                        gridTemplateColumns: {
+                            xs: "1fr",
+                            lg: "1fr 1fr",
+                            xl: "1fr 40%",
+                        },
+                        gridAutoFlow: "dense",
+                        justifyItems: "center",
+                        gap: "3rem",
                     }}>
-                    {project.tools && (
-                        <Box>
+                    <CardMedia
+                        component="video"
+                        src={project.videoUrl}
+                        autoPlay
+                        loop
+                        controls
+                        alt={project.title}
+                        sx={{
+                            gridColumn: "1",
+                            gridRow: {
+                                xs: "1",
+                                lg: project.tools.length > 0 ? "1 / 3" : "1",
+                            },
+                            alignSelf: "center",
+                            mb: { xs: "2rem", lg: "0" },
+                        }}
+                    />
+                    {project.tools.length > 0 && (
+                        <Box
+                            sx={{
+                                width: "100%",
+                                maxWidth: theme.maxWidth.toolsFeaturesTechsList,
+                                m: "0 auto",
+                                gridColumn: { xs: "1", lg: "2" },
+                                // gridRow: { xs: "2", lg: "1" },
+                            }}>
                             <ProjectCardContentHeading
                                 label="Outils de développement"
                                 linePosition="left"
@@ -153,7 +172,13 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             </List>
                         </Box>
                     )}
-                    <Box>
+                    <Box
+                        sx={{
+                            width: "100%",
+                            maxWidth: theme.maxWidth.toolsFeaturesTechsList,
+                            m: "0 auto",
+                            gridColumn: { xs: "1", lg: "2" },
+                        }}>
                         <ProjectCardContentHeading
                             label="Fonctionnalités"
                             linePosition="left"
@@ -191,7 +216,13 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             ))}
                         </List>
                     </Box>
-                    <Box sx={{ flexGrow: "1" }}>
+                    <Box
+                        sx={{
+                            width: "100%",
+                            maxWidth: theme.maxWidth.toolsFeaturesTechsList,
+                            m: "0 auto",
+                            gridColumn: { xs: "1", lg: "2" },
+                        }}>
                         <ProjectCardContentHeading
                             label="Techs"
                             linePosition="left"
@@ -246,6 +277,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                     <CardActions
                         disableSpacing
                         sx={{
+                            gridColumn: "1",
                             p: "0",
                             flexDirection: {
                                 xs: "column",

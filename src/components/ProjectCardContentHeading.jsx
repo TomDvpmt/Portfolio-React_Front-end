@@ -14,18 +14,22 @@ const ProjectCardContentHeading = ({ label, linePosition }) => {
     return (
         <Box
             width="100%"
-            mb="1rem"
+            mb="1.5rem"
             display="flex"
             alignItems="center"
             gap="1rem">
-            {linePosition === "left" && <TitleLine />}
+            {(linePosition === "left" || linePosition === "both") && (
+                <TitleLine />
+            )}
             <Typography
                 component="h4"
                 variant="h4"
                 color={theme.palette.text.title}>
                 {label}
             </Typography>
-            {linePosition === "right" && <TitleLine />}
+            {(linePosition === "right" || linePosition === "both") && (
+                <TitleLine />
+            )}
         </Box>
     );
 };

@@ -83,6 +83,7 @@ theme = createTheme(theme, {
         aboutSection: "1350px",
         aboutSpeech: "800px",
         aboutImg: "150px",
+        toolsFeaturesTechsList: "650px",
         techIcon: "24px",
         carousel: "1200px",
         form: "700px",
