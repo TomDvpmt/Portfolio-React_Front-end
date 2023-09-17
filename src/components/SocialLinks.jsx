@@ -24,14 +24,16 @@ const SocialLinks = ({ tabIndex }) => {
                 tabIndex={tabIndex}
                 sx={socialIconStyle}
                 href="https://fr.linkedin.com/in/thomas-boussion-b273a6150"
-                target="_blank">
+                target="_blank"
+                data-testid="linkedin">
                 <LinkedIn fontSize="large" />
             </IconButton>
             <IconButton
                 tabIndex={tabIndex}
                 sx={socialIconStyle}
                 href="https://github.com/TomDvpmt"
-                target="_blank">
+                target="_blank"
+                data-testid="github">
                 <GitHub fontSize="large" />
             </IconButton>
         </Box>

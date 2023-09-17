@@ -4,7 +4,7 @@ import PositionContext from "../contexts/PositionContext";
 import AllTechs from "../components/AllTechs";
 import SocialLinks from "../components/SocialLinks";
 
-import ALL_TECHS from "../assets/data/techs";
+import { ALL_TECHS, TYPES_ARRAY } from "../assets/data/techs";
 import profilePicture from "../assets/img/profile/profile-picture_square.jpg";
 import CV from "../assets/files/2023_CV_Thomas_Boussion.pdf";
 
@@ -22,7 +22,7 @@ const About = forwardRef((props, ref) => {
         isLargeScreen && setTabIndex(sectionPosition === 0 ? 0 : -1);
     }, [isLargeScreen, sectionPosition]);
 
-    const typesArray = ["langages", "back-end", "front-end", "autres"];
+    // const TYPES_ARRAY = ["langages", "back-end", "front-end", "autres"];
 
     const handleContactMe = () => {
         if (isLargeScreen) {
@@ -172,8 +172,6 @@ const About = forwardRef((props, ref) => {
                     mt="2rem"
                     mb={{
                         xs: "4rem",
-                        // md: "6rem",
-                        // xl: "8rem",
                     }}
                     display="flex"
                     flexDirection={{ xs: "column", sm: "row" }}
@@ -221,7 +219,7 @@ const About = forwardRef((props, ref) => {
                     </Box>
                 </Box>
                 <AllTechs
-                    typesArray={typesArray}
+                    typesArray={TYPES_ARRAY}
                     techsArray={ALL_TECHS}
                     hasTitle={true}
                 />

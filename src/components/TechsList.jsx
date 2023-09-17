@@ -11,6 +11,7 @@ const TechsList = ({ techsArray, location }) => {
 
     return (
         <Box
+            className="tech-type-column"
             sx={{
                 display: "flex",
                 flexDirection: "column",
@@ -19,6 +20,7 @@ const TechsList = ({ techsArray, location }) => {
             {techsArray.map((tech, index) => (
                 <Box
                     key={index}
+                    className="tech"
                     sx={{
                         display: "flex",
                         alignItems: "center",

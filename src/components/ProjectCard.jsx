@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import ProjectCardContentHeading from "./ProjectCardContentHeading";
 import TechsList from "./TechsList";
 
-import ALL_TECHS from "../assets/data/techs";
+import { ALL_TECHS } from "../assets/data/techs";
 
 import theme from "../styles/theme";
 import {
@@ -119,7 +119,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                     <IconButton
                         onClick={handleClose}
                         sx={{ color: theme.palette.text.title }}>
-                        <Close />
+                        <Close fontSize={isLargeScreen ? "large" : "initial"} />
                     </IconButton>
                 }
                 sx={{

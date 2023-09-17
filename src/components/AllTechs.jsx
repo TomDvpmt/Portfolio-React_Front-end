@@ -16,7 +16,6 @@ const AllTechs = ({ typesArray, techsArray, hasTitle }) => {
             sx={{
                 display: "flex",
                 justifyContent: {
-                    // xs: "space-evenly",
                     md: "center",
                 },
                 flexWrap: "wrap",

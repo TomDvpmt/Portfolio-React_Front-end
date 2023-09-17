@@ -1,6 +1,6 @@
 import TechsList from "./TechsList";
 
-import ALL_TECHS from "../assets/data/techs";
+import { ALL_TECHS } from "../assets/data/techs";
 
 import theme from "../styles/theme";
 import {

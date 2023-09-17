@@ -19,6 +19,8 @@ import expressLogo from "../img/techs/logo-expressjs.png";
 
 import theme from "../../styles/theme";
 
+const TYPES_ARRAY = ["langages", "back-end", "front-end", "autres"];
+
 const ALL_TECHS = [
     {
         label: "HTML",
@@ -133,4 +135,4 @@ const ALL_TECHS = [
     },
 ];
 
-export default ALL_TECHS;
+export { ALL_TECHS, TYPES_ARRAY };
