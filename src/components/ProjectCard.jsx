@@ -112,6 +112,47 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                         flexDirection: "column",
                         color: theme.palette.text.content,
                     }}>
+                    {project.tools && (
+                        <Box>
+                            <ProjectCardContentHeading
+                                label="Outils de développement"
+                                linePosition="left"
+                            />
+                            <List
+                                dense
+                                disablePadding
+                                sx={{ maxWidth: "500px", m: "0 auto" }}>
+                                {project.tools.map((feature, index) => (
+                                    <ListItem
+                                        key={index}
+                                        disablePadding
+                                        sx={{
+                                            mb: ".5rem",
+                                            alignItems: "start",
+                                            gap: ".5rem",
+                                        }}>
+                                        <ListItemIcon
+                                            sx={{
+                                                minWidth: "max-content",
+                                                color: theme.palette.text
+                                                    .content,
+                                            }}>
+                                            <ChevronRight fontSize="small" />
+                                        </ListItemIcon>
+                                        <ListItemText
+                                            sx={{
+                                                m: "0",
+                                                "& span": {
+                                                    fontSize: { md: "1rem" },
+                                                },
+                                            }}>
+                                            {feature}
+                                        </ListItemText>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </Box>
+                    )}
                     <Box>
                         <ProjectCardContentHeading
                             label="Fonctionnalités"

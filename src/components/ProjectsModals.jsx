@@ -6,15 +6,13 @@ import ProjectsList from "./ProjectsList";
 import ProjectCard from "./ProjectCard";
 
 import theme from "../styles/theme";
-import { Box, Dialog, useMediaQuery } from "@mui/material";
+import { Box, Dialog } from "@mui/material";
 
 const ProjectsModals = () => {
     const projectsData = useContext(ProjectsContext);
 
     const [showDialog, setShowDialog] = useState(false);
     const [projectToShow, setProjectToShow] = useState({});
-
-    const isMediumScreen = useMediaQuery(theme.breakpoints.up("md"));
 
     const handleClose = () => {
         setShowDialog(false);
@@ -54,13 +52,11 @@ const ProjectsModals = () => {
             <Dialog
                 open={showDialog}
                 onClose={handleClose}
-                fullScreen={isMediumScreen ? false : true}
-                fullWidth={isMediumScreen ? true : false}
+                fullScreen
                 maxWidth="xl"
                 sx={{
                     "& .MuiPaper-root": {
                         bgcolor: theme.palette.primary.main,
-                        boxShadow: `0 0 10px 1px ${theme.palette.secondary.main}`,
                     },
                     "& .MuiDialog-paperFullWidth": {
                         width: "100%",

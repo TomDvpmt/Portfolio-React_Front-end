@@ -4,6 +4,7 @@ import flixLogo from "../img/projects/flix-logo.png";
 import kasaImg from "../img/projects/kasa.webp";
 import groupomaniaImg from "../img/projects/groupomania.webp";
 import covoitImg from "../img/projects/covoit.webp";
+import portfolioImg from "../img/projects/portfolio.webp";
 import ohmyfoodImg from "../img/projects/ohmyfood.webp";
 import flixImg from "../img/projects/flix2.webp";
 
@@ -15,7 +16,6 @@ import flixVideo from "../vids/flix.webm";
 
 const projects = [
     {
-        id: 1,
         title: "Application de recherche de films (avec API externe)",
         shortTitle: "Recherche de films",
         logoUrl: flixLogo,
@@ -23,13 +23,15 @@ const projects = [
         videoUrl: flixVideo,
         description:
             "Création d'une application de recherche de films avec une API externe",
-        features: [
+        tools: [
             "base de données pour les fonctionnalités utilisateur (MongoDB Atlas + Mongoose)",
-            "authentification (JWT)",
-            "sécurité : token dans un cookie httpOnly",
+            "authentification (JWT) et compte utilisateur",
+            "sécurité : mot de passe chiffré en BDD + token dans un cookie httpOnly",
             "routeurs en back-end (Express) et front-end (React Router)",
             "state manager (Redux)",
-            "données cinéma issues d'une API externe (The Movie Database)",
+            "dialogue avec API externe pour les données cinéma (The Movie Database)",
+        ],
+        features: [
             "module de recherche par titre",
             "filtrage par date et genre",
             "choix de la langue pour toute l'application (français / anglais)",
@@ -53,7 +55,6 @@ const projects = [
         url: "https://flixx80s90s.netlify.app/",
     },
     {
-        id: 2,
         title: "Application de covoiturage avec module de réservation",
         shortTitle: "Covoiturage",
         logoUrl: "",
@@ -61,11 +62,14 @@ const projects = [
         videoUrl: covoitVideo,
         description:
             "Création d'une application de covoiturage avec module de réservation",
-        features: [
+        tools: [
             "base de données (MongoDB Atlas + Mongoose)",
-            "authentification (JWT)",
+            "authentification (JWT) et compte utilisateur",
+            "sécurité : mot de passe chiffré en BDD",
             "routeurs en back-end (Express) et front-end (React Router)",
             "state manager (Redux)",
+        ],
+        features: [
             "module de recherche de trajet",
             "système de réservations",
             "notifications par mail (Nodemailer)",
@@ -89,7 +93,6 @@ const projects = [
         url: "https://covoit.onrender.com/",
     },
     {
-        id: 3,
         title: "Réseau social avec forum et chat en temps réel",
         shortTitle: "Réseau social",
         logoUrl: groupomaniaLogo,
@@ -97,15 +100,19 @@ const projects = [
         videoUrl: groupomaniaVideo,
         description:
             "Création d'un réseau social avec forum et chat en temps réel",
-        features: [
+        tools: [
             "base de données (MySQL, sans ORM/ODM)",
-            "authentification (JWT)",
+            "authentification (JWT) et compte utilisateur",
+            "sécurité : mot de passe chiffré en BDD",
             "routeurs en back-end (Express) et front-end (React Router)",
             "state manager (Redux)",
+            "canal de communication bidirectionnelle serveur-client (Socket.io)",
+        ],
+        features: [
             "forum avec posts et commentaires",
-            "possibilité de poster des images (Multer)",
+            "possibilité de poster des images",
             "système de likes",
-            "chat en temps réel (Socket.io)",
+            "chat en temps réel",
         ],
         mainTechs: ["MySQL", "ReactJS", "Redux"],
         techs: [
@@ -124,7 +131,37 @@ const projects = [
         url: "",
     },
     {
-        id: 4,
+        title: "Portfolio",
+        shortTitle: "Portfolio",
+        logoUrl: "",
+        imgUrl: portfolioImg,
+        videoUrl: "",
+        description: "Création d'un portfolio d'applications",
+        tools: [
+            "typage des props avec prop-types",
+            "back-end minimal, uniquement pour le formulaire de contact (NodeMailer)",
+        ],
+        features: [
+            "navigation horizontale",
+            "mosaïque de projets",
+            "aperçu vidéo de chaque projet",
+            "fiche détaillée pour chaque projet, avec liste des outils de développement, fonctionnalités et technologies",
+            "liens GitHub et liens de test des applications",
+            "formulaire de contact",
+        ],
+        mainTechs: ["ReactJS"],
+        techs: [
+            // "JavaScript",
+            "Node.js",
+            "ReactJS",
+            "Material UI",
+            "Nodemailer",
+        ],
+        projectType: "front-end",
+        gitHubLink: "https://github.com/TomDvpmt/Portfolio-React_Front-end",
+        url: "https://thomas-boussion.fr/",
+    },
+    {
         title: "Intégration avec React de la maquette Figma d'une application immobilière",
         shortTitle: "Location immobilière",
         logoUrl: "",
@@ -132,13 +169,8 @@ const projects = [
         videoUrl: kasaVideo,
         description:
             "Création du front-end d'une application de location immobilière à partir d'une maquette Figma",
-        features: [
-            "navigation avec routeur (React Router)",
-            "modules CSS",
-            "responsive (mobile-first)",
-            "animations CSS",
-            "slider",
-        ],
+        tools: ["navigation avec routeur (React Router)", "modules CSS"],
+        features: ["animations", "responsive (mobile-first)", "slider"],
         mainTechs: ["ReactJS"],
         techs: [
             // "JavaScript",
@@ -149,7 +181,6 @@ const projects = [
         url: "https://tomdvpmt-kasa.netlify.app/",
     },
     {
-        id: 5,
         title: "Intégration de la maquette Figma d'une application de menus en ligne",
         shortTitle: "Menus en ligne",
         logoUrl: "",
@@ -157,7 +188,7 @@ const projects = [
         videoUrl: ohmyfoodVideo,
         description:
             "Intégration de la maquette Figma d'une application de menus en ligne",
-        features: ["Animations CSS", "responsive (mobile-first)"],
+        features: ["animations CSS", "responsive (mobile-first)"],
         mainTechs: ["Sass"],
         techs: [
             // "JavaScript",
