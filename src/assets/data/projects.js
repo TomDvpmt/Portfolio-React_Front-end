@@ -11,6 +11,7 @@ import flixImg from "../img/projects/flix2.webp";
 import kasaVideo from "../vids/kasa.webm";
 import groupomaniaVideo from "../vids/groupomania.webm";
 import covoitVideo from "../vids/covoit.webm";
+import portfolioVideo from "../vids/portfolio.webm";
 import ohmyfoodVideo from "../vids/ohmyfood.webm";
 import flixVideo from "../vids/flix.webm";
 
@@ -141,7 +142,7 @@ const projects = [
         shortTitle: "Portfolio",
         logoUrl: "",
         imgUrl: portfolioImg,
-        videoUrl: "",
+        videoUrl: portfolioVideo,
         description: "Création d'un portfolio d'applications",
         tools: [
             "typage des props avec prop-types",
@@ -167,7 +168,7 @@ const projects = [
         ],
         projectType: "front-end",
         gitHubLink: "https://github.com/TomDvpmt/Portfolio-React_Front-end",
-        url: "https://thomas-boussion.fr/",
+        url: "",
     },
     {
         title: "Intégration avec React de la maquette Figma d'une application immobilière",
