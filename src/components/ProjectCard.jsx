@@ -137,7 +137,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                         gridTemplateColumns: {
                             xs: "1fr",
                             lg: "1fr 1fr",
-                            xl: "1fr 40%",
+                            xl: project.done ? "1fr 40%" : "1fr 1fr",
                         },
                         gridAutoFlow: "dense",
                         gap: "3rem",
@@ -150,24 +150,36 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             flexDirection: "column",
                             justifyContent: "center",
                         }}>
-                        <CardMedia
-                            component="video"
-                            src={project.videoUrl}
-                            autoPlay
-                            loop
-                            controls
-                            alt={project.title}
-                            sx={{
-                                gridRow: {
-                                    xs: "1",
-                                    lg:
-                                        project.tools.length > 0
-                                            ? "1 / 3"
-                                            : "1",
-                                },
-                                mb: { xs: "2rem", lg: "0" },
-                            }}
-                        />
+                        {project.done ? (
+                            <CardMedia
+                                component="video"
+                                src={project.videoUrl}
+                                autoPlay
+                                loop
+                                controls
+                                alt={project.title}
+                                sx={{
+                                    gridRow: {
+                                        xs: "1",
+                                        lg:
+                                            project.tools.length > 0
+                                                ? "1 / 3"
+                                                : "1",
+                                    },
+                                    mb: { xs: "2rem", lg: "0" },
+                                }}
+                            />
+                        ) : (
+                            <CardMedia
+                                component="img"
+                                image={project.imgUrl}
+                                alt={project.title}
+                                // sx={{
+                                //     minHeight: "100%",
+                                //     maxWidth: "38%",
+                                // }}
+                            />
+                        )}
                         {isLargeScreen && !isExtraLargeScreen && cardActions}
                     </Box>
                     <Box

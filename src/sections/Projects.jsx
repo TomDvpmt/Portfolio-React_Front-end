@@ -14,15 +14,17 @@ const Projects = forwardRef((props, ref) => {
     return (
         <Box ref={ref} id="projects" component="section">
             {!isLargeScreen && <SectionHeading slug="projects" />}
-            <Typography
-                m={{ xs: "4rem 0", lg: "0 0 4rem" }}
-                align="center"
-                color={theme.palette.text.content}>
-                <Typography component="span" color="secondary">
-                    Cliquez
-                </Typography>{" "}
-                sur un projet pour afficher ses informations.
-            </Typography>
+            {!isLargeScreen && (
+                <Typography
+                    m={{ xs: "4rem 0", lg: "0 0 4rem" }}
+                    align="center"
+                    color={theme.palette.text.content}>
+                    <Typography component="span" color="secondary">
+                        Cliquez
+                    </Typography>{" "}
+                    sur un projet pour afficher ses informations.
+                </Typography>
+            )}
             <Box
                 sx={{
                     display: "flex",

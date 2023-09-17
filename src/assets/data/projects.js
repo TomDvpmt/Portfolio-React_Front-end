@@ -1,6 +1,7 @@
 import groupomaniaLogo from "../img/projects/groupomania-logo.png";
 import flixLogo from "../img/projects/flix-logo.png";
 
+import hikeImg from "../img/projects/hike.jpg";
 import kasaImg from "../img/projects/kasa.webp";
 import groupomaniaImg from "../img/projects/groupomania.webp";
 import covoitImg from "../img/projects/covoit.webp";
@@ -16,6 +17,33 @@ import ohmyfoodVideo from "../vids/ohmyfood.webm";
 import flixVideo from "../vids/flix.webm";
 
 const projects = [
+    {
+        title: "Site de e-commerce (en cours de développement)",
+        shortTitle: "E-commerce (en cours)",
+        logoUrl: "",
+        imgUrl: hikeImg,
+        videoUrl: "",
+        description: "Site de vente d'articles de randonnée",
+        tools: [
+            "programmation orientée objet",
+            "architecture MVC",
+            "routing",
+            "authentification",
+        ],
+        features: [
+            "compte utilisateur",
+            "plusieurs catégories de produits",
+            "aperçu et page dédiée pour chaque produit",
+            "consitution d'un panier",
+            "tunnel de commande (facturation, confirmation, paiement)",
+        ],
+        mainTechs: ["PHP", "MySQL", "Sass"],
+        techs: ["HTML", "CSS", "PHP", "MySQL", "Sass"],
+        projectType: "fullstack",
+        gitHubLink: "https://github.com/TomDvpmt/php-oop-mvc-training-2",
+        url: "",
+        done: false,
+    },
     {
         title: "Application de recherche de films (avec API externe)",
         shortTitle: "Recherche de films",
@@ -56,6 +84,7 @@ const projects = [
         projectType: "fullstack",
         gitHubLink: "https://github.com/TomDvpmt/80s-90s-Flixx-frontend",
         url: "https://flixx80s90s.netlify.app/",
+        done: true,
     },
     {
         title: "Application de covoiturage avec module de réservation",
@@ -96,6 +125,7 @@ const projects = [
         projectType: "fullstack",
         gitHubLink: "https://github.com/TomDvpmt/covoit-frontend",
         url: "https://covoit.onrender.com/",
+        done: true,
     },
     {
         title: "Réseau social avec forum et chat en temps réel",
@@ -136,6 +166,7 @@ const projects = [
         projectType: "fullstack",
         gitHubLink: "https://github.com/TomDvpmt/groupomania-frontend",
         url: "",
+        done: true,
     },
     {
         title: "Portfolio",
@@ -156,7 +187,7 @@ const projects = [
             "liens GitHub et liens de test des applications",
             "formulaire de contact",
         ],
-        mainTechs: ["ReactJS"],
+        mainTechs: ["ReactJS", "Material UI"],
         techs: [
             "HTML",
             "CSS",
@@ -169,6 +200,7 @@ const projects = [
         projectType: "front-end",
         gitHubLink: "https://github.com/TomDvpmt/Portfolio-React_Front-end",
         url: "",
+        done: true,
     },
     {
         title: "Intégration avec React de la maquette Figma d'une application immobilière",
@@ -185,6 +217,7 @@ const projects = [
         projectType: "front-end",
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_P7_Kasa",
         url: "https://tomdvpmt-kasa.netlify.app/",
+        done: true,
     },
     {
         title: "Intégration de la maquette Figma d'une application de menus en ligne",
@@ -201,6 +234,7 @@ const projects = [
         projectType: "front-end",
         gitHubLink: "https://github.com/TomDvpmt/OC_DevWeb_P3_OhMyFood",
         url: "https://tomdvpmt-ohmyfood.netlify.app/",
+        done: true,
     },
 ];
 

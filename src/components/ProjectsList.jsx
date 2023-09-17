@@ -38,7 +38,7 @@ const ProjectsList = ({
                 gap: "3rem",
             }}>
             <ProjectsListTitle label={projectType} />
-            <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
                 {projectsArray?.map((project, index) => {
                     return (
                         <ProjectsListCard
