@@ -20,7 +20,6 @@ import {
     ListItemText,
     IconButton,
     useMediaQuery,
-    Typography,
 } from "@mui/material";
 import { GitHub, ExitToApp, ChevronRight, Close } from "@mui/icons-material";
 
@@ -34,8 +33,8 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
     };
 
     const transitionDuration = 1000;
-
     const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+    const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up("xl"));
 
     const [projectTechs, setProjectTechs] = useState([]);
     const [numberOfTechColumns, setNumberOfTechColumns] = useState(0);
@@ -62,6 +61,43 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                 .filter((column) => column.length > 0).length
         );
     }, [projectTechs, getTechTypes]);
+
+    const cardActions = (
+        <CardActions
+            disableSpacing
+            sx={{
+                gridColumn: "1",
+                mt: isLargeScreen && !isExtraLargeScreen ? "6rem" : "3rem",
+                p: "0",
+                flexDirection: {
+                    xs: "column",
+                    sm: "row",
+                },
+                justifyContent: "center",
+                gap: {
+                    xs: ".5rem",
+                    sm: "2rem",
+                },
+            }}>
+            <Button
+                startIcon={<GitHub />}
+                href={project.gitHubLink}
+                target="_blank"
+                sx={{ color: theme.palette.text.content }}>
+                Voir sur GitHub
+            </Button>
+            {project.url !== "" && (
+                <Button
+                    color="secondary"
+                    variant="contained"
+                    startIcon={<ExitToApp />}
+                    href={project.url}
+                    target="_blank">
+                    Tester l'application
+                </Button>
+            )}
+        </CardActions>
+    );
 
     return (
         <Card
@@ -104,44 +140,107 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             xl: "1fr 40%",
                         },
                         gridAutoFlow: "dense",
-                        justifyItems: "center",
                         gap: "3rem",
                     }}>
-                    <CardMedia
-                        component="video"
-                        src={project.videoUrl}
-                        autoPlay
-                        loop
-                        controls
-                        alt={project.title}
+                    <Box
                         sx={{
                             gridColumn: "1",
-                            gridRow: {
-                                xs: "1",
-                                lg: project.tools.length > 0 ? "1 / 3" : "1",
-                            },
                             alignSelf: "center",
-                            mb: { xs: "2rem", lg: "0" },
-                        }}
-                    />
-                    {project.tools.length > 0 && (
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                        }}>
+                        <CardMedia
+                            component="video"
+                            src={project.videoUrl}
+                            autoPlay
+                            loop
+                            controls
+                            alt={project.title}
+                            sx={{
+                                gridRow: {
+                                    xs: "1",
+                                    lg:
+                                        project.tools.length > 0
+                                            ? "1 / 3"
+                                            : "1",
+                                },
+                                mb: { xs: "2rem", lg: "0" },
+                            }}
+                        />
+                        {isLargeScreen && !isExtraLargeScreen && cardActions}
+                    </Box>
+                    <Box
+                        sx={{
+                            gridColumn: { xs: "1", lg: "2" },
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "3rem",
+                        }}>
+                        {project.tools.length > 0 && (
+                            <Box
+                                sx={{
+                                    width: "100%",
+                                    maxWidth:
+                                        theme.maxWidth.toolsFeaturesTechsList,
+                                    m: "0 auto",
+                                }}>
+                                <ProjectCardContentHeading
+                                    label="Outils de développement"
+                                    linePosition="left"
+                                />
+                                <List
+                                    dense
+                                    disablePadding
+                                    sx={{ maxWidth: "500px", m: "0 auto" }}>
+                                    {project.tools.map((feature, index) => (
+                                        <ListItem
+                                            key={index}
+                                            disablePadding
+                                            sx={{
+                                                mb: ".5rem",
+                                                alignItems: "start",
+                                                gap: ".5rem",
+                                            }}>
+                                            <ListItemIcon
+                                                sx={{
+                                                    minWidth: "max-content",
+                                                    color: theme.palette.text
+                                                        .content,
+                                                }}>
+                                                <ChevronRight fontSize="small" />
+                                            </ListItemIcon>
+                                            <ListItemText
+                                                sx={{
+                                                    m: "0",
+                                                    "& span": {
+                                                        fontSize: {
+                                                            md: "1rem",
+                                                        },
+                                                    },
+                                                }}>
+                                                {feature}
+                                            </ListItemText>
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            </Box>
+                        )}
                         <Box
                             sx={{
                                 width: "100%",
                                 maxWidth: theme.maxWidth.toolsFeaturesTechsList,
                                 m: "0 auto",
-                                gridColumn: { xs: "1", lg: "2" },
-                                // gridRow: { xs: "2", lg: "1" },
                             }}>
                             <ProjectCardContentHeading
-                                label="Outils de développement"
+                                label="Fonctionnalités"
                                 linePosition="left"
                             />
                             <List
                                 dense
                                 disablePadding
                                 sx={{ maxWidth: "500px", m: "0 auto" }}>
-                                {project.tools.map((feature, index) => (
+                                {project.features.map((feature, index) => (
                                     <ListItem
                                         key={index}
                                         disablePadding
@@ -171,145 +270,68 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                 ))}
                             </List>
                         </Box>
-                    )}
-                    <Box
-                        sx={{
-                            width: "100%",
-                            maxWidth: theme.maxWidth.toolsFeaturesTechsList,
-                            m: "0 auto",
-                            gridColumn: { xs: "1", lg: "2" },
-                        }}>
-                        <ProjectCardContentHeading
-                            label="Fonctionnalités"
-                            linePosition="left"
-                        />
-                        <List
-                            dense
-                            disablePadding
-                            sx={{ maxWidth: "500px", m: "0 auto" }}>
-                            {project.features.map((feature, index) => (
-                                <ListItem
-                                    key={index}
-                                    disablePadding
-                                    sx={{
-                                        mb: ".5rem",
-                                        alignItems: "start",
-                                        gap: ".5rem",
-                                    }}>
-                                    <ListItemIcon
-                                        sx={{
-                                            minWidth: "max-content",
-                                            color: theme.palette.text.content,
-                                        }}>
-                                        <ChevronRight fontSize="small" />
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        sx={{
-                                            m: "0",
-                                            "& span": {
-                                                fontSize: { md: "1rem" },
-                                            },
-                                        }}>
-                                        {feature}
-                                    </ListItemText>
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Box>
-                    <Box
-                        sx={{
-                            width: "100%",
-                            maxWidth: theme.maxWidth.toolsFeaturesTechsList,
-                            m: "0 auto",
-                            gridColumn: { xs: "1", lg: "2" },
-                        }}>
-                        <ProjectCardContentHeading
-                            label="Techs"
-                            linePosition="left"
-                        />
                         <Box
                             sx={{
-                                maxWidth: "500px",
+                                width: "100%",
+                                maxWidth: theme.maxWidth.toolsFeaturesTechsList,
                                 m: "0 auto",
-                                display: "flex",
-                                justifyContent: {
-                                    xs:
-                                        numberOfTechColumns > 1
-                                            ? "space-evenly"
-                                            : "flex-start",
-                                    sm:
-                                        numberOfTechColumns > 2
-                                            ? "space-between"
-                                            : numberOfTechColumns > 1
-                                            ? "space-evenly"
-                                            : "flex-start",
-                                },
-                                gap: { xs: "1rem", lg: "4rem" },
-                                flexWrap: {
-                                    xs: "wrap",
-                                    lg: "nowrap",
-                                },
                             }}>
-                            {getTechTypes().map((type) => {
-                                const typeFilteredTechs = projectTechs.filter(
-                                    (tech) => tech.type === type
-                                );
+                            <ProjectCardContentHeading
+                                label="Techs"
+                                linePosition="left"
+                            />
+                            <Box
+                                sx={{
+                                    maxWidth: "500px",
+                                    m: "0 auto",
+                                    display: "flex",
+                                    justifyContent: {
+                                        xs:
+                                            numberOfTechColumns > 1
+                                                ? "space-evenly"
+                                                : "flex-start",
+                                        sm:
+                                            numberOfTechColumns > 2
+                                                ? "space-between"
+                                                : numberOfTechColumns > 1
+                                                ? "space-evenly"
+                                                : "flex-start",
+                                    },
+                                    gap: { xs: "1rem", lg: "4rem" },
+                                    flexWrap: {
+                                        xs: "wrap",
+                                        lg: "nowrap",
+                                    },
+                                }}>
+                                {getTechTypes().map((type) => {
+                                    const typeFilteredTechs =
+                                        projectTechs.filter(
+                                            (tech) => tech.type === type
+                                        );
 
-                                return (
-                                    typeFilteredTechs.length > 0 && (
-                                        <Box
-                                            key={type}
-                                            sx={{
-                                                width: "max-content",
-                                                display: "flex",
-                                                flexDirection: "column",
-                                            }}>
-                                            <TechsList
-                                                techsArray={typeFilteredTechs}
-                                                location="modal"
-                                            />
-                                        </Box>
-                                    )
-                                );
-                            })}
+                                    return (
+                                        typeFilteredTechs.length > 0 && (
+                                            <Box
+                                                key={type}
+                                                sx={{
+                                                    width: "max-content",
+                                                    display: "flex",
+                                                    flexDirection: "column",
+                                                }}>
+                                                <TechsList
+                                                    techsArray={
+                                                        typeFilteredTechs
+                                                    }
+                                                    location="modal"
+                                                />
+                                            </Box>
+                                        )
+                                    );
+                                })}
+                            </Box>
                         </Box>
+                        {(!isLargeScreen || isExtraLargeScreen) && cardActions}
                     </Box>
-                    <CardActions
-                        disableSpacing
-                        sx={{
-                            gridColumn: "1",
-                            p: "0",
-                            flexDirection: {
-                                xs: "column",
-                                sm: "row",
-                            },
-                            justifyContent: {
-                                sm: "center",
-                                lg: "flex-start",
-                            },
-                            gap: {
-                                xs: ".5rem",
-                                sm: "2rem",
-                            },
-                        }}>
-                        <Button
-                            startIcon={<GitHub />}
-                            href={project.gitHubLink}
-                            target="_blank"
-                            sx={{ color: theme.palette.text.content }}>
-                            Voir sur GitHub
-                        </Button>
-                        {project.url !== "" && (
-                            <Button
-                                color="secondary"
-                                variant="contained"
-                                startIcon={<ExitToApp />}
-                                href={project.url}
-                                target="_blank">
-                                Tester l'application
-                            </Button>
-                        )}
-                    </CardActions>
                 </CardContent>
             </Box>
         </Card>

@@ -128,7 +128,7 @@ const ALL_TECHS = [
     },
     {
         label: "Socket.io",
-        type: "autres",
+        type: "back-end",
         imgElement: <SocketIoLogo title="Socket.io" />,
     },
 ];
