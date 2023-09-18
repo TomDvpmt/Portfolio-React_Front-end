@@ -23,7 +23,7 @@ const SocialLinks = ({ tabIndex }) => {
             <IconButton
                 tabIndex={tabIndex}
                 sx={socialIconStyle}
-                href="https://fr.linkedin.com/in/thomas-boussion-b273a6150"
+                href="https://fr.linkedin.com/in/thomas-boussion-dev"
                 target="_blank"
                 data-testid="linkedin">
                 <LinkedIn fontSize="large" />
