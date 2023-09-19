@@ -22,8 +22,6 @@ const About = forwardRef((props, ref) => {
         isLargeScreen && setTabIndex(sectionPosition === 0 ? 0 : -1);
     }, [isLargeScreen, sectionPosition]);
 
-    // const TYPES_ARRAY = ["langages", "back-end", "front-end", "autres"];
-
     const handleContactMe = () => {
         if (isLargeScreen) {
             setSectionPosition(2);

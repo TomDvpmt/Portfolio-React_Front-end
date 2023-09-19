@@ -31,15 +31,19 @@ const NavBar = forwardRef((props, ref) => {
     const { aboutSection, projectsSection, contactSection } = ref;
 
     useEffect(() => {
-        if (location.pathname === "/")
+        if (location.pathname === "/") {
             createObserver(aboutSection.current, aboutLink.current);
-
-        if (location.pathname === "/")
-            createObserver(projectsSection.current, projectsLink.current);
-
-        if (location.pathname === "/")
+            !isLargeScreen &&
+                createObserver(projectsSection.current, projectsLink.current);
             createObserver(contactSection.current, contactLink.current);
-    }, [location.pathname, aboutSection, projectsSection, contactSection]);
+        }
+    }, [
+        location.pathname,
+        aboutSection,
+        projectsSection,
+        contactSection,
+        isLargeScreen,
+    ]);
 
     const handleClick = (e) => {
         const links = e.currentTarget.children;

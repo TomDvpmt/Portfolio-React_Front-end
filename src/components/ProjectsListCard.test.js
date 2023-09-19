@@ -9,9 +9,6 @@ jest.mock("react", () => ({
 const setState = jest.fn();
 
 describe("ProjectsListCard", () => {
-    beforeEach(() => {
-        useStateMock.mockImplementation((init) => [init, setState]);
-    });
     const mockProject = {
         description: "Site de vente d'articles de randonnée",
         done: false,
@@ -39,6 +36,10 @@ describe("ProjectsListCard", () => {
         url: "",
         videoUrl: "",
     };
+    beforeEach(() => {
+        useStateMock.mockImplementation((init) => [init, setState]);
+    });
+
     it("should render without crashing", async () => {
         render(
             <ProjectsListCard
