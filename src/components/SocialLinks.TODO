@@ -17,6 +17,6 @@ describe("SocialLinks", () => {
         expect(link.href).toMatch(/github/);
     });
     // it("should be navigable with the keyboard when visible", async () => {
-
+        
     // });
 });

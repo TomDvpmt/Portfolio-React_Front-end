@@ -86,7 +86,6 @@ describe("ProjectsListCard", () => {
         const techs = techElements.map(
             (tech) => tech.querySelector("span").textContent
         );
-        console.log(techs, mockProject.mainTechs);
         expect(techs).toEqual(mockProject.mainTechs);
     });
 });

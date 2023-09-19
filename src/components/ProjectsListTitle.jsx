@@ -12,6 +12,7 @@ const ProjectsListTitle = ({ label }) => {
 
     return (
         <Box
+            data-testid="title-container"
             sx={{
                 width: "100%",
                 display: "flex",
@@ -21,6 +22,7 @@ const ProjectsListTitle = ({ label }) => {
             }}>
             {isLargeScreen && (
                 <Box
+                    data-testid="title-line"
                     sx={{
                         height: "1px",
                         flexGrow: "1",
@@ -34,11 +36,13 @@ const ProjectsListTitle = ({ label }) => {
                 textTransform="uppercase"
                 align="center"
                 color={theme.palette.text.title}
-                fontSize="1.5rem">
+                fontSize="1.5rem"
+                data-testid="title">
                 {label.charAt(0).toUpperCase() + label.slice(1)}
             </Typography>
             {isLargeScreen && (
                 <Box
+                    data-testid="title-line"
                     sx={{
                         height: "1px",
                         flexGrow: "1",

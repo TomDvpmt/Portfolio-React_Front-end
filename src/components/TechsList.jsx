@@ -21,6 +21,7 @@ const TechsList = ({ techsArray, location }) => {
                 <Box
                     key={index}
                     className="tech"
+                    data-testid="tech"
                     sx={{
                         display: "flex",
                         alignItems: "center",
@@ -40,7 +41,8 @@ const TechsList = ({ techsArray, location }) => {
                         color={
                             ["about", "homeCard"].includes(location) &&
                             theme.palette.text.content
-                        }>
+                        }
+                        data-testid="tech-name">
                         {tech.label}
                     </Typography>
                 </Box>
