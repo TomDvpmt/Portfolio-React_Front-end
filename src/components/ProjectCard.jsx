@@ -297,10 +297,11 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                                 : "flex-start",
                                     },
                                     gap: { xs: "1rem", lg: "4rem" },
-                                    flexWrap: {
-                                        xs: "wrap",
-                                        lg: "nowrap",
-                                    },
+                                    // flexWrap: {
+                                    //     xs: "wrap",
+                                    //     lg: "nowrap",
+                                    // },
+                                    flexWrap: "wrap",
                                 }}>
                                 {TYPES_ARRAY.map((type) => {
                                     const typeFilteredTechs =

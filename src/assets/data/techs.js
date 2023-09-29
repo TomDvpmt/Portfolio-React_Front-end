@@ -13,6 +13,7 @@ import { ReactComponent as MaterialUILogo } from "../img/techs/logo-materialUI.s
 import { ReactComponent as SocketIoLogo } from "../img/techs/logo-socket-io.svg";
 import { ReactComponent as LinuxLogo } from "../img/techs/logo-linux.svg";
 import { ReactComponent as WordPressLogo } from "../img/techs/logo-wordpress.svg";
+import { ReactComponent as JestLogo } from "../img/techs/logo-jest.svg";
 import phpLogo from "../img/techs/logo-php.png";
 import nodemailerLogo from "../img/techs/logo-nodemailer_200x136.png";
 import expressLogo from "../img/techs/logo-expressjs.png";
@@ -99,9 +100,9 @@ const ALL_TECHS = [
         ),
     },
     {
-        label: "ReactJS",
+        label: "React.js",
         type: "front-end",
-        imgElement: <ReactLogo title="ReactJS" />,
+        imgElement: <ReactLogo title="React.js" />,
     },
     {
         label: "Redux",
@@ -132,6 +133,11 @@ const ALL_TECHS = [
         label: "Socket.io",
         type: "back-end",
         imgElement: <SocketIoLogo title="Socket.io" />,
+    },
+    {
+        label: "Jest",
+        type: "autres",
+        imgElement: <JestLogo title="Jest" />,
     },
 ];
 
