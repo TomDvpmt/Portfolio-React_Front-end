@@ -1,13 +1,13 @@
-import ProjectCardContentHeading from "./ProjectCardContentHeading";
+import ProjectModalContentHeading from "./ProjectModalContentHeading";
 import { render, screen } from "@testing-library/react";
 
-describe("ProjectCardContentHeading", () => {
+describe("ProjectModalContentHeading", () => {
     it("should render without crashing", () => {
-        render(<ProjectCardContentHeading />);
+        render(<ProjectModalContentHeading />);
     });
     it("should display a line element and a label", async () => {
         const { container } = render(
-            <ProjectCardContentHeading
+            <ProjectModalContentHeading
                 label={"Some title"}
                 linePosition={"left"}
             />
@@ -18,7 +18,7 @@ describe("ProjectCardContentHeading", () => {
     });
     it("should display the label passed in props", async () => {
         const { container } = render(
-            <ProjectCardContentHeading
+            <ProjectModalContentHeading
                 label={"Some title"}
                 linePosition={"left"}
             />

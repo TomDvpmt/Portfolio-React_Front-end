@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
-import ProjectCardContentList from "./ProjectCardContentList";
-import ProjectCardContentListItem from "./ProjectCardContentListItem";
+import ProjectModalContentList from "./ProjectModalContentList";
+import ProjectModalContentListItem from "./ProjectModalContentListItem";
 import TechsList from "./TechsList";
 
 import { ALL_TECHS, TYPES_ARRAY } from "../assets/data/techs";
@@ -26,8 +26,8 @@ import { GitHub, ExitToApp, Close } from "@mui/icons-material";
 
 import PropTypes from "prop-types";
 
-const ProjectCard = ({ project, translateValue, handleClose }) => {
-    ProjectCard.propTypes = {
+const ProjectModal = ({ project, translateValue, handleClose }) => {
+    ProjectModal.propTypes = {
         project: PropTypes.object.isRequired,
         translateValue: PropTypes.number.isRequired,
         handleClose: PropTypes.func.isRequired,
@@ -133,14 +133,14 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                         },
                         gridAutoFlow: "dense",
                         gap: "3rem",
+                        position: "relative",
                     }}>
                     <Box
                         sx={{
                             gridColumn: "1",
-                            alignSelf: "center",
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "center",
+                            alignSelf: "start",
+                            position: { lg: "sticky" },
+                            top: { lg: "6rem" },
                         }}>
                         {project.done ? (
                             <CardMedia
@@ -151,13 +151,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                 controls
                                 alt={project.title}
                                 sx={{
-                                    gridRow: {
-                                        xs: "1",
-                                        lg:
-                                            project.tools.length > 0
-                                                ? "1 / 3"
-                                                : "1",
-                                    },
                                     mb: { xs: "2rem", lg: "0" },
                                 }}
                             />
@@ -177,12 +170,12 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             flexDirection: "column",
                             gap: "3rem",
                         }}>
-                        <ProjectCardContentList label={"Contexte"}>
+                        <ProjectModalContentList label={"Contexte"}>
                             <Typography sx={{ maxWidth: "500px", m: "0 auto" }}>
                                 {project.context}
                             </Typography>
-                        </ProjectCardContentList>
-                        <ProjectCardContentList
+                        </ProjectModalContentList>
+                        <ProjectModalContentList
                             label={
                                 project.objectives.length > 1
                                     ? "Objectifs"
@@ -195,7 +188,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                     sx={{ maxWidth: "500px", m: "0 auto" }}>
                                     {project.objectives.map(
                                         (objective, index) => (
-                                            <ProjectCardContentListItem
+                                            <ProjectModalContentListItem
                                                 key={index}
                                                 item={objective}
                                             />
@@ -208,36 +201,36 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                     {capitalize(project.objectives[0]) + "."}
                                 </Typography>
                             )}
-                        </ProjectCardContentList>
+                        </ProjectModalContentList>
                         {project.tools.length > 0 && (
-                            <ProjectCardContentList label="Outils de développement">
+                            <ProjectModalContentList label="Outils de développement">
                                 <List
                                     dense
                                     disablePadding
                                     sx={{ maxWidth: "500px", m: "0 auto" }}>
                                     {project.tools.map((tool, index) => (
-                                        <ProjectCardContentListItem
+                                        <ProjectModalContentListItem
                                             key={index}
                                             item={tool}
                                         />
                                     ))}
                                 </List>
-                            </ProjectCardContentList>
+                            </ProjectModalContentList>
                         )}
-                        <ProjectCardContentList label="Fonctionnalités">
+                        <ProjectModalContentList label="Fonctionnalités">
                             <List
                                 dense
                                 disablePadding
                                 sx={{ maxWidth: "500px", m: "0 auto" }}>
                                 {project.features.map((feature, index) => (
-                                    <ProjectCardContentListItem
+                                    <ProjectModalContentListItem
                                         key={index}
                                         item={feature}
                                     />
                                 ))}
                             </List>
-                        </ProjectCardContentList>
-                        <ProjectCardContentList label="Techs">
+                        </ProjectModalContentList>
+                        <ProjectModalContentList label="Techs">
                             <Box
                                 sx={{
                                     maxWidth: "500px",
@@ -284,7 +277,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                     );
                                 })}
                             </Box>
-                        </ProjectCardContentList>
+                        </ProjectModalContentList>
                         {(!isLargeScreen || isExtraLargeScreen) && cardActions}
                     </Box>
                 </CardContent>
@@ -293,4 +286,4 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
     );
 };
 
-export default ProjectCard;
+export default ProjectModal;

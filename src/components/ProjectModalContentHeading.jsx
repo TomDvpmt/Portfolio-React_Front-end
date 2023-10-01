@@ -5,8 +5,8 @@ import { Box, Typography } from "@mui/material";
 
 import PropTypes from "prop-types";
 
-const ProjectCardContentHeading = ({ label, linePosition }) => {
-    ProjectCardContentHeading.propTypes = {
+const ProjectModalContentHeading = ({ label, linePosition }) => {
+    ProjectModalContentHeading.propTypes = {
         label: PropTypes.string.isRequired,
         linePosition: PropTypes.string.isRequired,
     };
@@ -35,4 +35,4 @@ const ProjectCardContentHeading = ({ label, linePosition }) => {
     );
 };
 
-export default ProjectCardContentHeading;
+export default ProjectModalContentHeading;

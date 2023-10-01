@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import ProjectsContext from "../contexts/ProjectsContext";
 
 import ProjectsList from "./ProjectsList";
-import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 
 import theme from "../styles/theme";
 import { Box, Dialog } from "@mui/material";
@@ -63,7 +63,7 @@ const ProjectsModals = () => {
                         m: { xs: "1rem", lg: "2rem" },
                     },
                 }}>
-                <ProjectCard
+                <ProjectModal
                     project={projectToShow}
                     translateValue={0}
                     handleClose={handleClose}

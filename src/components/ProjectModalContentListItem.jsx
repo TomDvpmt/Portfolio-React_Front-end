@@ -7,8 +7,8 @@ import theme from "../styles/theme";
 
 import PropTypes from "prop-types";
 
-const ProjectCardContentListItem = ({ item }) => {
-    ProjectCardContentListItem.propTypes = {
+const ProjectModalContentListItem = ({ item }) => {
+    ProjectModalContentListItem.propTypes = {
         item: PropTypes.string.isRequired,
     };
     return (
@@ -41,4 +41,4 @@ const ProjectCardContentListItem = ({ item }) => {
     );
 };
 
-export default ProjectCardContentListItem;
+export default ProjectModalContentListItem;
