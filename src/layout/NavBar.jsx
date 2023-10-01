@@ -113,6 +113,7 @@ const NavBar = forwardRef((props, ref) => {
                         ref={aboutLink}
                         component={NavLink}
                         id="about-link"
+                        data-testid="nav-link"
                         underline="none">
                         À propos
                     </Link>
@@ -120,6 +121,7 @@ const NavBar = forwardRef((props, ref) => {
                         ref={projectsLink}
                         component={NavLink}
                         id="projects-link"
+                        data-testid="nav-link"
                         underline="none">
                         Projets
                     </Link>
@@ -127,6 +129,7 @@ const NavBar = forwardRef((props, ref) => {
                         ref={contactLink}
                         component={NavLink}
                         id="contact-link"
+                        data-testid="nav-link"
                         underline="none">
                         Contact
                     </Link>

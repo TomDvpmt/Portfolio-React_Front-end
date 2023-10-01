@@ -47,7 +47,7 @@ const SectionHeading = ({ slug }) => {
                 }}
             />
 
-            <Typography variant="h2" component="h2">
+            <Typography variant="h2" component="h2" data-testid="section-title">
                 {title}
             </Typography>
 

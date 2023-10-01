@@ -1,6 +1,6 @@
 import { useState as useStateMock } from "react";
 import ProjectsListCard from "./ProjectsListCard";
-import { getByText, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 jest.mock("react", () => ({
     ...jest.requireActual("react"),

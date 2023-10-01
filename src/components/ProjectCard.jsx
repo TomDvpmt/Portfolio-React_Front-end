@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-import ProjectCardContentHeading from "./ProjectCardContentHeading";
+import ProjectCardContentList from "./ProjectCardContentList";
+import ProjectCardContentListItem from "./ProjectCardContentListItem";
 import TechsList from "./TechsList";
 
 import { ALL_TECHS, TYPES_ARRAY } from "../assets/data/techs";
@@ -17,14 +18,11 @@ import {
     CardActions,
     Button,
     List,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
     IconButton,
     useMediaQuery,
     Typography,
 } from "@mui/material";
-import { GitHub, ExitToApp, ChevronRight, Close } from "@mui/icons-material";
+import { GitHub, ExitToApp, Close } from "@mui/icons-material";
 
 import PropTypes from "prop-types";
 
@@ -41,8 +39,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
 
     const [projectTechs, setProjectTechs] = useState([]);
     const [numberOfTechColumns, setNumberOfTechColumns] = useState(0);
-
-    // const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
     useEffect(() => {
         setProjectTechs(
@@ -181,35 +177,17 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             flexDirection: "column",
                             gap: "3rem",
                         }}>
-                        <Box
-                            sx={{
-                                width: "100%",
-                                maxWidth: theme.maxWidth.toolsFeaturesTechsList,
-                                m: "0 auto",
-                            }}>
-                            <ProjectCardContentHeading
-                                label="Contexte"
-                                linePosition="left"
-                            />
+                        <ProjectCardContentList label={"Contexte"}>
                             <Typography sx={{ maxWidth: "500px", m: "0 auto" }}>
                                 {project.context}
                             </Typography>
-                        </Box>
-
-                        <Box
-                            sx={{
-                                width: "100%",
-                                maxWidth: theme.maxWidth.toolsFeaturesTechsList,
-                                m: "0 auto",
-                            }}>
-                            <ProjectCardContentHeading
-                                label={
-                                    project.objectives.length > 1
-                                        ? "Objectifs"
-                                        : "Objectif"
-                                }
-                                linePosition="left"
-                            />
+                        </ProjectCardContentList>
+                        <ProjectCardContentList
+                            label={
+                                project.objectives.length > 1
+                                    ? "Objectifs"
+                                    : "Objectif"
+                            }>
                             {project.objectives.length > 1 ? (
                                 <List
                                     dense
@@ -217,34 +195,10 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                     sx={{ maxWidth: "500px", m: "0 auto" }}>
                                     {project.objectives.map(
                                         (objective, index) => (
-                                            <ListItem
+                                            <ProjectCardContentListItem
                                                 key={index}
-                                                disablePadding
-                                                sx={{
-                                                    mb: ".5rem",
-                                                    alignItems: "start",
-                                                    gap: ".5rem",
-                                                }}>
-                                                <ListItemIcon
-                                                    sx={{
-                                                        minWidth: "max-content",
-                                                        color: theme.palette
-                                                            .text.content,
-                                                    }}>
-                                                    <ChevronRight fontSize="small" />
-                                                </ListItemIcon>
-                                                <ListItemText
-                                                    sx={{
-                                                        m: "0",
-                                                        "& span": {
-                                                            fontSize: {
-                                                                md: "1rem",
-                                                            },
-                                                        },
-                                                    }}>
-                                                    {objective}
-                                                </ListItemText>
-                                            </ListItem>
+                                                item={objective}
+                                            />
                                         )
                                     )}
                                 </List>
@@ -254,111 +208,36 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                     {capitalize(project.objectives[0]) + "."}
                                 </Typography>
                             )}
-                        </Box>
-
+                        </ProjectCardContentList>
                         {project.tools.length > 0 && (
-                            <Box
-                                sx={{
-                                    width: "100%",
-                                    maxWidth:
-                                        theme.maxWidth.toolsFeaturesTechsList,
-                                    m: "0 auto",
-                                }}>
-                                <ProjectCardContentHeading
-                                    label="Outils de développement"
-                                    linePosition="left"
-                                />
+                            <ProjectCardContentList label="Outils de développement">
                                 <List
                                     dense
                                     disablePadding
                                     sx={{ maxWidth: "500px", m: "0 auto" }}>
                                     {project.tools.map((tool, index) => (
-                                        <ListItem
+                                        <ProjectCardContentListItem
                                             key={index}
-                                            disablePadding
-                                            sx={{
-                                                mb: ".5rem",
-                                                alignItems: "start",
-                                                gap: ".5rem",
-                                            }}>
-                                            <ListItemIcon
-                                                sx={{
-                                                    minWidth: "max-content",
-                                                    color: theme.palette.text
-                                                        .content,
-                                                }}>
-                                                <ChevronRight fontSize="small" />
-                                            </ListItemIcon>
-                                            <ListItemText
-                                                sx={{
-                                                    m: "0",
-                                                    "& span": {
-                                                        fontSize: {
-                                                            md: "1rem",
-                                                        },
-                                                    },
-                                                }}>
-                                                {tool}
-                                            </ListItemText>
-                                        </ListItem>
+                                            item={tool}
+                                        />
                                     ))}
                                 </List>
-                            </Box>
+                            </ProjectCardContentList>
                         )}
-                        <Box
-                            sx={{
-                                width: "100%",
-                                maxWidth: theme.maxWidth.toolsFeaturesTechsList,
-                                m: "0 auto",
-                            }}>
-                            <ProjectCardContentHeading
-                                label="Fonctionnalités"
-                                linePosition="left"
-                            />
+                        <ProjectCardContentList label="Fonctionnalités">
                             <List
                                 dense
                                 disablePadding
                                 sx={{ maxWidth: "500px", m: "0 auto" }}>
                                 {project.features.map((feature, index) => (
-                                    <ListItem
+                                    <ProjectCardContentListItem
                                         key={index}
-                                        disablePadding
-                                        sx={{
-                                            mb: ".5rem",
-                                            alignItems: "start",
-                                            gap: ".5rem",
-                                        }}>
-                                        <ListItemIcon
-                                            sx={{
-                                                minWidth: "max-content",
-                                                color: theme.palette.text
-                                                    .content,
-                                            }}>
-                                            <ChevronRight fontSize="small" />
-                                        </ListItemIcon>
-                                        <ListItemText
-                                            sx={{
-                                                m: "0",
-                                                "& span": {
-                                                    fontSize: { md: "1rem" },
-                                                },
-                                            }}>
-                                            {feature}
-                                        </ListItemText>
-                                    </ListItem>
+                                        item={feature}
+                                    />
                                 ))}
                             </List>
-                        </Box>
-                        <Box
-                            sx={{
-                                width: "100%",
-                                maxWidth: theme.maxWidth.toolsFeaturesTechsList,
-                                m: "0 auto",
-                            }}>
-                            <ProjectCardContentHeading
-                                label="Techs"
-                                linePosition="left"
-                            />
+                        </ProjectCardContentList>
+                        <ProjectCardContentList label="Techs">
                             <Box
                                 sx={{
                                     maxWidth: "500px",
@@ -405,7 +284,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                     );
                                 })}
                             </Box>
-                        </Box>
+                        </ProjectCardContentList>
                         {(!isLargeScreen || isExtraLargeScreen) && cardActions}
                     </Box>
                 </CardContent>
