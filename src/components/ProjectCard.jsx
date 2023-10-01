@@ -5,6 +5,8 @@ import TechsList from "./TechsList";
 
 import { ALL_TECHS, TYPES_ARRAY } from "../assets/data/techs";
 
+import { capitalize } from "../utils/functions";
+
 import theme from "../styles/theme";
 import {
     Box,
@@ -20,6 +22,7 @@ import {
     ListItemText,
     IconButton,
     useMediaQuery,
+    Typography,
 } from "@mui/material";
 import { GitHub, ExitToApp, ChevronRight, Close } from "@mui/icons-material";
 
@@ -38,6 +41,8 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
 
     const [projectTechs, setProjectTechs] = useState([]);
     const [numberOfTechColumns, setNumberOfTechColumns] = useState(0);
+
+    // const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
     useEffect(() => {
         setProjectTechs(
@@ -176,6 +181,81 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                             flexDirection: "column",
                             gap: "3rem",
                         }}>
+                        <Box
+                            sx={{
+                                width: "100%",
+                                maxWidth: theme.maxWidth.toolsFeaturesTechsList,
+                                m: "0 auto",
+                            }}>
+                            <ProjectCardContentHeading
+                                label="Contexte"
+                                linePosition="left"
+                            />
+                            <Typography sx={{ maxWidth: "500px", m: "0 auto" }}>
+                                {project.context}
+                            </Typography>
+                        </Box>
+
+                        <Box
+                            sx={{
+                                width: "100%",
+                                maxWidth: theme.maxWidth.toolsFeaturesTechsList,
+                                m: "0 auto",
+                            }}>
+                            <ProjectCardContentHeading
+                                label={
+                                    project.objectives.length > 1
+                                        ? "Objectifs"
+                                        : "Objectif"
+                                }
+                                linePosition="left"
+                            />
+                            {project.objectives.length > 1 ? (
+                                <List
+                                    dense
+                                    disablePadding
+                                    sx={{ maxWidth: "500px", m: "0 auto" }}>
+                                    {project.objectives.map(
+                                        (objective, index) => (
+                                            <ListItem
+                                                key={index}
+                                                disablePadding
+                                                sx={{
+                                                    mb: ".5rem",
+                                                    alignItems: "start",
+                                                    gap: ".5rem",
+                                                }}>
+                                                <ListItemIcon
+                                                    sx={{
+                                                        minWidth: "max-content",
+                                                        color: theme.palette
+                                                            .text.content,
+                                                    }}>
+                                                    <ChevronRight fontSize="small" />
+                                                </ListItemIcon>
+                                                <ListItemText
+                                                    sx={{
+                                                        m: "0",
+                                                        "& span": {
+                                                            fontSize: {
+                                                                md: "1rem",
+                                                            },
+                                                        },
+                                                    }}>
+                                                    {objective}
+                                                </ListItemText>
+                                            </ListItem>
+                                        )
+                                    )}
+                                </List>
+                            ) : (
+                                <Typography
+                                    sx={{ maxWidth: "500px", m: "0 auto" }}>
+                                    {capitalize(project.objectives[0]) + "."}
+                                </Typography>
+                            )}
+                        </Box>
+
                         {project.tools.length > 0 && (
                             <Box
                                 sx={{
@@ -192,7 +272,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                     dense
                                     disablePadding
                                     sx={{ maxWidth: "500px", m: "0 auto" }}>
-                                    {project.tools.map((feature, index) => (
+                                    {project.tools.map((tool, index) => (
                                         <ListItem
                                             key={index}
                                             disablePadding
@@ -218,7 +298,7 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                                         },
                                                     },
                                                 }}>
-                                                {feature}
+                                                {tool}
                                             </ListItemText>
                                         </ListItem>
                                     ))}
@@ -297,10 +377,6 @@ const ProjectCard = ({ project, translateValue, handleClose }) => {
                                                 : "flex-start",
                                     },
                                     gap: { xs: "1rem", lg: "4rem" },
-                                    // flexWrap: {
-                                    //     xs: "wrap",
-                                    //     lg: "nowrap",
-                                    // },
                                     flexWrap: "wrap",
                                 }}>
                                 {TYPES_ARRAY.map((type) => {

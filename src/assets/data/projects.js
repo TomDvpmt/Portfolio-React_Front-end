@@ -24,6 +24,10 @@ const projects = [
         imgUrl: hikeImg,
         videoUrl: "",
         description: "Site de vente d'articles de randonnée",
+        context: "Projet personnel développé en 2023.",
+        objectives: [
+            "entraînement à la programmation orientée objet et à l'architecture MVC en PHP",
+        ],
         tools: [
             "programmation orientée objet",
             "architecture MVC",
@@ -38,7 +42,7 @@ const projects = [
             "tunnel de commande (facturation, validation, paiement, confirmation)",
         ],
         mainTechs: ["PHP", "MySQL", "Sass"],
-        techs: ["HTML", "CSS", "PHP", "MySQL", "Sass"],
+        techs: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Sass"],
         projectType: "fullstack",
         gitHubLink: "https://github.com/TomDvpmt/php-oop-mvc-training-2",
         url: "",
@@ -52,11 +56,15 @@ const projects = [
         videoUrl: flixVideo,
         description:
             "Création d'une application de recherche de films avec une API externe",
+        context:
+            'Projet personnel développé en parallèle de la formation "Développeur web" en 2023.',
+        objectives: ["entraînement aux interactions avec une API externe"],
         tools: [
             "base de données pour les fonctionnalités utilisateur (MongoDB Atlas + Mongoose)",
             "authentification (JWT) et compte utilisateur",
             "sécurité : mot de passe chiffré en BDD + token dans un cookie httpOnly",
             "routeurs en back-end (Express) et front-end (React Router)",
+            "typage des props (prop-types)",
             "state manager (Redux)",
             "dialogue avec API externe pour les données cinéma (The Movie Database)",
         ],
@@ -94,18 +102,26 @@ const projects = [
         videoUrl: covoitVideo,
         description:
             "Création d'une application de covoiturage avec module de réservation",
+        context:
+            'Projet supplémentaire réalisé en fin de formation "Développeur web" en 2023.',
+        objectives: [
+            "utiliser Redux pour gérer le state sur toute l'application",
+            "implémenter des notifications par mail",
+        ],
         tools: [
             "base de données (MongoDB Atlas + Mongoose)",
             "authentification (JWT) et compte utilisateur",
             "sécurité : mot de passe chiffré en BDD",
             "routeurs en back-end (Express) et front-end (React Router)",
+            "typage des props (prop-types)",
             "state manager (Redux)",
+            "envoi d'emails depuis le formulaire de contact (Nodemailer)",
             "API externe pour les noms de communes",
         ],
         features: [
             "module de recherche de trajet",
             "système de réservations",
-            "notifications par mail (Nodemailer)",
+            "notifications par mail pour les réservations",
             "messagerie interne entre utilisateurs",
         ],
         mainTechs: ["MongoDB", "React.js", "Redux"],
@@ -135,11 +151,18 @@ const projects = [
         videoUrl: groupomaniaVideo,
         description:
             "Création d'un réseau social avec forum et chat en temps réel",
+        context:
+            'Projet réalisé au cours de la formation "Développeur web" en 2023.',
+        objectives: [
+            "créer et gérer une base de données relationnelle avec opérations CRUD",
+            "implémenter une interface de chat en temps réel",
+        ],
         tools: [
             "base de données (MySQL, sans ORM/ODM)",
             "authentification (JWT) et compte utilisateur",
             "sécurité : mot de passe chiffré en BDD",
             "routeurs en back-end (Express) et front-end (React Router)",
+            "typage des props (prop-types)",
             "state manager (Redux)",
             "canal de communication bidirectionnelle serveur-client (Socket.io)",
         ],
@@ -175,6 +198,12 @@ const projects = [
         imgUrl: portfolioImg,
         videoUrl: portfolioVideo,
         description: "Création d'un portfolio d'applications",
+        context:
+            'Projet réalisé à la suite de la formation "Développeur web" en 2023.',
+        objectives: [
+            "présenter les différents projets réalisés",
+            "proposer un formulaire de contact lié à une adresse email",
+        ],
         tools: [
             "typage des props avec prop-types",
             "back-end minimal, uniquement pour le formulaire de contact (NodeMailer)",
@@ -212,7 +241,18 @@ const projects = [
         videoUrl: kasaVideo,
         description:
             "Création du front-end d'une application de location immobilière à partir d'une maquette Figma",
-        tools: ["navigation avec routeur (React Router)", "modules CSS"],
+        context:
+            'Projet réalisé au cours de la formation "Développeur web" en 2023.',
+        objectives: [
+            "intégrer les 4 pages de la maquette Figma dans une Single Page Application avec React",
+            "récupérer les données par des requêtes HTTP",
+            "créer les animations CSS décrites dans le cahier des charges",
+        ],
+        tools: [
+            "navigation avec routeur (React Router)",
+            "modules CSS",
+            "données récupérées par des requêtes HTTP vers un fichier JSON",
+        ],
         features: ["animations", "responsive (mobile-first)", "slider"],
         mainTechs: ["React.js"],
         techs: ["HTML", "CSS", "JavaScript", "React.js"],
@@ -229,6 +269,12 @@ const projects = [
         videoUrl: ohmyfoodVideo,
         description:
             "Intégration de la maquette Figma d'une application de menus en ligne",
+        context:
+            'Projet réalisé au cours de la formation "Développeur web" en 2023.',
+        objectives: [
+            "intégrer précisément la maquette Figma",
+            "créer les animations CSS décrites dans le cahier des charges",
+        ],
         tools: [],
         features: ["animations CSS", "responsive (mobile-first)"],
         mainTechs: ["Sass"],
