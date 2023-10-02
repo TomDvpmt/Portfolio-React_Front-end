@@ -6,7 +6,7 @@ import SocialLinks from "../components/SocialLinks";
 
 import { ALL_TECHS, TYPES_ARRAY } from "../assets/data/techs";
 import profilePicture from "../assets/img/profile/profile-picture_square.jpg";
-import CV from "../assets/files/CV_Alternance_Developpeur-fullstack-junior_Thomas-Boussion.pdf";
+import CV from "../assets/files/Developpeur-JS-PHP_CV_Thomas_Boussion.pdf";
 
 import theme from "../styles/theme";
 import { Box, Typography, Button, useMediaQuery } from "@mui/material";
