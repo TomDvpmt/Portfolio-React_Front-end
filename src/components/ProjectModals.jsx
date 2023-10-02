@@ -8,7 +8,7 @@ import ProjectModal from "./ProjectModal";
 import theme from "../styles/theme";
 import { Box, Dialog } from "@mui/material";
 
-const ProjectsModals = () => {
+const ProjectModals = () => {
     const projectsData = useContext(ProjectsContext);
 
     const [showDialog, setShowDialog] = useState(false);
@@ -73,4 +73,4 @@ const ProjectsModals = () => {
     );
 };
 
-export default ProjectsModals;
+export default ProjectModals;

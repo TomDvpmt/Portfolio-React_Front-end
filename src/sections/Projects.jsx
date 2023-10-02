@@ -3,7 +3,7 @@ import ProjectsContext from "../contexts/ProjectsContext";
 import projects from "../assets/data/projects";
 
 import SectionHeading from "../components/SectionHeading";
-import ProjectsModals from "../components/ProjectsModals";
+import ProjectModals from "../components/ProjectModals";
 
 import theme from "../styles/theme";
 import { Box, Typography, useMediaQuery } from "@mui/material";
@@ -31,7 +31,7 @@ const Projects = forwardRef((props, ref) => {
                     justifyContent: "center",
                 }}>
                 <ProjectsContext.Provider value={projects}>
-                    <ProjectsModals />
+                    <ProjectModals />
                 </ProjectsContext.Provider>
             </Box>
         </Box>

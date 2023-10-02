@@ -207,7 +207,7 @@ const projects = [
         tools: [
             "typage des props avec prop-types",
             "back-end minimal, uniquement pour le formulaire de contact (NodeMailer)",
-            "test unitaires (Jest)",
+            "tests unitaires (Jest)",
         ],
         features: [
             "navigation horizontale",

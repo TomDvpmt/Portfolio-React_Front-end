@@ -140,7 +140,7 @@ const ProjectModal = ({ project, translateValue, handleClose }) => {
                             gridColumn: "1",
                             alignSelf: "start",
                             position: { lg: "sticky" },
-                            top: { lg: "6rem" },
+                            top: { lg: "3rem" },
                         }}>
                         {project.done ? (
                             <CardMedia
