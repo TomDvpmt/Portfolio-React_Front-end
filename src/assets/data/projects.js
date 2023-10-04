@@ -14,7 +14,7 @@ import groupomaniaVideo from "../vids/groupomania.webm";
 import covoitVideo from "../vids/covoit.webm";
 import portfolioVideo from "../vids/portfolio.webm";
 import ohmyfoodVideo from "../vids/ohmyfood.webm";
-import flixVideo from "../vids/flix.webm";
+import flixVideo from "../vids/flixx.webm";
 
 const projects = [
     {
