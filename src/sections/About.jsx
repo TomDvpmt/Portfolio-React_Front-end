@@ -132,8 +132,8 @@ const About = forwardRef((props, ref) => {
                             <Typography
                                 textAlign={{ xs: "left", lg: "justify" }}
                                 color={theme.palette.text.content}>
-                                Récemment reconverti dans le développement web,
-                                je développe des applications{" "}
+                                Passionné de développement, je construis des
+                                applications{" "}
                                 <Typography
                                     component="span"
                                     fontWeight="700"

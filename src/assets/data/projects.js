@@ -179,6 +179,8 @@ const projects = [
         ],
         features: [
             "compte utilisateur",
+            "autorisations selon statut (admin ou client)",
+            "CMS maison pour gérer les produits",
             "plusieurs catégories de produits",
             "aperçu et page dédiée pour chaque produit",
             "consitution d'un panier",
