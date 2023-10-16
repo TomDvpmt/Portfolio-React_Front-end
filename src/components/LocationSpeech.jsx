@@ -26,12 +26,19 @@ const LocationSpeech = forwardRef((props, ref) => {
                 </Typography>
             </Box>
             <Typography color={theme.palette.text.content}>
-                J'habite en{" "}
+                Je souhaite travailler dans les régions{" "}
                 <Typography component="span" color="secondary">
-                    France
+                    Pays de la Loire
                 </Typography>
-                , avec une mobilité principale sur la région Rhône-Alpes, mais
-                aussi, ponctuellement, sur tout le territoire français.
+                ,{" "}
+                <Typography component="span" color="secondary">
+                    Bretagne
+                </Typography>{" "}
+                ou{" "}
+                <Typography component="span" color="secondary">
+                    Auvergne-Rhône-Alpes
+                </Typography>
+                .
             </Typography>
             <Typography color={theme.palette.text.content}>
                 Je privilégie le travail en équipe et{" "}
