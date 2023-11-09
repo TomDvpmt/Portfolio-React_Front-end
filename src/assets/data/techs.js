@@ -14,6 +14,7 @@ import { ReactComponent as SocketIoLogo } from "../img/techs/logo-socket-io.svg"
 import { ReactComponent as LinuxLogo } from "../img/techs/logo-linux.svg";
 import { ReactComponent as WordPressLogo } from "../img/techs/logo-wordpress.svg";
 import { ReactComponent as JestLogo } from "../img/techs/logo-jest.svg";
+import { ReactComponent as TwigLogo } from "../img/techs/logo-twig.svg";
 import phpLogo from "../img/techs/logo-php.png";
 import nodemailerLogo from "../img/techs/logo-nodemailer_200x136.png";
 import expressLogo from "../img/techs/logo-expressjs.png";
@@ -113,6 +114,11 @@ const ALL_TECHS = [
         label: "Sass",
         type: "front-end",
         imgElement: <SassLogo title="Sass" />,
+    },
+    {
+        label: "Twig",
+        type: "front-end",
+        imgElement: <TwigLogo title="Twig" />,
     },
     {
         label: "Material UI",
