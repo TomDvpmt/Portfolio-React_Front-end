@@ -7,7 +7,6 @@ import { ReactComponent as GitLogo } from "../img/techs/logo-git.svg";
 import { ReactComponent as SassLogo } from "../img/techs/logo-sass.svg";
 import { ReactComponent as MongoDBLogo } from "../img/techs/logo-mongodb.svg";
 import { ReactComponent as MySQLLogo } from "../img/techs/logo-mysql.svg";
-import { ReactComponent as JWTLogo } from "../img/techs/logo-jwt.svg";
 import { ReactComponent as ReduxLogo } from "../img/techs/logo-redux.svg";
 import { ReactComponent as MaterialUILogo } from "../img/techs/logo-materialUI.svg";
 import { ReactComponent as SocketIoLogo } from "../img/techs/logo-socket-io.svg";
@@ -15,9 +14,10 @@ import { ReactComponent as LinuxLogo } from "../img/techs/logo-linux.svg";
 import { ReactComponent as WordPressLogo } from "../img/techs/logo-wordpress.svg";
 import { ReactComponent as JestLogo } from "../img/techs/logo-jest.svg";
 import { ReactComponent as TwigLogo } from "../img/techs/logo-twig.svg";
+// import { ReactComponent as JWTLogo } from "../img/techs/logo-jwt.svg";
 import phpLogo from "../img/techs/logo-php.png";
-import nodemailerLogo from "../img/techs/logo-nodemailer_200x136.png";
 import expressLogo from "../img/techs/logo-expressjs.png";
+// import nodemailerLogo from "../img/techs/logo-nodemailer_200x136.png";
 
 import theme from "../../styles/theme";
 
@@ -83,23 +83,23 @@ const ALL_TECHS = [
             />
         ),
     },
-    {
-        label: "JWT",
-        type: "back-end",
-        imgElement: <JWTLogo title="JWT" />,
-    },
-    {
-        label: "Nodemailer",
-        type: "back-end",
-        imgElement: (
-            <img
-                src={nodemailerLogo}
-                alt="Nodemailer"
-                title="Nodemailer"
-                width={theme.maxWidth.techIcon}
-            />
-        ),
-    },
+    // {
+    //     label: "JWT",
+    //     type: "back-end",
+    //     imgElement: <JWTLogo title="JWT" />,
+    // },
+    // {
+    //     label: "Nodemailer",
+    //     type: "back-end",
+    //     imgElement: (
+    //         <img
+    //             src={nodemailerLogo}
+    //             alt="Nodemailer"
+    //             title="Nodemailer"
+    //             width={theme.maxWidth.techIcon}
+    //         />
+    //     ),
+    // },
     {
         label: "React.js",
         type: "front-end",
