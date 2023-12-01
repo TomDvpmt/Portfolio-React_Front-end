@@ -152,16 +152,22 @@ const About = forwardRef((props, ref) => {
                                     fontWeight="700"
                                     color="secondary">
                                     MERN
+                                </Typography>{" "}
+                                et sur{" "}
+                                <Typography
+                                    component="span"
+                                    fontWeight="700"
+                                    color="secondary">
+                                    PHP
                                 </Typography>
                                 , et étudie actuellement{" "}
                                 <Typography
                                     component="span"
                                     fontWeight="700"
                                     color="secondary">
-                                    PHP
+                                    Symfony
                                 </Typography>{" "}
-                                pour étendre mes compétences, avec pour objectif
-                                de maîtriser le framework Symfony.{" "}
+                                pour étendre mes compétences en back-end.
                             </Typography>
                         </Box>
                     </Box>

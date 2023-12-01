@@ -1,19 +1,20 @@
-import { ReactComponent as ReactLogo } from "../img/techs/logo-react.svg";
 import { ReactComponent as CSSLogo } from "../img/techs/logo-css3.svg";
+import { ReactComponent as GitLogo } from "../img/techs/logo-git.svg";
 import { ReactComponent as HTMLLogo } from "../img/techs/logo-html5.svg";
 import { ReactComponent as JavaScriptLogo } from "../img/techs/logo-javascript.svg";
-import { ReactComponent as NodeJsLogo } from "../img/techs/logo-nodejs.svg";
-import { ReactComponent as GitLogo } from "../img/techs/logo-git.svg";
-import { ReactComponent as SassLogo } from "../img/techs/logo-sass.svg";
+import { ReactComponent as JestLogo } from "../img/techs/logo-jest.svg";
+import { ReactComponent as LinuxLogo } from "../img/techs/logo-linux.svg";
+import { ReactComponent as MaterialUILogo } from "../img/techs/logo-materialUI.svg";
 import { ReactComponent as MongoDBLogo } from "../img/techs/logo-mongodb.svg";
 import { ReactComponent as MySQLLogo } from "../img/techs/logo-mysql.svg";
+import { ReactComponent as NodeJsLogo } from "../img/techs/logo-nodejs.svg";
+import { ReactComponent as ReactLogo } from "../img/techs/logo-react.svg";
 import { ReactComponent as ReduxLogo } from "../img/techs/logo-redux.svg";
-import { ReactComponent as MaterialUILogo } from "../img/techs/logo-materialUI.svg";
+import { ReactComponent as SassLogo } from "../img/techs/logo-sass.svg";
 import { ReactComponent as SocketIoLogo } from "../img/techs/logo-socket-io.svg";
-import { ReactComponent as LinuxLogo } from "../img/techs/logo-linux.svg";
-import { ReactComponent as WordPressLogo } from "../img/techs/logo-wordpress.svg";
-import { ReactComponent as JestLogo } from "../img/techs/logo-jest.svg";
 import { ReactComponent as TwigLogo } from "../img/techs/logo-twig.svg";
+import { ReactComponent as TypescriptLogo } from "../img/techs/logo-typescript.svg";
+import { ReactComponent as WordPressLogo } from "../img/techs/logo-wordpress.svg";
 // import { ReactComponent as JWTLogo } from "../img/techs/logo-jwt.svg";
 import phpLogo from "../img/techs/logo-php.png";
 import expressLogo from "../img/techs/logo-expressjs.png";
@@ -38,6 +39,11 @@ const ALL_TECHS = [
         label: "JavaScript",
         type: "langages",
         imgElement: <JavaScriptLogo title="JavaScript" />,
+    },
+    {
+        label: "TypeScript",
+        type: "langages",
+        imgElement: <TypescriptLogo title="TypeScript" />,
     },
     {
         label: "PHP",
@@ -83,6 +89,11 @@ const ALL_TECHS = [
             />
         ),
     },
+    {
+        label: "Twig",
+        type: "back-end",
+        imgElement: <TwigLogo title="Twig" />,
+    },
     // {
     //     label: "JWT",
     //     type: "back-end",
@@ -116,11 +127,6 @@ const ALL_TECHS = [
         imgElement: <SassLogo title="Sass" />,
     },
     {
-        label: "Twig",
-        type: "front-end",
-        imgElement: <TwigLogo title="Twig" />,
-    },
-    {
         label: "Material UI",
         type: "front-end",
         imgElement: <MaterialUILogo title="Material UI" />,
@@ -137,7 +143,7 @@ const ALL_TECHS = [
     },
     {
         label: "Socket.io",
-        type: "back-end",
+        type: "autres",
         imgElement: <SocketIoLogo title="Socket.io" />,
     },
     {
